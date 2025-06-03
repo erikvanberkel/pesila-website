@@ -884,11 +884,15 @@
     <section id="booking" class="booking-section">
       <div class="container">
         <h2 class="section-title">Maak een afspraak</h2>
-        <form id="bookingForm" novalidate>
+        <form id="bookingForm" novalidate action="https://formsubmit.co/b5194cb0bc209d6fe5c6011d7a27d02f" method="POST">
+          <input type="hidden" name="_redirect" value="https://erikvanberkel.github.io/pesila-website/">
+          <input type="hidden" name="_subject" value="Nieuwe website afspraak">
+          <input type="hidden" name="_captcha" value="false">
           <div class="row">
             <div class="col-md-6">
               <input
                 type="text"
+                name="Name"
                 class="form-control"
                 id="fullName"
                 placeholder="Naam"
@@ -899,6 +903,7 @@
             <div class="col-md-6">
               <input
                 type="email"
+                name="Email"
                 class="form-control"
                 id="email"
                 placeholder="Email"
@@ -909,6 +914,7 @@
             <div class="col-md-6">
               <input
                 type="tel"
+                name="Telephone"
                 class="form-control"
                 id="phone"
                 placeholder="Telefoon"
@@ -917,7 +923,7 @@
               <div class="invalid-feedback">Telefoonnummer is verplicht.</div>
             </div>
             <div class="col-md-6">
-              <select class="form-control" id="service">
+              <select name="Service" class="form-control" id="service">
                 <option value="" disabled selected>Service</option>
                 <option>Traditionele Thaise Massage</option>
                 <option>Aroma-Oliemassage</option>
@@ -934,6 +940,7 @@
             </div>
             <div class="col-12">
               <textarea
+                name="Message"
                 class="form-control"
                 id="notes"
                 rows="4"
@@ -1001,8 +1008,8 @@
               event.preventDefault();
               event.stopPropagation();
             } else {
-              event.preventDefault();
-              alert("Booking submitted successfully!");
+              // event.preventDefault();
+              // alert("Booking submitted successfully!");
             }
             form.classList.add("was-validated");
           },
