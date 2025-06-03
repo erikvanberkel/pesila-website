@@ -26,8 +26,9 @@
         background-color: #f8f4ef;
         color: #333;
       }
-      h1, h2 {
-          text-wrap-style: balance;
+      h1,
+      h2 {
+        text-wrap-style: balance;
       }
       .hero-section {
         background: url("images/HighResolution.jpeg") no-repeat center
@@ -108,7 +109,7 @@
 
       .text-container {
         position: relative;
-        max-height: 100px; /* Adjust height as needed */
+        max-height: 80px; /* Adjust height as needed */
         overflow: hidden;
         cursor: pointer;
         transition: max-height 0.3s ease;
@@ -120,7 +121,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 60px;
+        height: 50px;
         background: linear-gradient(to bottom, transparent, white);
         pointer-events: none;
       }
@@ -272,15 +273,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Over ons</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Service</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#timetable">Openingstijden</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">Over ons</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#testimonials">Reviews</a>
@@ -303,6 +306,37 @@
         <h1>Welkom bij Pesila Thai Massage</h1>
         <p>Ervaar het authentiek Thaise welzijn.</p>
         <a href="#booking" class="btn btn-custom">Maak een afspraak</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title">Over ons</h2>
+        <div class="card">
+          <div class="card-body">
+            <p class="text-center">
+              Bij Pesila Thai Massage in Rotterdam staan onze ervaren masseuses
+              voor je klaar om je de volledige aandacht en zorg te bieden die je
+              verdient.
+            </p>
+            <p class="text-center">
+              Of je nu kiest voor een traditionele Thaise massage, een
+              verkwikkende sportmassage, of een diepgaande deep tissue massage –
+              wij helpen je graag om je klachten te verlichten en je lichaam en
+              geest volledig te resetten.
+            </p>
+            <p class="text-center">
+              Na je behandeling geniet je van een rustgevend kopje thee, zodat
+              je ontspannen en herboren weer naar buiten stapt.
+            </p>
+            <p class="text-center">
+              Je kunt bij ons terecht voor een individuele sessie of samen met
+              een partner. Behandelingen starten al vanaf € 40,- voor 30 minuten
+              pure ontspanning.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -809,33 +843,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-      <div class="container">
-        <h2 class="section-title">Over ons</h2>
-        <p class="text-center">
-          Bij Pesila Thai Massage in Rotterdam staan onze ervaren masseuses voor
-          je klaar om je de volledige aandacht en zorg te bieden die je
-          verdient.
-        </p>
-        <p class="text-center">
-          Of je nu kiest voor een traditionele Thaise massage, een verkwikkende
-          sportmassage, of een diepgaande deep tissue massage – wij helpen je
-          graag om je klachten te verlichten en je lichaam en geest volledig te
-          resetten.
-        </p>
-        <p class="text-center">
-          Na je behandeling geniet je van een rustgevend kopje thee, zodat je
-          ontspannen en herboren weer naar buiten stapt.
-        </p>
-        <p class="text-center">
-          Je kunt bij ons terecht voor een individuele sessie of samen met een
-          partner. Behandelingen starten al vanaf € 40,- voor 30 minuten pure
-          ontspanning.
-        </p>
-      </div>
-    </section>
-
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials-section">
       <div class="container">
@@ -887,10 +894,23 @@
     <section id="booking" class="booking-section">
       <div class="container">
         <h2 class="section-title">Maak een afspraak</h2>
-        <form id="bookingForm" novalidate action="https://formsubmit.co/b5194cb0bc209d6fe5c6011d7a27d02f" method="POST">
-          <input type="hidden" name="_redirect" value="https://erikvanberkel.github.io/pesila-website/">
-          <input type="hidden" name="_subject" value="Nieuwe website afspraak">
-          <input type="hidden" name="_captcha" value="false">
+        <form
+          id="bookingForm"
+          novalidate
+          action="https://formsubmit.co/b5194cb0bc209d6fe5c6011d7a27d02f"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_redirect"
+            value="https://erikvanberkel.github.io/pesila-website/"
+          />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nieuwe website afspraak"
+          />
+          <input type="hidden" name="_captcha" value="false" />
           <div class="row">
             <div class="col-md-6">
               <input
@@ -1000,7 +1020,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Form validation
       (function () {
         "use strict";
         const form = document.getElementById("bookingForm");
@@ -1010,9 +1029,6 @@
             if (!form.checkValidity()) {
               event.preventDefault();
               event.stopPropagation();
-            } else {
-              // event.preventDefault();
-              // alert("Booking submitted successfully!");
             }
             form.classList.add("was-validated");
           },
