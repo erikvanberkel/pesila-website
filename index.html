@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -20,9 +20,26 @@
     <link rel="icon" sizes="192x192" href="images/" type="image/png" />
     <link rel="shortcut icon" href="images/icon.png" type="image/png" />
     <link rel="192x192" href="images/icon192.png" type="image/png" />
+    <link rel="canonical" href="https://www.pesila.nl" />
+    <meta
+      name="description"
+      content="Pesila Massage. In onze massagepraktijk in Rotterdam nemen we uitgebreid de tijd voor uw massage. Kies voor een traditionele Thaise massage, sportmassage of deep tissue massage om van al uw klachten en problemen af te komen en het gevoel te ervaren alsof u herboren bent. Om ervoor te zorgen dat u na de behandeling volledig ontspannen bent, krijgt u na afloop een kopje thee. Pesila"
+    />
+    <meta property="og:url" content="https://www.pesila.nl/contact" />
+    <meta
+      property="og:title"
+      content="Pesila Massage, Schiedamseweg 17A Rotterdam"
+    />
+    <meta
+      property="og:description"
+      content="Pesila Massage. In onze massagepraktijk in Rotterdam nemen we uitgebreid de tijd voor uw massage. Kies voor een traditionele Thaise massage, sportmassage of deep tissue massage om van al uw klachten en problemen af te komen en het gevoel te ervaren alsof u herboren bent. Om ervoor te zorgen dat u na de behandeling volledig ontspannen bent, krijgt u na afloop een kopje thee. Pesila"
+    />
+    <meta property="og:url" content="https://www.pesila.nl" />
+    <meta property="og:site_name" content="Pesila Massage" />
+    <meta property="og:type" content="website" />
     <style>
       body {
-        font-family: "Roboto", sans-serif;
+        font-family: "Inter", sans-serif;
         background-color: #f8f4ef;
         color: #333;
       }
@@ -34,15 +51,19 @@
         color: #fff;
       }
       .hero-section {
-        background: url("images/HighResolution.jpeg") no-repeat center
+        scroll-margin-top: 10rem;
+        margin-top: 110px;
+        background: url("images/ladies.jpeg") no-repeat center
           center/cover;
-        height: 100vh;
+        min-height: calc(100vh - 110px);
+        height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         color: #fff;
         position: relative;
+        padding: 4rem 0 2rem 0;
       }
       .hero-section::before {
         content: "";
@@ -51,14 +72,16 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.4);
       }
       .hero-content {
         position: relative;
         z-index: 1;
       }
       .hero-content img {
-        width: 65%;
+        margin-top: -10%;
+        margin-bottom: 2rem;
+        width: 50%;
         filter: brightness(1000%) contrast(100%);
       }
       .hero-content h1 {
@@ -78,6 +101,7 @@
         transition: background-color 0.3s;
       }
       .btn-custom:hover {
+        color: #fff;
         background-color: #8b6f47;
       }
       .section-title {
@@ -212,6 +236,7 @@
         color: #8b6f47;
       }
       .navbar {
+        --bs-navbar-toggler-focus-width: 0.15rem;
         background: rgba(255, 255, 255, 0.9);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
@@ -260,7 +285,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#home">
           <img src="images/logo.png" alt="Pesila Thai Massage" />
         </a>
         <button
@@ -305,10 +330,10 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
       <div class="hero-content">
-        <img src="images/logo.svg" alt="Pesila thai massage" />
+        <img src="images/logo-large.png" alt="Pesila Thai Massage" />
         <h1>Welkom bij Pesila Thai Massage</h1>
         <p>Ervaar het authentieke Thaise welzijn.</p>
-        <a href="#booking" class="btn btn-custom">Maak een afspraak</a>
+        <a href="#booking" class="btn btn-primary btn-custom">Maak een afspraak</a>
       </div>
     </section>
 
@@ -352,7 +377,7 @@
             <div class="service-card">
               <img
                 src="images/services/traditioneel.avif"
-                alt="Swedish Massage"
+                alt="Traditionele Thaise Massage"
               />
               <h3>Traditionele Thaise Massage</h3>
               <div
@@ -373,8 +398,8 @@
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>30 min</td>
@@ -398,7 +423,7 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/aroma.avif" alt="Deep Tissue Massage" />
+              <img src="images/services/aroma.avif" alt="Aroma-Oliemassage" />
               <h3>Aroma-Oliemassage</h3>
               <div
                 class="text-container"
@@ -419,8 +444,8 @@
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>30 min</td>
@@ -444,7 +469,7 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/voeten.avif" alt="Aromatherapy" />
+              <img src="images/services/voeten.avif" alt="Voetenmassage" />
               <h3>Voetenmassage</h3>
               <div
                 class="text-container"
@@ -464,8 +489,8 @@
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>30 min</td>
@@ -489,7 +514,7 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/nek-schouder.avif" alt="Aromatherapy" />
+              <img src="images/services/nek-schouder.avif" alt="Nek-Schouder en Hoofdmassage" />
               <h3>Nek-Schouder en Hoofdmassage</h3>
               <div
                 class="text-container"
@@ -524,8 +549,8 @@
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>30 min</td>
@@ -549,7 +574,7 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/hotstone.avif" alt="Aromatherapy" />
+              <img src="images/services/hotstone.avif" alt="Hotstone Massage" />
               <h3>Hotstone Massage</h3>
               <div
                 class="text-container"
@@ -582,8 +607,8 @@
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>30 min</td>
@@ -607,13 +632,13 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/duo.avif" alt="Aromatherapy" />
+              <img src="images/services/duo.avif" alt="Duo Massage" />
               <h3>Duo Massage</h3>
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>60 min</td>
@@ -633,13 +658,13 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/zwangerschap.avif" alt="Aromatherapy" />
+              <img src="images/services/zwangerschap.avif" alt="ZwangerSchap Massage" />
               <h3>ZwangerSchap Massage</h3>
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>30 min</td>
@@ -663,7 +688,7 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/sport.avif" alt="Aromatherapy" />
+              <img src="images/services/sport.avif" alt="Sport Massage" />
               <h3>Sport Massage</h3>
               <div
                 class="text-container"
@@ -699,8 +724,8 @@
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>30 min</td>
@@ -724,7 +749,7 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/deep-tissue.avif" alt="Aromatherapy" />
+              <img src="images/services/deep-tissue.avif" alt="Deep Tissue" />
               <h3>Deep Tissue</h3>
               <div
                 class="text-container"
@@ -749,8 +774,8 @@
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>30 min</td>
@@ -776,7 +801,7 @@
             <div class="service-card">
               <img
                 src="images/services/kruidenstempel.avif"
-                alt="Aromatherapy"
+                alt="Kruidenstempel massage"
               />
               <h3>Kruidenstempel massage</h3>
               <div
@@ -801,8 +826,8 @@
               <div class="pricing-table">
                 <table>
                   <tr>
-                    <th>Duur</th>
-                    <th>Prijs</th>
+                    <th scope="col">Duur</th>
+                    <th scope="col">Prijs</th>
                   </tr>
                   <tr>
                     <td>30 min</td>
@@ -916,39 +941,46 @@
           <input type="hidden" name="_captcha" value="false" />
           <div class="row">
             <div class="col-md-6">
+              <label for="fullName" class="visually-hidden">Naam</label>
               <input
                 type="text"
                 name="Name"
                 class="form-control"
                 id="fullName"
                 placeholder="Naam"
+                autocomplete="name"
                 required
               />
               <div class="invalid-feedback">Naam is verplicht.</div>
             </div>
             <div class="col-md-6">
+              <label for="email" class="visually-hidden">Email</label>
               <input
                 type="email"
                 name="Email"
                 class="form-control"
                 id="email"
                 placeholder="Email"
+                autocomplete="email"
                 required
               />
               <div class="invalid-feedback">Email is verplicht.</div>
             </div>
             <div class="col-md-6">
+              <label for="phone" class="visually-hidden">Telefoonnummer</label>
               <input
                 type="tel"
                 name="Telephone"
                 class="form-control"
                 id="phone"
                 placeholder="Telefoon"
+                autocomplete="tel"
                 required
               />
               <div class="invalid-feedback">Telefoonnummer is verplicht.</div>
             </div>
             <div class="col-md-6">
+              <label for="service" class="visually-hidden">Service</label>
               <select name="Service" class="form-control" id="service">
                 <option value="" disabled selected>Service</option>
                 <option>Traditionele Thaise Massage</option>
@@ -965,6 +997,7 @@
               <div class="invalid-feedback">Service.</div>
             </div>
             <div class="col-12">
+              <label for="notes" class="visually-hidden">Bericht</label>
               <textarea
                 name="Message"
                 class="form-control"
@@ -974,7 +1007,7 @@
               ></textarea>
             </div>
             <div class="col-12 text-center">
-              <button type="submit" class="btn btn-custom mt-3">
+              <button type="submit" class="btn btn-primary btn-custom mt-3">
                 Verstuur
               </button>
             </div>
@@ -982,6 +1015,7 @@
         </form>
         <div class="map">
           <iframe
+            title="Locatie op Google maps"
             src="https://www.google.com/maps?q=Pesila+Schiedamseweg+17A,+Rotterdam,+Netherlands&output=embed"
             allowfullscreen=""
             loading="lazy"
@@ -999,8 +1033,11 @@
           plannen.
         </p>
         <p class="text-center">
-          Telefoon: <a href="tel:+31623899709">06-23899709</a> of <a href="tel:+31102266247">010-2266247</a><br>
-          Email: <a href="mailto:pesilawellness@gmail.com">pesilawellness@gmail.com</a><br>
+          Telefoon: <a href="tel:+31623899709">06-23899709</a> of
+          <a href="tel:+31102266247">010-2266247</a><br />
+          Email:
+          <a href="mailto:pesilawellness@gmail.com">pesilawellness@gmail.com</a
+          ><br />
           Address: Schiedamseweg 17A, 3026 AB Rotterdam
         </p>
       </div>
