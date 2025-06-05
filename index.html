@@ -53,8 +53,7 @@
       .hero-section {
         scroll-margin-top: 10rem;
         margin-top: 89px;
-        background: url("images/ladies.jpeg") no-repeat center
-          center/cover;
+        background: url("images/ladies.jpeg") no-repeat center center/cover;
         min-height: calc(100vh - 90px);
         height: auto;
         display: flex;
@@ -332,7 +331,9 @@
         <img src="images/logo-large.png" alt="Pesila Thai Massage" />
         <h1>Welkom bij Pesila Thai Massage</h1>
         <p>Ervaar het authentieke Thaise welzijn.</p>
-        <a href="#booking" class="btn btn-primary btn-custom">Maak een afspraak</a>
+        <a href="#booking" class="btn btn-primary btn-custom"
+          >Maak een afspraak</a
+        >
       </div>
     </section>
 
@@ -513,7 +514,10 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/nek-schouder.avif" alt="Nek-Schouder en Hoofdmassage" />
+              <img
+                src="images/services/nek-schouder.avif"
+                alt="Nek-Schouder en Hoofdmassage"
+              />
               <h3>Nek-Schouder en Hoofdmassage</h3>
               <div
                 class="text-container"
@@ -657,7 +661,10 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <div class="service-card">
-              <img src="images/services/zwangerschap.avif" alt="ZwangerSchap Massage" />
+              <img
+                src="images/services/zwangerschap.avif"
+                alt="ZwangerSchap Massage"
+              />
               <h3>ZwangerSchap Massage</h3>
               <div class="pricing-table">
                 <table>
@@ -1065,6 +1072,19 @@
           },
           false
         );
+
+        const navbarNav = document.querySelector(".navbar-nav");
+        navbarNav.addEventListener("click", (event) => {
+          if (event.target.classList.contains("nav-link")) {
+            const navbarCollapse = document.querySelector(".navbar-collapse");
+            if (navbarCollapse.classList.contains("show")) {
+              const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false,
+              });
+              bsCollapse.hide();
+            }
+          }
+        });
       })();
     </script>
   </body>
