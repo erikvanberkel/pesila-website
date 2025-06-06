@@ -1061,29 +1061,32 @@
     </footer>
 
     <script>
-      "use strict";
+      (function () {
+        "use strict";
 
-      window.addEventListener("load", () => {
-        document.getElementById("preloader").style.display = "none";
-      });
+        window.addEventListener("load", () => {
+          document.getElementById("preloader").style.display = "none";
+        });
 
-      document.getElementById("bookingForm").addEventListener(
-        "submit",
-        function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
+        const form = document.getElementById("bookingForm");
+        form.addEventListener(
+          "submit",
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          },
+          false
+        );
+
+        document.querySelector(".navbar-nav").addEventListener("click", (event) => {
+          if (event.target.classList.contains("nav-link")) {
+            document.querySelector("#navbar-toggle").checked = false;
           }
-          form.classList.add("was-validated");
-        },
-        false
-      );
-
-      document.querySelector(".navbar-nav").addEventListener("click", (event) => {
-        if (event.target.classList.contains("nav-link")) {
-          document.querySelector("#navbar-toggle").checked = false;
-        }
-      });
+        });
+      })();
     </script>
   </body>
 </html>
