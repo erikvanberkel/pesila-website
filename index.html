@@ -305,21 +305,27 @@
         justify-content: center;
       }
 
-      #navbar-toggle ~ .navbar-collapse {
-        display: block;
-        max-height: 0;
-        overflow: hidden;
-        transition: var(--transition);
-      }
-
-      #navbar-toggle:checked ~ .navbar-collapse {
-        max-height: 300px;
-      }
-
       @keyframes slideUp {
         to {
           transform: translateY(0);
           opacity: 1;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .navbar-toggler {
+          cursor: pointer;
+        }
+
+        #navbar-toggle ~ .navbar-collapse {
+          display: block;
+          max-height: 0;
+          overflow: hidden;
+          transition: var(--transition);
+        }
+
+        #navbar-toggle:checked ~ .navbar-collapse {
+          max-height: 300px;
         }
       }
 
