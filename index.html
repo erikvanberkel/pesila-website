@@ -30,6 +30,19 @@
     <meta property="og:site_name" content="Pesila Thai Massage" />
     <meta property="og:type" content="website" />
     <style>
+     :root {
+        --primary-color: #6b4e31;
+        --secondary-color: #8b6f47;
+        --background-color: #f8f4ef;
+        --text-color: #333;
+        --overlay-opacity: 0.5;
+        --transition: all 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        to { opacity: 1; }
+      }
+
       body {
         font-family: "Inter", sans-serif;
         background-color: #f8f4ef;
@@ -45,6 +58,7 @@
       }
       p {
         text-wrap-style: pretty;
+        line-height: 1.6;
       }
       .hero-section {
         scroll-margin-top: 10rem;
@@ -73,25 +87,37 @@
       }
       .hero-content {
         position: relative;
-        z-index: 1;
+        z-index: 2;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: slideUp 0.8s ease-out 0.3s forwards;
       }
+      
+      @keyframes slideUp {
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
       .hero-content img {
         margin-bottom: 2rem;
         width: 50%;
       }
       .hero-content h1 {
         font-family: "Playfair Display", serif;
-        font-size: 3.5rem;
+        font-size: clamp(2.5rem, 5vw, 4rem);
         margin-bottom: 1rem;
       }
       .hero-content p {
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 2vw, 1.25rem);
         margin-bottom: 2rem;
       }
       .btn-custom {
         background-color: #6b4e31;
         color: #fff;
         padding: 10px 20px;
+        border-radius: 25px;
         border: none;
         transition: background-color 0.3s;
       }
@@ -107,7 +133,7 @@
       }
       .service-card,
       .testimonial-card {
-        transition: transform 0.3s;
+        transition: var(--transition);
         background: #fff;
         padding: 1.5rem;
         border-radius: 10px;
@@ -117,6 +143,7 @@
       .service-card:hover,
       .testimonial-card:hover {
         transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
       }
       .service-card img {
         width: 100%;
@@ -190,31 +217,29 @@
         color: #fff;
       }
       .form-control {
-        border-radius: 5px;
-        margin-bottom: 1rem;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        padding: 0.75rem;
+        transition: var(--transition);
       }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(107, 78, 49, 0.25);
+      }
+
       .form-control.is-invalid {
         border-color: #dc3545;
       }
       .invalid-feedback {
         color: #dc3545;
         font-size: 0.875rem;
-        margin: -1rem 0 1rem 0;
       }
       footer {
         background: #333;
         color: #fff;
         text-align: center;
         padding: 1rem 0;
-      }
-      .social-icons a {
-        color: #fff;
-        font-size: 1.5rem;
-        margin: 0 10px;
-        transition: color 0.3s;
-      }
-      .social-icons a:hover {
-        color: #8b6f47;
       }
       .navbar {
         --bs-navbar-toggler-focus-width: 0.15rem;
@@ -249,6 +274,19 @@
         margin-top: 3rem;
       }
 
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--background-color);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       @media (max-width: 768px) {
         .hero-content h1 {
           font-size: 2rem;
@@ -267,6 +305,10 @@
     </style>
   </head>
   <body>
+    <div id="preloader">
+      <img src="images/logo.png" alt="Loading..." style="max-width: 100px;">
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
@@ -1021,7 +1063,7 @@
           />
           <input type="hidden" name="_captcha" value="false" />
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-3">
               <label for="fullName" class="visually-hidden">Naam</label>
               <input
                 type="text"
@@ -1034,7 +1076,7 @@
               />
               <div class="invalid-feedback">Naam is verplicht.</div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-3">
               <label for="email" class="visually-hidden">E-mail</label>
               <input
                 type="email"
@@ -1047,7 +1089,7 @@
               />
               <div class="invalid-feedback">E-mailadres is verplicht.</div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-3">
               <label for="phone" class="visually-hidden">Telefoonnummer</label>
               <input
                 type="tel"
@@ -1060,7 +1102,7 @@
               />
               <div class="invalid-feedback">Telefoonnummer is verplicht.</div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-3">
               <label for="service" class="visually-hidden">Service</label>
               <select name="Service" class="form-control" id="service">
                 <option value="" disabled selected>Kies je massage</option>
@@ -1134,6 +1176,12 @@
     <script>
       (function () {
         "use strict";
+
+        window.addEventListener('load', () => {
+          const preloader = document.getElementById('preloader');
+          preloader.style.display = 'none';
+        });
+
         const form = document.getElementById("bookingForm");
         form.addEventListener(
           "submit",
