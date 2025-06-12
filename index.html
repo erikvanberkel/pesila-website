@@ -12,18 +12,31 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pesila Thai Massage | Rotterdam</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700&display=swap" as="style" />
-    <link rel="icon" type="image/png" href="images/icon.png" />
-    <link rel="canonical" href="https://www.pesila.nl" />
-    <meta name="description" content="Ervaar authentieke Thaise massage in Rotterdam bij Pesila. Boek nu voor ontspanning en herstel! Schiedamseweg 17A." />
+    <title>Pesila Thai Massage Rotterdam | Authentieke Thaise Massage</title>
+    <meta
+      name="description"
+      content="Ontspan met authentieke Thaise massages bij Pesila Thai Massage in Rotterdam. Boek nu voor traditionele, aroma-olie, of sportmassages op Schiedamseweg 17A!"
+    />
     <meta
       name="keywords"
-      content="Thaise massage Rotterdam, Pesila Thai Massage, Traditionele Thaise massage, Aroma-oliemassage, Voetreflexmassage, Nek-schouder-hoofdmassage, Hot stone massage, Duo-massage, Zwangerschapsmassage, Sportmassage, Deep tissue massage, Kruidenstempelmassage"
+      content="Thaise massage Rotterdam, Pesila Thai Massage, traditionele Thaise massage, aroma-oliemassage, voetreflexmassage, nek-schouder-massage, hot stone massage, duo-massage, zwangerschapsmassage, sportmassage, deep tissue massage, kruidenstempelmassage, massage Rotterdam"
     />
-    <meta property="og:title" content="Pesila Thai Massage Rotterdam - Authentieke Wellness" />
-    <meta property="og:description" content="Ontspan met traditionele Thaise massages bij Pesila in Rotterdam. Boek nu voor ultieme rust!" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Pesila Thai Massage" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" preload />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700&display=swap"
+      as="style"
+      preload
+    />
+    <link rel="icon" type="image/png" href="images/icon.png" />
+    <link rel="canonical" href="https://www.pesila.nl" />
+    <meta property="og:title" content="Pesila Thai Massage Rotterdam - Authentieke Thaise Wellness" />
+    <meta
+      property="og:description"
+      content="Ervaar traditionele Thaise massages bij Pesila in Rotterdam. Boek nu voor ontspanning en herstel op Schiedamseweg 17A!"
+    />
     <meta property="og:locale" content="nl_NL" />
     <meta property="og:url" content="https://www.pesila.nl" />
     <meta property="og:site_name" content="Pesila Thai Massage" />
@@ -31,7 +44,14 @@
     <meta property="og:image" content="https://www.pesila.nl/images/logo-color-512.png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
-    <meta property="og:image:alt" content="Pesila Thai Massage" />
+    <meta property="og:image:alt" content="Pesila Thai Massage Logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pesila Thai Massage Rotterdam - Authentieke Thaise Wellness" />
+    <meta
+      name="twitter:description"
+      content="Ervaar traditionele Thaise massages bij Pesila in Rotterdam. Boek nu voor ontspanning en herstel op Schiedamseweg 17A!"
+    />
+    <meta name="twitter:image" content="https://www.pesila.nl/images/logo-color-512.png" />
     <style>
       :root {
         --primary-color: #6b4e31;
@@ -387,33 +407,72 @@
           "postalCode": "3026 AB",
           "addressCountry": "NL"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 51.9154,
+          "longitude": 4.4658
+        },
         "telephone": "+31623899709",
         "email": "pesilawellness@gmail.com",
         "url": "https://www.pesila.nl",
-        "openingHours": ["Mo-Sa 10:00-21:00", "Su "],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "10:00",
+            "closes": "21:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "00:00",
+            "closes": "00:00",
+            "description": "Op afspraak"
+          }
+        ],
         "image": "https://www.pesila.nl/images/logo-color-512.png",
-        "description": "Authentieke Thaise massages in Rotterdam voor ontspanning en herstel.",
-        "offers": {
-          "@type": "Offer",
-          "name": "Thaise Massage",
-          "price": "65",
-          "priceCurrency": "EUR",
-          "description": "60 minuten traditionele Thaise massage"
+        "description": "Authentieke Thaise massages in Rotterdam voor ontspanning en herstel bij Pesila Thai Massage op Schiedamseweg 17A.",
+        "priceRange": "€40-€220",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Massage Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Traditionele Thaise Massage",
+                "description": "60 minuten traditionele Thaise massage voor ontspanning en balans."
+              },
+              "price": "65",
+              "priceCurrency": "EUR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Aroma-olie Massage",
+                "description": "60 minuten aroma-oliemassage met etherische oliën."
+              },
+              "price": "65",
+              "priceCurrency": "EUR"
+            }
+          ]
         }
       }
     </script>
   </head>
   <body>
     <div id="preloader">
-      <img src="images/logo.png" alt="Loading..." style="max-width: 100px" />
+      <img src="images/logo.png" alt="Pesila Thai Massage wordt geladen" style="max-width: 100px" />
     </div>
 
     <!-- Navigation -->
     <header>
-      <nav class="navbar navbar-expand-lg fixed-top">
+      <nav class="navbar navbar-expand-lg fixed-top" aria-label="Hoofdnavigatie">
         <div class="container">
           <a class="navbar-brand" href="#home">
-            <img src="images/logo.png" alt="Pesila Thai Massage" />
+            <img src="images/logo.png" alt="Pesila Thai Massage Logo" />
           </a>
           <input type="checkbox" id="navbar-toggle" class="d-none" />
           <label for="navbar-toggle" class="navbar-toggler" aria-label="Navigatie in-/uitschakelen">
@@ -449,23 +508,23 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero-section" aria-labelledby="hero-heading">
       <div class="hero-content">
         <img src="images/logo-white-1024.png" alt="Wit logo van Pesila Thai Massage" />
-        <h1>Ontspan bij Pesila Thai Massage</h1>
-        <p>Ervaar authentieke Thaise massages in Rotterdam voor ultieme ontspanning en herstel.</p>
-        <a href="#booking" class="btn btn-primary btn-custom"> Boek nu jouw moment van rust </a>
+        <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
+        <p>Ontspan en herstel met traditionele Thaise massages bij Pesila Thai Massage op Schiedamseweg 17A, Rotterdam.</p>
+        <a href="#booking" class="btn btn-primary btn-custom">Boek nu jouw massage</a>
       </div>
     </section>
 
     <!-- Timetable Section -->
-    <section id="timetable" class="timetable-section">
+    <section id="timetable" class="timetable-section" aria-labelledby="timetable-heading">
       <div class="container">
-        <h2 class="section-title">Onze openingstijden</h2>
+        <h2 id="timetable-heading" class="section-title">Onze openingstijden</h2>
         <p class="text-center">Plan je bezoek aan Pesila Thai Massage op een tijd die jou uitkomt.</p>
         <div class="card">
           <div class="card-body">
-            <table class="table">
+            <table class="table" aria-label="Openingstijden van Pesila Thai Massage">
               <tbody>
                 <tr>
                   <td class="text-end w-50">Maandag - Zaterdag</td>
@@ -489,15 +548,15 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section">
+    <section id="services" class="services-section" aria-labelledby="services-heading">
       <div class="container">
-        <h2 class="section-title">Massages & Prijzen</h2>
+        <h2 id="services-heading" class="section-title">Onze Massages en Prijzen</h2>
         <p class="text-center">Kies uit ons brede aanbod van traditionele en moderne massages, afgestemd op jouw behoeften.</p>
         <div class="row">
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/traditioneel.avif" loading="lazy" alt="Traditionele Thaise massage" />
-              <h3>Traditionele Thaise massage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="traditional-massage">
+              <img src="images/services/traditioneel.avif" loading="lazy" alt="Traditionele Thaise massage bij Pesila" />
+              <h3 id="traditional-massage">Traditionele Thaise Massage</h3>
               <div class="text-container">
                 <div>
                   <p>
@@ -509,7 +568,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor traditionele Thaise massage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -532,12 +591,12 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/aroma.avif" loading="lazy" alt="Aroma-oliemassage" />
-              <h3>Aroma-oliemassage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="aroma-massage">
+              <img src="images/services/aroma.avif" loading="lazy" alt="Aroma-oliemassage bij Pesila" />
+              <h3 id="aroma-massage">Aroma-oliemassage</h3>
               <div class="text-container">
                 <div>
                   <p>
@@ -549,7 +608,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor aroma-oliemassage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -572,12 +631,12 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/voeten.avif" loading="lazy" alt="Voetreflexmassage" />
-              <h3>Voetreflexmassage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="foot-massage">
+              <img src="images/services/voeten.avif" loading="lazy" alt="Voetreflexmassage bij Pesila" />
+              <h3 id="foot-massage">Voetreflexmassage</h3>
               <div class="text-container">
                 <div>
                   <p>
@@ -587,7 +646,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor voetreflexmassage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -610,12 +669,12 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/nek-schouder.avif" loading="lazy" alt="Nek-schouder-hoofdmassage" />
-              <h3>Nek-schouder-hoofdmassage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="neck-shoulder-massage">
+              <img src="images/services/nek-schouder.avif" loading="lazy" alt="Nek-schouder-hoofdmassage bij Pesila" />
+              <h3 id="neck-shoulder-massage">Nek-schouder-hoofdmassage</h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -637,7 +696,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor nek-schouder-hoofdmassage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -660,12 +719,12 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/hotstone.avif" loading="lazy" alt="Hot stone massage" />
-              <h3>Hot stone massage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="hot-stone-massage">
+              <img src="images/services/hotstone.avif" loading="lazy" alt="Hot stone massage bij Pesila" />
+              <h3 id="hot-stone-massage">Hot Stone Massage</h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -688,7 +747,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor hot stone massage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -707,12 +766,12 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/duo.avif" loading="lazy" alt="Duo-massage" />
-              <h3>Duo-massage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="duo-massage">
+              <img src="images/services/duo.avif" loading="lazy" alt="Duo-massage bij Pesila" />
+              <h3 id="duo-massage">Duo-massage</h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -728,7 +787,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor duo-massage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -747,12 +806,12 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/zwangerschap.avif" loading="lazy" alt="Zwangerschapsmassage" />
-              <h3>Zwangerschapsmassage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="pregnancy-massage">
+              <img src="images/services/zwangerschap.avif" loading="lazy" alt="Zwangerschapsmassage bij Pesila" />
+              <h3 id="pregnancy-massage">Zwangerschapsmassage</h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -768,7 +827,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor zwangerschapsmassage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -779,12 +838,12 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/sport.avif" loading="lazy" alt="Sportmassage" />
-              <h3>Sportmassage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="sports-massage">
+              <img src="images/services/sport.avif" loading="lazy" alt="Sportmassage bij Pesila" />
+              <h3 id="sports-massage">Sportmassage</h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -807,7 +866,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor sportmassage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -826,12 +885,12 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/deep-tissue.avif" loading="lazy" alt="Deep tissue massage" />
-              <h3>Deep tissue massage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="deep-tissue-massage">
+              <img src="images/services/deep-tissue.avif" loading="lazy" alt="Deep tissue massage bij Pesila" />
+              <h3 id="deep-tissue-massage">Deep Tissue Massage</h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -849,7 +908,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor deep tissue massage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -868,12 +927,12 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <div class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')">
-              <img src="images/services/kruidenstempel.avif" loading="lazy" alt="Kruidenstempelmassage" />
-              <h3>Kruidenstempelmassage</h3>
+            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="herbal-massage">
+              <img src="images/services/kruidenstempel.avif" loading="lazy" alt="Kruidenstempelmassage bij Pesila" />
+              <h3 id="herbal-massage">Kruidenstempelmassage</h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -890,7 +949,7 @@
                 </div>
               </div>
               <div class="pricing-table">
-                <table>
+                <table aria-label="Prijzen voor kruidenstempelmassage">
                   <tr>
                     <th scope="col">Duur</th>
                     <th scope="col">Prijs</th>
@@ -909,56 +968,56 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </article>
           </div>
         </div>
         <p class="text-center">
-          <a href="#booking" class="btn btn-primary btn-custom">Plan je bezoek</a>
+          <a href="#booking" class="btn btn-primary btn-custom">Boek je massage vandaag</a>
         </p>
         <div class="text-center mt-5">
-          <img src="images/gallery/entree2.jpg" class="gallery" loading="lazy" alt="Entree van Pesila Thai Massage in Rotterdam" />
+          <img src="images/gallery/entree2.jpg" class="gallery" loading="lazy" alt="Ingang van Pesila Thai Massage in Rotterdam" />
         </div>
       </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
+    <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
       <div class="container">
-        <h2 class="section-title">Wat onze klanten zeggen</h2>
+        <h2 id="testimonials-heading" class="section-title">Ervaringen van Onze Klanten</h2>
         <div class="row">
           <div class="col-xl-3 col-md-6 mb-4">
-            <div class="testimonial-card">
+            <article class="testimonial-card">
               <p class="card-text">
                 "We hebben een heerlijke duo-massage gehad. Ik kreeg een mix van een ontspannende zwangerschapsmassage en een Thaise massage (nek, schouders en
                 armen). Precies wat ik nodig had. Bedankt!"
                 <cite>- Lina Kaufmann</cite>
               </p>
-            </div>
+            </article>
           </div>
           <div class="col-xl-3 col-md-6 mb-4">
-            <div class="testimonial-card">
+            <article class="testimonial-card">
               <p class="card-text">
                 "Vriendelijke dames, verwarmde bedden, stevige massage, echt 💯! Wij komen zeker terug 👍 …"
                 <cite>- Lange Makki</cite>
               </p>
-            </div>
+            </article>
           </div>
           <div class="col-xl-3 col-md-6 mb-4">
-            <div class="testimonial-card">
+            <article class="testimonial-card">
               <p class="card-text">
                 "Ik wil eigenlijk geen review schrijven want dat betekent dat het hier drukker gaat worden en dat wil ik niet HAHAHA MAAAR!! Ja weetje geweldige
                 massage en ze was super lief, ga gewoon"
                 <cite>- Sophie Wodziková</cite>
               </p>
-            </div>
+            </article>
           </div>
           <div class="col-xl-3 col-md-6 mb-4">
-            <div class="testimonial-card">
+            <article class="testimonial-card">
               <p class="card-text">
                 "Beste massage gehad ....heel klantvriendelijk en kom er nu elke maand terug."
                 <cite>- Clyde Regillio</cite>
               </p>
-            </div>
+            </article>
           </div>
         </div>
         <div class="text-center mt-5">
@@ -968,9 +1027,9 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about" class="about-section" aria-labelledby="about-heading">
       <div class="container">
-        <h2 class="section-title">Wie wij zijn</h2>
+        <h2 id="about-heading" class="section-title">Over Pesila Thai Massage</h2>
         <div class="card">
           <div class="card-body">
             <p class="text-center">
@@ -989,14 +1048,13 @@
     </section>
 
     <!-- Booking Section -->
-    <section id="booking" class="booking-section">
+    <section id="booking" class="booking-section" aria-labelledby="booking-heading">
       <div class="container">
         <h2 class="section-title">Maak nu je afspraak</h2>
-        <p class="text-center">Vul het formulier in en wij bevestigen je afspraak snel!</p>
+        <p class="text-center">Vul het formulier in om snel en eenvoudig een afspraak te maken bij Pesila Thai Massage.</p>
         <form id="bookingForm" novalidate action="https://formsubmit.co/df50c71d97c0a3fa7a5952d3850057c8" method="POST">
           <input type="hidden" name="_redirect" value="https://www.pesila.nl/" />
           <input type="hidden" name="_subject" value="Nieuwe afspraak - Pesila Thai Massage" />
-          <input type="hidden" name="_captcha" value="false" />
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="fullName" class="visually-hidden">Naam</label>
@@ -1030,7 +1088,7 @@
               </select>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="service" class="visually-hidden">Duur</label>
+              <label for="duration" class="visually-hidden">Duur</label>
               <select name="Duration" class="form-control" id="duration">
                 <option value="" disabled selected>Kies je tijdsduur</option>
                 <option>30 minuten</option>
@@ -1056,7 +1114,7 @@
         </form>
         <div class="map">
           <iframe
-            title="Pesila Thai Massage locatie op Google Maps"
+            title="Locatie van Pesila Thai Massage op Google Maps"
             src="https://www.google.com/maps?q=Pesila+Schiedamseweg+17A,+Rotterdam,+Netherlands&output=embed"
             allowfullscreen=""
             loading="lazy"
@@ -1066,10 +1124,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
       <div class="container">
-        <h2 class="section-title">Neem contact met ons op</h2>
-        <p class="text-center">Vragen of een afspraak maken? Bel, mail of bezoek ons in Rotterdam!</p>
+        <h2 id="contact-heading" class="section-title">Neem contact met ons op</h2>
+        <p class="text-center">Heb je vragen of wil je een afspraak maken? Neem contact op via telefoon, e-mail of bezoek ons in Rotterdam!</p>
         <p class="text-center">
           Telefoon:
           <a href="tel:+31623899709" class="text-nowrap">06-23899709</a>
