@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-69BZRSS6JF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-69BZRSS6JF");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Grid Image Gallery</title>
+    <title>Pesila Thai Massage Rotterdam | Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" preload />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700&display=swap"
+      as="style"
+      preload
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/png" href="images/icon.png" />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color: #f4f4f4;
-      }
-
       .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        gap: 2rem;
         margin: 0 auto;
       }
 
@@ -25,11 +36,12 @@
         object-fit: cover;
         border-radius: 8px;
         cursor: pointer;
-        transition: transform 0.3s ease;
+        transition: var(--transition);
       }
 
       .gallery img:hover {
-        transform: scale(1.05);
+        transform: scale(1.025);
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
       }
 
       /* Landscape images (4x3) */
@@ -51,10 +63,11 @@
         left: 0;
         width: 100%;
         height: 100%;
+        height: 100dvh;
         background-color: rgba(0, 0, 0, 0.75);
         justify-content: center;
         align-items: center;
-        z-index: 1000;
+        z-index: 1040;
       }
 
       .fullscreen-modal img {
@@ -83,42 +96,94 @@
     </style>
   </head>
   <body>
-    <div class="gallery">
-      <img src="images/gallery/w1280/photo-01.avif" alt="Landscape 01" class="landscape" />
-      <img src="images/gallery/w1280/photo-02.avif" alt="Landscape 02" class="landscape" />
-      <img src="images/gallery/w1280/photo-03.avif" alt="Landscape 03" class="portrait" />
-      <img src="images/gallery/w1280/photo-04.avif" alt="Landscape 04" class="landscape" />
-      <img src="images/gallery/w1280/photo-05.avif" alt="Landscape 05" class="portrait" />
-      <img src="images/gallery/w1280/photo-06.avif" alt="Landscape 06" class="portrait" />
-      <img src="images/gallery/w1280/photo-07.avif" alt="Landscape 07" class="portrait" />
-      <img src="images/gallery/w1280/photo-08.avif" alt="Landscape 08" class="landscape" />
-      <img src="images/gallery/w1280/photo-09.avif" alt="Landscape 09" class="landscape" />
-      <img src="images/gallery/w1280/photo-10.avif" alt="Landscape 10" class="portrait" />
-      <img src="images/gallery/w1280/photo-11.avif" alt="Landscape 11" class="landscape" />
-      <img src="images/gallery/w1280/photo-12.avif" alt="Landscape 12" class="portrait" />
-      <img src="images/gallery/w1280/photo-13.avif" alt="Landscape 13" class="landscape" />
-      <img src="images/gallery/w1280/photo-14.avif" alt="Landscape 14" class="portrait" />
-      <img src="images/gallery/w1280/photo-15.avif" alt="Landscape 15" class="portrait" />
-      <img src="images/gallery/w1280/photo-16.avif" alt="Landscape 16" class="landscape" />
-      <img src="images/gallery/w1280/photo-17.avif" alt="Landscape 17" class="landscape" />
-      <img src="images/gallery/w1280/photo-18.avif" alt="Landscape 18" class="portrait" />
-      <img src="images/gallery/w1280/photo-19.avif" alt="Landscape 19" class="landscape" />
-      <img src="images/gallery/w1280/photo-10.avif" alt="Landscape 10" class="portrait" />
-      <img src="images/gallery/w1280/photo-21.avif" alt="Landscape 21" class="landscape" />
-      <img src="images/gallery/w1280/photo-22.avif" alt="Landscape 22" class="portrait" />
-      <img src="images/gallery/w1280/photo-23.avif" alt="Landscape 23" class="portrait" />
-      <img src="images/gallery/w1280/photo-24.avif" alt="Landscape 24" class="landscape" />
-      <img src="images/gallery/w1280/photo-25.avif" alt="Landscape 25" class="landscape" />
-      <img src="images/gallery/w1280/photo-26.avif" alt="Landscape 26" class="landscape" />
-      <img src="images/gallery/w1280/photo-27.avif" alt="Landscape 27" class="landscape" />
-      <img src="images/gallery/w1280/photo-28.avif" alt="Landscape 28" class="landscape" />
-      <img src="images/gallery/w1280/photo-29.avif" alt="Landscape 29" class="portrait" />
-    </div>
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top" aria-label="Hoofdnavigatie">
+        <div class="container">
+          <a class="navbar-brand" href="#home">
+            <img src="images/logo.png" alt="Pesila Thai Massage Logo" />
+          </a>
+          <input type="checkbox" id="navbar-toggle" class="d-none" />
+          <label for="navbar-toggle" class="navbar-toggler" aria-label="Navigatie in-/uitschakelen">
+            <span class="navbar-toggler-icon"></span>
+          </label>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#timetable">Openingstijden</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#services">Massages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#testimonials">Recensies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#about">Over ons</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#booking">Boek nu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section aria-labelledby="gallery-heading">
+      <div class="container">
+        <h2 id="gallery-heading" class="section-title">Gallery</h2>
+        <div class="gallery">
+          <img src="images/gallery/w1280/photo-01.avif" alt="Landscape 01" class="landscape" />
+          <img src="images/gallery/w1280/photo-02.avif" alt="Landscape 02" class="landscape" />
+          <img src="images/gallery/w1280/photo-03.avif" alt="Landscape 03" class="portrait" />
+          <img src="images/gallery/w1280/photo-04.avif" alt="Landscape 04" class="landscape" />
+          <img src="images/gallery/w1280/photo-05.avif" alt="Landscape 05" class="portrait" />
+          <img src="images/gallery/w1280/photo-06.avif" alt="Landscape 06" class="portrait" />
+          <img src="images/gallery/w1280/photo-07.avif" alt="Landscape 07" class="portrait" />
+          <img src="images/gallery/w1280/photo-08.avif" alt="Landscape 08" class="landscape" />
+          <img src="images/gallery/w1280/photo-09.avif" alt="Landscape 09" class="landscape" />
+          <img src="images/gallery/w1280/photo-10.avif" alt="Landscape 10" class="portrait" />
+          <img src="images/gallery/w1280/photo-11.avif" alt="Landscape 11" class="landscape" />
+          <img src="images/gallery/w1280/photo-12.avif" alt="Landscape 12" class="portrait" />
+          <img src="images/gallery/w1280/photo-13.avif" alt="Landscape 13" class="landscape" />
+          <img src="images/gallery/w1280/photo-14.avif" alt="Landscape 14" class="portrait" />
+          <img src="images/gallery/w1280/photo-15.avif" alt="Landscape 15" class="portrait" />
+          <img src="images/gallery/w1280/photo-16.avif" alt="Landscape 16" class="landscape" />
+          <img src="images/gallery/w1280/photo-17.avif" alt="Landscape 17" class="landscape" />
+          <img src="images/gallery/w1280/photo-18.avif" alt="Landscape 18" class="portrait" />
+          <img src="images/gallery/w1280/photo-19.avif" alt="Landscape 19" class="landscape" />
+          <img src="images/gallery/w1280/photo-10.avif" alt="Landscape 10" class="portrait" />
+          <img src="images/gallery/w1280/photo-21.avif" alt="Landscape 21" class="landscape" />
+          <img src="images/gallery/w1280/photo-22.avif" alt="Landscape 22" class="portrait" />
+          <img src="images/gallery/w1280/photo-23.avif" alt="Landscape 23" class="portrait" />
+          <img src="images/gallery/w1280/photo-24.avif" alt="Landscape 24" class="landscape" />
+          <img src="images/gallery/w1280/photo-25.avif" alt="Landscape 25" class="landscape" />
+          <img src="images/gallery/w1280/photo-26.avif" alt="Landscape 26" class="landscape" />
+          <img src="images/gallery/w1280/photo-27.avif" alt="Landscape 27" class="landscape" />
+          <img src="images/gallery/w1280/photo-28.avif" alt="Landscape 28" class="landscape" />
+          <img src="images/gallery/w1280/photo-29.avif" alt="Landscape 29" class="portrait" />
+        </div>
+      </div>
+    </section>
 
     <div class="fullscreen-modal" id="fullscreenModal">
       <button class="close-button" id="closeButton">&times;</button>
       <img id="fullscreenImage" src="" alt="Fullscreen Image" />
     </div>
+
+    <footer>
+      <div class="container">
+        <p>Pesila Thai Massage | Schiedamseweg 17A, 3026 AB Rotterdam | <a href="tel:+31623899709">06-23899709</a></p>
+        <p>© 2025 Pesila Thai Massage. Alle rechten voorbehouden.</p>
+      </div>
+    </footer>
 
     <script>
       const galleryImages = document.querySelectorAll(".gallery img");
