@@ -23,14 +23,19 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" type="image/png" href="images/icon.png" />
     <style>
+      body.no-scroll {
+        overflow: hidden;
+      }
+
       .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 2rem;
         margin: 0 auto;
       }
 
-      .gallery img {
+      .gallery img,
+      .gallery picture {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -140,35 +145,352 @@
       <div class="container">
         <h2 id="gallery-heading" class="section-title">Gallery</h2>
         <div class="gallery">
-          <img src="images/gallery/w1280/photo-01.avif" alt="Landscape 01" class="landscape" />
-          <img src="images/gallery/w1280/photo-02.avif" alt="Landscape 02" class="landscape" />
-          <img src="images/gallery/w1280/photo-03.avif" alt="Landscape 03" class="portrait" />
-          <img src="images/gallery/w1280/photo-04.avif" alt="Landscape 04" class="landscape" />
-          <img src="images/gallery/w1280/photo-05.avif" alt="Landscape 05" class="portrait" />
-          <img src="images/gallery/w1280/photo-06.avif" alt="Landscape 06" class="portrait" />
-          <img src="images/gallery/w1280/photo-07.avif" alt="Landscape 07" class="portrait" />
-          <img src="images/gallery/w1280/photo-08.avif" alt="Landscape 08" class="landscape" />
-          <img src="images/gallery/w1280/photo-09.avif" alt="Landscape 09" class="landscape" />
-          <img src="images/gallery/w1280/photo-10.avif" alt="Landscape 10" class="portrait" />
-          <img src="images/gallery/w1280/photo-11.avif" alt="Landscape 11" class="landscape" />
-          <img src="images/gallery/w1280/photo-12.avif" alt="Landscape 12" class="portrait" />
-          <img src="images/gallery/w1280/photo-13.avif" alt="Landscape 13" class="landscape" />
-          <img src="images/gallery/w1280/photo-14.avif" alt="Landscape 14" class="portrait" />
-          <img src="images/gallery/w1280/photo-15.avif" alt="Landscape 15" class="portrait" />
-          <img src="images/gallery/w1280/photo-16.avif" alt="Landscape 16" class="landscape" />
-          <img src="images/gallery/w1280/photo-17.avif" alt="Landscape 17" class="landscape" />
-          <img src="images/gallery/w1280/photo-18.avif" alt="Landscape 18" class="portrait" />
-          <img src="images/gallery/w1280/photo-19.avif" alt="Landscape 19" class="landscape" />
-          <img src="images/gallery/w1280/photo-10.avif" alt="Landscape 10" class="portrait" />
-          <img src="images/gallery/w1280/photo-21.avif" alt="Landscape 21" class="landscape" />
-          <img src="images/gallery/w1280/photo-22.avif" alt="Landscape 22" class="portrait" />
-          <img src="images/gallery/w1280/photo-23.avif" alt="Landscape 23" class="portrait" />
-          <img src="images/gallery/w1280/photo-24.avif" alt="Landscape 24" class="landscape" />
-          <img src="images/gallery/w1280/photo-25.avif" alt="Landscape 25" class="landscape" />
-          <img src="images/gallery/w1280/photo-26.avif" alt="Landscape 26" class="landscape" />
-          <img src="images/gallery/w1280/photo-27.avif" alt="Landscape 27" class="landscape" />
-          <img src="images/gallery/w1280/photo-28.avif" alt="Landscape 28" class="landscape" />
-          <img src="images/gallery/w1280/photo-29.avif" alt="Landscape 29" class="portrait" />
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-01.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-01.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-01.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-01.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-01.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-01.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-01.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-01.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-01.avif" alt="Foto van Pesila Thai Massage 01" class="landscape" />
+          </picture>
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-02.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-02.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-02.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-02.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-02.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-02.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-02.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-02.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-02.avif" alt="Foto van Pesila Thai Massage 02" class="landscape" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-03.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-03.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-03.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-03.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-03.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-03.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-03.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-03.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-03.avif" alt="Foto van Pesila Thai Massage 03" class="portrait" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-04.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-04.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-04.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-04.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-04.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-04.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-04.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-04.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-04.avif" alt="Foto van Pesila Thai Massage 04" class="landscape" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-05.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-05.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-05.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-05.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-05.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-05.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-05.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-05.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-05.avif" alt="Foto van Pesila Thai Massage 05" class="portrait" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-06.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-06.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-06.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-06.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-06.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-06.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-06.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-06.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-06.avif" alt="Foto van Pesila Thai Massage 06" class="portrait" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-07.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-07.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-07.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-07.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-07.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-07.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-07.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-07.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-07.avif" alt="Foto van Pesila Thai Massage 07" class="portrait" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-08.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-08.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-08.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-08.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-08.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-08.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-08.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-08.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-08.avif" alt="Foto van Pesila Thai Massage 08" class="landscape" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-09.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-09.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-09.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-09.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-09.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-09.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-09.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-09.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-09.avif" alt="Foto van Pesila Thai Massage 09" class="landscape" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-10.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-10.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-10.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-10.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-10.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-10.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-10.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-10.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-10.avif" alt="Foto van Pesila Thai Massage 10" class="portrait" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-11.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-11.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-11.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-11.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-11.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-11.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-11.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-11.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-11.avif" alt="Foto van Pesila Thai Massage 11" class="landscape" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-12.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-12.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-12.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-12.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-12.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-12.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-12.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-12.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-12.avif" alt="Foto van Pesila Thai Massage 12" class="portrait" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-13.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-13.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-13.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-13.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-13.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-13.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-13.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-13.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-13.avif" alt="Foto van Pesila Thai Massage 13" class="landscape" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-14.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-14.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-14.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-14.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-14.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-14.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-14.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-14.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-14.avif" alt="Foto van Pesila Thai Massage 14" class="portrait" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-15.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-15.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-15.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-15.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-15.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-15.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-15.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-15.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-15.avif" alt="Foto van Pesila Thai Massage 15" class="portrait" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-16.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-16.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-16.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-16.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-16.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-16.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-16.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-16.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-16.avif" alt="Foto van Pesila Thai Massage 16" class="landscape" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-17.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-17.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-17.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-17.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-17.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-17.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-17.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-17.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-17.avif" alt="Foto van Pesila Thai Massage 17" class="landscape" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-18.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-18.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-18.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-18.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-18.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-18.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-18.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-18.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-18.avif" alt="Foto van Pesila Thai Massage 18" class="portrait" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-19.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-19.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-19.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-19.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-19.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-19.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-19.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-19.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-19.avif" alt="Foto van Pesila Thai Massage 19" class="landscape" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-20.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-20.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-20.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-20.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-20.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-20.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-20.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-20.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-20.avif" alt="Foto van Pesila Thai Massage 20" class="portrait" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-21.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-21.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-21.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-21.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-21.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-21.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-21.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-21.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-21.avif" alt="Foto van Pesila Thai Massage 21" class="landscape" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-22.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-22.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-22.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-22.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-22.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-22.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-22.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-22.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-22.avif" alt="Foto van Pesila Thai Massage 22" class="portrait" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-23.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-23.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-23.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-23.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-23.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-23.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-23.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-23.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-23.avif" alt="Foto van Pesila Thai Massage 23" class="portrait" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-24.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-24.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-24.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-24.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-24.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-24.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-24.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-24.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-24.avif" alt="Foto van Pesila Thai Massage 24" class="landscape" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-25.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-25.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-25.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-25.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-25.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-25.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-25.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-25.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-25.avif" alt="Foto van Pesila Thai Massage 25" class="landscape" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-26.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-26.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-26.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-26.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-26.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-26.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-26.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-26.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-26.avif" alt="Foto van Pesila Thai Massage 26" class="landscape" />
+          </picture>
+
+          <picture class="portrait">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-29.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-29.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-29.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-29.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-29.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-29.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-29.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-29.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-29.avif" alt="Foto van Pesila Thai Massage 29" class="portrait" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-27.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-27.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-27.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-27.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-27.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-27.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-27.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-27.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-27.avif" alt="Foto van Pesila Thai Massage 27" class="landscape" />
+          </picture>
+
+          <picture class="landscape">
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-28.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-28.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-28.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-28.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-28.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-28.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-28.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-28.webp" type="image/webp" />
+            <img src="images/gallery/w640/photo-28.avif" alt="Foto van Pesila Thai Massage 28" class="landscape" />
+          </picture>
         </div>
       </div>
     </section>
@@ -190,28 +512,33 @@
       const fullscreenModal = document.getElementById("fullscreenModal");
       const fullscreenImage = document.getElementById("fullscreenImage");
       const closeButton = document.getElementById("closeButton");
+      const body = document.body;
 
       galleryImages.forEach((image) => {
         image.addEventListener("click", () => {
           fullscreenImage.src = image.src;
           fullscreenImage.alt = image.alt;
           fullscreenModal.style.display = "flex";
+          body.classList.add("no-scroll");
         });
       });
 
       closeButton.addEventListener("click", () => {
         fullscreenModal.style.display = "none";
+        body.classList.remove("no-scroll");
       });
 
       fullscreenModal.addEventListener("click", (e) => {
         if (e.target === fullscreenModal) {
           fullscreenModal.style.display = "none";
+          body.classList.remove("no-scroll");
         }
       });
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           fullscreenModal.style.display = "none";
+          body.classList.remove("no-scroll");
         }
       });
     </script>
