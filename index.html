@@ -54,6 +54,24 @@
     />
     <meta name="twitter:image" content="https://www.pesila.nl/images/logo-color-512.png" />
     <style>
+      a#wahanda-online-booking-widget {
+        background-color: #6b4e31;
+        color: #fff;
+        border-radius: 25px;
+        border: none;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        transition: background-color 0.3s;
+        text-transform: none;
+        height: auto;
+      }
+
+      a#wahanda-online-booking-widget:hover {
+        color: #fff;
+        background-color: #8b6f47;
+      }
+
       .hero-section {
         scroll-margin-top: 5rem;
         margin-top: 63px;
@@ -952,7 +970,31 @@
     <section id="booking" class="booking-section" aria-labelledby="booking-heading">
       <div class="container">
         <h2 class="section-title">Maak nu je afspraak</h2>
-        <p class="text-center">Vul het formulier in om snel en eenvoudig een afspraak te maken bij Pesila Thai Massage.</p>
+
+        <p class="text-center mt-5">Als je direct online een afspraak wilt maken op basis van onze beschikbaarheid kies dan Boek nu. Snel, eenvoudig en 24/7 beschikbaar!</p>
+        <script src="https://widget.treatwell.nl/common/venue-menu/javascript/widget-button.js?v1"></script>
+        <script>
+          (function () {
+            var link = document.createElement("link");
+            link.type = "text/css";
+            link.href = "https://widget.treatwell.nl/common/venue-menu/css/widget-button.css";
+            link.rel = "stylesheet";
+            link.media = "screen";
+            document.getElementsByTagName("head")[0].appendChild(link);
+          })();
+        </script>
+        <p class="text-center">
+          <a
+            href="https://www.treatwell.nl/"
+            id="wahanda-online-booking-widget"
+            onclick='wahanda.openOnlineBookingWidget("https://widget.treatwell.nl/salon/482688/menu/"); return false;'
+            target="_blank"
+          >
+            <span>Boek nu</span>
+          </a>
+        </p>
+
+        <p class="text-center mt-5">Als je vragen hebt, vul dan het formulier in en wij nemen zo snel mogelijk contact met je op.</p>
         <form id="bookingForm" novalidate action="https://formsubmit.co/df50c71d97c0a3fa7a5952d3850057c8" method="POST">
           <input type="hidden" name="_redirect" value="https://www.pesila.nl/" />
           <input type="hidden" name="_subject" value="Nieuwe afspraak - Pesila Thai Massage" />
@@ -975,7 +1017,7 @@
             <div class="col-md-6 mb-3">
               <label for="service" class="visually-hidden">Massage</label>
               <select name="Service" class="form-control" id="service">
-                <option value="" disabled selected>Kies je massage</option>
+                <option value="" disabled selected>- Kies je massage -</option>
                 <option>Traditionele Thaise massage</option>
                 <option>Aroma-oliemassage</option>
                 <option>Voetreflexmassage</option>
@@ -991,7 +1033,7 @@
             <div class="col-md-6 mb-3">
               <label for="duration" class="visually-hidden">Duur</label>
               <select name="Duration" class="form-control" id="duration">
-                <option value="" disabled selected>Kies je tijdsduur</option>
+                <option value="" disabled selected>- Kies je tijdsduur -</option>
                 <option>30 minuten</option>
                 <option>60 minuten</option>
                 <option>90 minuten</option>
@@ -1000,16 +1042,10 @@
             </div>
             <div class="col-12">
               <label for="notes" class="visually-hidden">Bericht</label>
-              <textarea
-                name="Message"
-                class="form-control"
-                id="notes"
-                rows="4"
-                placeholder="Eventuele opmerkingen of voorkeuren voor bijvoorbeeld datum en tijd"
-              ></textarea>
+              <textarea name="Message" class="form-control" id="notes" rows="4" placeholder="Eventuele opmerkingen en gewenste datum/tijd"></textarea>
             </div>
             <div class="col-12 text-center">
-              <button type="submit" class="btn btn-primary btn-custom mt-3">Verstuur je afspraak</button>
+              <button type="submit" class="btn btn-primary btn-custom mt-3">Verstuur je aanvraag</button>
             </div>
           </div>
         </form>
