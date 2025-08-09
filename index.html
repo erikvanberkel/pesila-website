@@ -1114,7 +1114,7 @@
       </div>
     </footer>
     <script async>
-      (function () {
+     (function () {
         "use strict";
 
         window.addEventListener("load", () => {
@@ -1125,10 +1125,37 @@
         form.addEventListener(
           "submit",
           function (event) {
-            if (!form.checkValidity()) {
+            const emailInput = document.getElementById("email");
+            const phoneInput = document.getElementById("phone");
+            const emailValue = emailInput.value.trim();
+            const phoneValue = phoneInput.value.trim();
+
+            emailInput.classList.remove("is-invalid", "is-valid");
+            phoneInput.classList.remove("is-invalid", "is-valid");
+
+            if (!emailValue && !phoneValue) {
               event.preventDefault();
               event.stopPropagation();
+              emailInput.classList.add("is-invalid");
+              phoneInput.classList.add("is-invalid");
+            } else {
+              if (emailValue && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+                event.preventDefault();
+                event.stopPropagation();
+                emailInput.classList.add("is-invalid");
+              } else if (emailValue) {
+                emailInput.classList.add("is-valid");
+              }
+
+              if (phoneValue && !/^\+?[\d\s-]{7,}$/.test(phoneValue)) {
+                event.preventDefault();
+                event.stopPropagation();
+                phoneInput.classList.add("is-invalid");
+              } else if (phoneValue) {
+                phoneInput.classList.add("is-valid");
+              }
             }
+
             form.classList.add("was-validated");
           },
           false
