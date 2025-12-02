@@ -1015,17 +1015,6 @@
           </a>
         </div>
 
-
-        <!-- Google Reviews Container (dynamically populated) -->
-        <div id="google-reviews" class="row"></div>
-
-        <!-- Link to Google Reviews -->
-        <div class="text-center">
-          <a href="https://search.google.com/local/reviews?placeid=ChIJayy_TwM1xEcRGWhh99q1o48" target="_blank" rel="noopener" class="google-link" id="google-reviews-link">
-            📝 Bekijk alle recensies op Google
-          </a>
-        </div>
-
         <div class="text-center mt-5">
           <img src="images/gallery/room1.jpg" class="gallery" loading="lazy" alt="Behandelkamer van Pesila Thai Massage in Rotterdam" />
         </div>
@@ -1202,12 +1191,14 @@
      (function () {
         "use strict";
 
-        // Hide vacation notices after vacation period ends (January 18, 2026)
+        // Show vacation notices only 5 days before vacation starts and hide after vacation ends
+        const vacationStartDate = new Date("2025-12-19T00:00:00");
         const vacationEndDate = new Date("2026-01-18T23:59:59");
+        const showNoticeFromDate = new Date(vacationStartDate.getTime() - (5 * 24 * 60 * 60 * 1000)); // 5 days before
         const currentDate = new Date();
 
-        if (currentDate > vacationEndDate) {
-          // Hide all vacation notices
+        // Hide vacation notices if we're before the 5-day warning period or after vacation ends
+        if (currentDate < showNoticeFromDate || currentDate > vacationEndDate) {
           const vacationNotices = document.querySelectorAll(".vacation-alert, .hero-vacation-notice");
           vacationNotices.forEach(notice => {
             notice.style.display = "none";
