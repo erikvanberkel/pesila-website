@@ -173,6 +173,27 @@
         cursor: pointer;
       }
 
+      .service-card:focus {
+        outline: 3px solid #6b4e31;
+        outline-offset: 2px;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #6b4e31;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        z-index: 10000;
+        border-radius: 0 0 4px 0;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+
       .text-container > div {
         display: grid;
         grid-template-rows: 0fr;
@@ -426,6 +447,7 @@
     </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Spring naar hoofdinhoud</a>
     <div id="preloader">
       <img src="images/logo.png" alt="Pesila Thai Massage wordt geladen" style="max-width: 100px" />
     </div>
@@ -475,6 +497,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section" aria-labelledby="hero-heading">
+      <div id="main-content"></div>
       <div class="hero-content">
         <img src="images/logo-white-1024.png" alt="Wit logo van Pesila Thai Massage" />
         <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
@@ -531,7 +554,7 @@
         <p class="text-center">Kies uit ons brede aanbod van traditionele en moderne massages, afgestemd op jouw behoeften.</p>
         <div class="row">
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="traditional-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="traditional-massage">
               <img src="images/services/traditioneel.avif" loading="lazy" alt="Traditionele Thaise massage bij Pesila" />
               <h3 id="traditional-massage">Traditionele Thaise Massage</h3>
               <div class="text-container">
@@ -571,7 +594,7 @@
             </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="aroma-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="aroma-massage">
               <img src="images/services/aroma.avif" loading="lazy" alt="Aroma-oliemassage bij Pesila" />
               <h3 id="aroma-massage">Aroma-oliemassage</h3>
               <div class="text-container">
@@ -607,7 +630,7 @@
             </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="foot-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="foot-massage">
               <img src="images/services/voeten.avif" loading="lazy" alt="Voetreflexmassage bij Pesila" />
               <h3 id="foot-massage">Voetreflexmassage</h3>
               <div class="text-container">
@@ -645,7 +668,7 @@
             </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="neck-shoulder-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="neck-shoulder-massage">
               <img src="images/services/nek-schouder.avif" loading="lazy" alt="Nek-schouder-hoofdmassage bij Pesila" />
               <h3 id="neck-shoulder-massage">Nek-schouder-hoofdmassage</h3>
               <div class="text-container">
@@ -695,7 +718,7 @@
             </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="hot-stone-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="hot-stone-massage">
               <img src="images/services/hotstone.avif" loading="lazy" alt="Hot stone massage bij Pesila" />
               <h3 id="hot-stone-massage">Hot Stone Massage</h3>
               <div class="text-container">
@@ -742,7 +765,7 @@
             </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="duo-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="duo-massage">
               <img src="images/services/duo.avif" loading="lazy" alt="Duo-massage bij Pesila" />
               <h3 id="duo-massage">Duo-massage</h3>
               <div class="text-container">
@@ -782,7 +805,7 @@
             </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="pregnancy-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="pregnancy-massage">
               <img src="images/services/zwangerschap.avif" loading="lazy" alt="Zwangerschapsmassage bij Pesila" />
               <h3 id="pregnancy-massage">Zwangerschapsmassage</h3>
               <div class="text-container">
@@ -814,7 +837,7 @@
             </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="sports-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="sports-massage">
               <img src="images/services/sport.avif" loading="lazy" alt="Sportmassage bij Pesila" />
               <h3 id="sports-massage">Sportmassage</h3>
               <div class="text-container">
@@ -861,7 +884,7 @@
             </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="deep-tissue-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="deep-tissue-massage">
               <img src="images/services/deep-tissue.avif" loading="lazy" alt="Deep tissue massage bij Pesila" />
               <h3 id="deep-tissue-massage">Deep Tissue Massage</h3>
               <div class="text-container">
@@ -903,7 +926,7 @@
             </article>
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
-            <article class="service-card" onclick="this.querySelector('.text-container').classList.toggle('show-full')" aria-labelledby="herbal-massage">
+            <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="herbal-massage">
               <img src="images/services/kruidenstempel.avif" loading="lazy" alt="Kruidenstempelmassage bij Pesila" />
               <h3 id="herbal-massage">Kruidenstempelmassage</h3>
               <div class="text-container">
@@ -1037,7 +1060,10 @@
         </p>
 
         <p class="text-center mt-5">Als je vragen hebt, vul dan het formulier in en wij nemen zo snel mogelijk contact met je op.</p>
-        <form id="bookingForm" novalidate action="https://formsubmit.co/df50c71d97c0a3fa7a5952d3850057c8" method="POST">
+        <div id="form-instructions" class="text-center mb-3" style="font-size: 0.95rem; color: #555;">
+          <strong>Let op:</strong> Vul minimaal je e-mailadres of telefoonnummer in, zodat we contact met je kunnen opnemen.
+        </div>
+        <form id="bookingForm" novalidate action="https://formsubmit.co/df50c71d97c0a3fa7a5952d3850057c8" method="POST" aria-describedby="form-instructions">
           <input type="hidden" name="_redirect" value="https://www.pesila.nl/" />
           <input type="hidden" name="_subject" value="Nieuwe afspraak - Pesila Thai Massage" />
           <div class="row">
@@ -1048,12 +1074,13 @@
             </div>
             <div class="col-md-6 mb-3">
               <label for="email" class="visually-hidden">E-mail</label>
-              <input type="email" name="email" class="form-control" id="email" placeholder="Je e-mailadres" autocomplete="email" required />
-              <div class="invalid-feedback">Je e-mailadres is nodig, omdat we anders geen contact met je kunnen opnemen</div>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Je e-mailadres" autocomplete="email" required aria-describedby="email-error" />
+              <div class="invalid-feedback" id="email-error">Je e-mailadres is nodig, omdat we anders geen contact met je kunnen opnemen</div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="phone" class="visually-hidden">Telefoonnummer</label>
-              <input type="tel" name="Telephone" class="form-control" id="phone" placeholder="Je telefoonnummer" autocomplete="tel" />
+              <input type="tel" name="Telephone" class="form-control" id="phone" placeholder="Je telefoonnummer" autocomplete="tel" aria-describedby="phone-error" />
+              <div class="invalid-feedback" id="phone-error">Vul een geldig telefoonnummer in</div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="service" class="visually-hidden">Massage</label>
@@ -1206,6 +1233,25 @@
           if (event.target.classList.contains("nav-link")) {
             document.querySelector("#navbar-toggle").checked = false;
           }
+        });
+
+        // Service card expand/collapse functionality
+        document.querySelectorAll(".service-card").forEach((card) => {
+          function toggleCard() {
+            const textContainer = card.querySelector(".text-container");
+            textContainer.classList.toggle("show-full");
+            const isExpanded = textContainer.classList.contains("show-full");
+            card.setAttribute("aria-expanded", isExpanded);
+          }
+
+          card.addEventListener("click", toggleCard);
+
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              toggleCard();
+            }
+          });
         });
 
         const GOOGLE_PLACE_ID = "ChIJayy_TwM1xEcRGWhh99q1o48";
