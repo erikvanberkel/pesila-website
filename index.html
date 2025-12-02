@@ -11,6 +11,7 @@
       gtag("config", "G-69BZRSS6JF");
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt1_ykH6bXZmKuW3xi7pMZMn9qKEgQmFE&libraries=places&loading=async"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt1_ykH6bXZmKuW3xi7pMZMn9qKEgQmFE&libraries=places&loading=async"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pesila Thai Massage Rotterdam | Authentieke Thaise Massage</title>
@@ -292,6 +293,46 @@
         margin-top: 1rem;
         font-weight: 600;
         font-size: 1.1rem;
+      }
+
+      .star-rating {
+        color: #ffc107;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .star-rating .empty-star {
+        color: #ddd;
+      }
+
+      .review-author {
+        font-weight: bold;
+        color: #6b4e31;
+        font-style: normal;
+        display: block;
+        margin-top: 0.75rem;
+      }
+
+      .review-date {
+        font-size: 0.85rem;
+        color: #888;
+        font-style: normal;
+      }
+
+      .google-link {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.75rem 1.5rem;
+        background: #4285f4;
+        color: #fff;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .google-link:hover {
+        background: #357ae8;
+        color: #fff;
       }
 
       .star-rating {
@@ -963,6 +1004,17 @@
     <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
       <div class="container">
         <h2 id="testimonials-heading" class="section-title">Ervaringen van Onze Klanten</h2>
+
+        <!-- Google Reviews Container (dynamically populated) -->
+        <div id="google-reviews" class="row"></div>
+
+        <!-- Link to Google Reviews -->
+        <div class="text-center">
+          <a href="https://search.google.com/local/reviews?placeid=ChIJayy_TwM1xEcRGWhh99q1o48" target="_blank" rel="noopener" class="google-link" id="google-reviews-link">
+            📝 Bekijk alle recensies op Google
+          </a>
+        </div>
+
 
         <!-- Google Reviews Container (dynamically populated) -->
         <div id="google-reviews" class="row"></div>
