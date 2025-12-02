@@ -283,6 +283,44 @@
         border-radius: 10px;
       }
 
+      .vacation-alert {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+        color: #fff;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 2rem auto;
+        max-width: 800px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .vacation-alert h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .vacation-alert p {
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+      }
+
+      .vacation-alert .vacation-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-vacation-notice {
+        background: rgba(255, 107, 107, 0.9);
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        display: inline-block;
+        margin-top: 1rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
       @keyframes slideUp {
         to {
           transform: translateY(0);
@@ -435,6 +473,7 @@
         <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
         <p>Ontspan en herstel met traditionele Thaise massages bij Pesila Thai Massage op Schiedamseweg 17A, Rotterdam.</p>
         <p><a href="#booking" class="btn btn-primary btn-custom">Boek nu jouw massage</a></p>
+        <p class="hero-vacation-notice">🌴 VAKANTIE: Gesloten van 19 december 2025 t/m 18 januari 2026</p>
         <p>LET OP! GEEN EROTIEK</p>
       </div>
     </section>
@@ -444,6 +483,16 @@
       <div class="container">
         <h2 id="timetable-heading" class="section-title">Onze openingstijden</h2>
         <p class="text-center">Plan je bezoek aan Pesila Thai Massage op een tijd die jou uitkomt.</p>
+
+        <!-- Vacation Notice -->
+        <div class="vacation-alert" role="alert" aria-live="polite">
+          <div class="vacation-icon">🌴✈️</div>
+          <h3>Vakantie - Tijdelijk gesloten</h3>
+          <p><strong>Wij zijn gesloten van 19 december 2025 t/m 18 januari 2026</strong></p>
+          <p>We genieten van een welverdiende vakantie en zijn weer terug op 19 januari 2026.</p>
+          <p>Bedankt voor uw begrip en tot snel!</p>
+        </div>
+
         <div class="card">
           <div class="card-body">
             <table class="table" aria-label="Openingstijden van Pesila Thai Massage">
@@ -973,6 +1022,14 @@
           <em>LET OP! GEEN EROTIEK</em>
         </p>
 
+        <!-- Vacation Notice -->
+        <div class="vacation-alert" role="alert" aria-live="polite">
+          <div class="vacation-icon">🌴✈️</div>
+          <h3>Let op: Vakantieperiode</h3>
+          <p><strong>Wij accepteren geen nieuwe boekingen voor 19 december 2025 - 18 januari 2026</strong></p>
+          <p>Vanaf 19 januari 2026 zijn we weer volledig beschikbaar voor afspraken.</p>
+        </div>
+
         <p class="text-center mt-5">
           Als je direct online een afspraak wilt maken op basis van onze beschikbaarheid, kies dan Boek nu.<br />
           Snel, eenvoudig en 24/7 beschikbaar!
@@ -1106,6 +1163,18 @@
     <script async>
      (function () {
         "use strict";
+
+        // Hide vacation notices after vacation period ends (January 18, 2026)
+        const vacationEndDate = new Date("2026-01-18T23:59:59");
+        const currentDate = new Date();
+
+        if (currentDate > vacationEndDate) {
+          // Hide all vacation notices
+          const vacationNotices = document.querySelectorAll(".vacation-alert, .hero-vacation-notice");
+          vacationNotices.forEach(notice => {
+            notice.style.display = "none";
+          });
+        }
 
         window.addEventListener("load", () => {
           document.getElementById("preloader").style.display = "none";
