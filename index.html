@@ -10,6 +10,7 @@
       gtag("js", new Date());
       gtag("config", "G-69BZRSS6JF");
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt1_ykH6bXZmKuW3xi7pMZMn9qKEgQmFE&libraries=places&loading=async"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pesila Thai Massage Rotterdam | Authentieke Thaise Massage</title>
@@ -291,6 +292,46 @@
         margin-top: 1rem;
         font-weight: 600;
         font-size: 1.1rem;
+      }
+
+      .star-rating {
+        color: #ffc107;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .star-rating .empty-star {
+        color: #ddd;
+      }
+
+      .review-author {
+        font-weight: bold;
+        color: #6b4e31;
+        font-style: normal;
+        display: block;
+        margin-top: 0.75rem;
+      }
+
+      .review-date {
+        font-size: 0.85rem;
+        color: #888;
+        font-style: normal;
+      }
+
+      .google-link {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.75rem 1.5rem;
+        background: #4285f4;
+        color: #fff;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .google-link:hover {
+        background: #357ae8;
+        color: #fff;
       }
 
       @keyframes slideUp {
@@ -922,42 +963,17 @@
     <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
       <div class="container">
         <h2 id="testimonials-heading" class="section-title">Ervaringen van Onze Klanten</h2>
-        <div class="row">
-          <div class="col-xl-3 col-md-6 mb-4">
-            <article class="testimonial-card">
-              <p class="card-text">
-                "We hebben een heerlijke duo-massage gehad. Ik kreeg een mix van een ontspannende zwangerschapsmassage en een Thaise massage (nek, schouders en
-                armen). Precies wat ik nodig had. Bedankt!"
-                <cite>- Lina Kaufmann</cite>
-              </p>
-            </article>
-          </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            <article class="testimonial-card">
-              <p class="card-text">
-                "Vriendelijke dames, verwarmde bedden, stevige massage, echt 💯! Wij komen zeker terug 👍 …"
-                <cite>- Lange Makki</cite>
-              </p>
-            </article>
-          </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            <article class="testimonial-card">
-              <p class="card-text">
-                "Ik wil eigenlijk geen review schrijven want dat betekent dat het hier drukker gaat worden en dat wil ik niet HAHAHA MAAAR!! Ja weetje geweldige
-                massage en ze was super lief, ga gewoon"
-                <cite>- Sophie Wodziková</cite>
-              </p>
-            </article>
-          </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            <article class="testimonial-card">
-              <p class="card-text">
-                "Beste massage gehad ....heel klantvriendelijk en kom er nu elke maand terug."
-                <cite>- Clyde Regillio</cite>
-              </p>
-            </article>
-          </div>
+
+        <!-- Google Reviews Container (dynamically populated) -->
+        <div id="google-reviews" class="row"></div>
+
+        <!-- Link to Google Reviews -->
+        <div class="text-center">
+          <a href="https://search.google.com/local/reviews?placeid=ChIJayy_TwM1xEcRGWhh99q1o48" target="_blank" rel="noopener" class="google-link" id="google-reviews-link">
+            📝 Bekijk alle recensies op Google
+          </a>
         </div>
+
         <div class="text-center mt-5">
           <img src="images/gallery/room1.jpg" class="gallery" loading="lazy" alt="Behandelkamer van Pesila Thai Massage in Rotterdam" />
         </div>
@@ -1195,6 +1211,172 @@
             document.querySelector("#navbar-toggle").checked = false;
           }
         });
+
+        const GOOGLE_PLACE_ID = "ChIJayy_TwM1xEcRGWhh99q1o48";
+        const CACHE_DURATION = 24 * 60 * 60 * 1000;
+
+        function fetchGoogleReviews() {
+          return new Promise((resolve, reject) => {
+            // Check cache first
+            const cached = localStorage.getItem("google_reviews_cache");
+            if (cached) {
+              const { data, timestamp } = JSON.parse(cached);
+              const age = Date.now() - timestamp;
+
+              if (age < CACHE_DURATION) {
+                console.log("Google Reviews: Using cached data");
+                resolve(data);
+                return;
+              }
+            }
+
+            // Check if Google Maps API is loaded
+            if (typeof google === 'undefined' || !google.maps || !google.maps.places) {
+              console.error("Google Reviews: Google Maps API not loaded");
+              resolve(null);
+              return;
+            }
+
+            // Create a temporary div for the PlacesService (required by API)
+            const tempDiv = document.createElement('div');
+            const service = new google.maps.places.PlacesService(tempDiv);
+
+            // Request place details with reviews
+            const request = {
+              placeId: GOOGLE_PLACE_ID,
+              fields: ['reviews', 'rating', 'user_ratings_total', 'name']
+            };
+
+            service.getDetails(request, (place, status) => {
+              if (status === google.maps.places.PlacesServiceStatus.OK && place && place.reviews) {
+                // Cache the results
+                const placeData = {
+                  reviews: place.reviews,
+                  rating: place.rating,
+                  user_ratings_total: place.user_ratings_total,
+                  name: place.name
+                };
+
+                localStorage.setItem("google_reviews_cache", JSON.stringify({
+                  data: placeData,
+                  timestamp: Date.now()
+                }));
+
+                console.log("Google Reviews: Fetched fresh data from API");
+                resolve(placeData);
+              } else {
+                console.error("Google Reviews: Failed to fetch", status);
+                resolve(null);
+              }
+            });
+          });
+        }
+
+        /**
+         * Generates star rating HTML
+         */
+        function generateStars(rating) {
+          const fullStars = Math.floor(rating);
+          const hasHalfStar = rating % 1 >= 0.5;
+          let starsHtml = "";
+
+          for (let i = 0; i < 5; i++) {
+            if (i < fullStars) {
+              starsHtml += "★";
+            } else if (i === fullStars && hasHalfStar) {
+              starsHtml += "★";
+            } else {
+              starsHtml += '<span class="empty-star">★</span>';
+            }
+          }
+
+          return starsHtml;
+        }
+
+        /**
+         * Formats relative time (e.g., "2 months ago")
+         */
+        function formatRelativeTime(timestamp) {
+          const now = Date.now() / 1000;
+          const diff = now - timestamp;
+
+          const minutes = Math.floor(diff / 60);
+          const hours = Math.floor(diff / 3600);
+          const days = Math.floor(diff / 86400);
+          const months = Math.floor(diff / 2592000);
+          const years = Math.floor(diff / 31536000);
+
+          if (years > 0) return `${years} jaar geleden`;
+          if (months > 0) return `${months} ${months === 1 ? 'maand' : 'maanden'} geleden`;
+          if (days > 0) return `${days} ${days === 1 ? 'dag' : 'dagen'} geleden`;
+          if (hours > 0) return `${hours} ${hours === 1 ? 'uur' : 'uren'} geleden`;
+          if (minutes > 0) return `${minutes} ${minutes === 1 ? 'minuut' : 'minuten'} geleden`;
+          return "Zojuist";
+        }
+
+        /**
+         * Renders reviews to the page
+         */
+        function renderGoogleReviews(placeData) {
+          if (!placeData || !placeData.reviews || placeData.reviews.length === 0) {
+            console.log("Google Reviews: No reviews to display");
+            return;
+          }
+
+          const reviewsContainer = document.getElementById("google-reviews");
+
+          const topReviews = placeData.reviews
+            .filter(review => review.rating >= 4)
+            .sort((a, b) => b.time - a.time)
+            .slice(0, 4);
+
+          const reviewsHtml = topReviews.map(review => {
+            const stars = generateStars(review.rating);
+            const date = formatRelativeTime(review.time);
+            const text = review.text || "";
+            const authorName = review.author_name || "Anoniem";
+
+            return `
+              <div class="col-xl-3 col-md-6 mb-4">
+                <article class="testimonial-card">
+                  <div class="star-rating">${stars}</div>
+                  <p class="card-text">"${text}"</p>
+                  <cite class="review-author">${authorName}</cite>
+                  <span class="review-date">${date}</span>
+                </article>
+              </div>
+            `;
+          }).join("");
+
+          reviewsContainer.innerHTML = reviewsHtml;
+
+          const googleLink = document.getElementById("google-reviews-link");
+          if (googleLink && GOOGLE_PLACE_ID) {
+            googleLink.href = `https://search.google.com/local/reviews?placeid=${GOOGLE_PLACE_ID}`;
+          }
+
+          console.log(`Google Reviews: Displayed ${topReviews.length} reviews`);
+        }
+
+        function initGoogleReviews() {
+          if (typeof google === 'undefined' || !google.maps || !google.maps.places) {
+            console.log("Google Reviews: Waiting for Google Maps API to load...");
+            setTimeout(initGoogleReviews, 100);
+            return;
+          }
+
+          console.log("Google Reviews: Google Maps API loaded, fetching reviews...");
+
+          fetchGoogleReviews()
+            .then(placeData => {
+              renderGoogleReviews(placeData);
+            })
+            .catch(error => {
+              console.error("Google Reviews: Initialization failed", error);
+            });
+        }
+
+        window.addEventListener("load", initGoogleReviews);
       })();
     </script>
   </body>
