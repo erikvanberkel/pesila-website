@@ -283,34 +283,6 @@
         border-radius: 10px;
       }
 
-      .vacation-alert {
-        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-        color: #fff;
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin: 2rem auto;
-        max-width: 800px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        text-align: center;
-        font-weight: 500;
-      }
-
-      .vacation-alert h3 {
-        margin: 0 0 0.5rem 0;
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
-
-      .vacation-alert p {
-        margin: 0.5rem 0;
-        font-size: 1.1rem;
-      }
-
-      .vacation-alert .vacation-icon {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-      }
-
       .hero-vacation-notice {
         background: rgba(255, 107, 107, 0.9);
         padding: 0.75rem 1.5rem;
@@ -473,8 +445,8 @@
         <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
         <p>Ontspan en herstel met traditionele Thaise massages bij Pesila Thai Massage op Schiedamseweg 17A, Rotterdam.</p>
         <p><a href="#booking" class="btn btn-primary btn-custom">Boek nu jouw massage</a></p>
+        <p class="small mt-4">✓ Professionele therapeutische massage</p>
         <p class="hero-vacation-notice">🌴 VAKANTIE: Gesloten van 19 december 2025 t/m 18 januari 2026</p>
-        <p>LET OP! GEEN EROTIEK</p>
       </div>
     </section>
 
@@ -485,12 +457,11 @@
         <p class="text-center">Plan je bezoek aan Pesila Thai Massage op een tijd die jou uitkomt.</p>
 
         <!-- Vacation Notice -->
-        <div class="vacation-alert" role="alert" aria-live="polite">
-          <div class="vacation-icon">🌴✈️</div>
-          <h3>Vakantie - Tijdelijk gesloten</h3>
-          <p><strong>Wij zijn gesloten van 19 december 2025 t/m 18 januari 2026</strong></p>
-          <p>We genieten van een welverdiende vakantie en zijn weer terug op 19 januari 2026.</p>
-          <p>Bedankt voor uw begrip en tot snel!</p>
+        <div class="alert alert-info vacation-alert" role="alert" aria-live="polite" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #0c5460;">
+          <h4 class="alert-heading" style="margin-bottom: 0.75rem;">🌴 Vakantie - Tijdelijk gesloten</h4>
+          <p style="margin-bottom: 0.5rem;"><strong>Wij zijn gesloten van 19 december 2025 t/m 18 januari 2026</strong></p>
+          <p style="margin-bottom: 0.5rem;">We genieten van een welverdiende vakantie en zijn weer terug op 19 januari 2026.</p>
+          <p style="margin-bottom: 0;">Bedankt voor uw begrip en tot snel!</p>
         </div>
 
         <div class="card">
@@ -1018,16 +989,15 @@
     <section id="booking" class="booking-section" aria-labelledby="booking-heading">
       <div class="container">
         <h2 class="section-title">Maak nu je afspraak</h2>
-        <p class="text-center text-danger">
-          <em>LET OP! GEEN EROTIEK</em>
-        </p>
+        <div class="alert alert-warning" role="alert" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #856404;">
+          <strong>⚠️ Belangrijk:</strong> Wij bieden uitsluitend professionele therapeutische massages in een respectvolle omgeving. Ongepast gedrag wordt niet getolereerd.
+        </div>
 
         <!-- Vacation Notice -->
-        <div class="vacation-alert" role="alert" aria-live="polite">
-          <div class="vacation-icon">🌴✈️</div>
-          <h3>Let op: Vakantieperiode</h3>
-          <p><strong>Wij accepteren geen nieuwe boekingen voor 19 december 2025 - 18 januari 2026</strong></p>
-          <p>Vanaf 19 januari 2026 zijn we weer volledig beschikbaar voor afspraken.</p>
+        <div class="alert alert-info vacation-alert" role="alert" aria-live="polite" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #0c5460;">
+          <h4 class="alert-heading" style="margin-bottom: 0.75rem;">🌴 Vakantieperiode</h4>
+          <p style="margin-bottom: 0.5rem;"><strong>Wij accepteren geen nieuwe boekingen voor 19 december 2025 - 18 januari 2026</strong></p>
+          <p style="margin-bottom: 0;">Vanaf 19 januari 2026 zijn we weer volledig beschikbaar voor afspraken.</p>
         </div>
 
         <p class="text-center mt-5">
