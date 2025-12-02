@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"D:\\Projects\\Pesila\\pesila-website\" log --oneline -10)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
