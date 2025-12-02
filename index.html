@@ -1268,9 +1268,6 @@
           });
         }
 
-        /**
-         * Generates star rating HTML
-         */
         function generateStars(rating) {
           const fullStars = Math.floor(rating);
           const hasHalfStar = rating % 1 >= 0.5;
@@ -1329,19 +1326,15 @@
         }
 
         function initGoogleReviews() {
-          // Non-blocking check for Google Maps API
           if (typeof google === 'undefined' || !google.maps || !google.maps.places) {
-            // Poll asynchronously without blocking
             setTimeout(initGoogleReviews, 100);
             return;
           }
 
           console.log("Google Reviews: Google Maps API loaded, fetching reviews...");
 
-          // Fetch reviews asynchronously
           fetchGoogleReviews()
             .then(placeData => {
-              // Render reviews asynchronously using requestAnimationFrame for better performance
               requestAnimationFrame(() => {
                 renderGoogleReviews(placeData);
               });
@@ -1351,11 +1344,9 @@
             });
         }
 
-        // Start loading reviews as soon as DOM is ready (doesn't wait for images/stylesheets)
         if (document.readyState === 'loading') {
           document.addEventListener("DOMContentLoaded", initGoogleReviews);
         } else {
-          // DOM already loaded, start immediately
           initGoogleReviews();
         }
       })();
