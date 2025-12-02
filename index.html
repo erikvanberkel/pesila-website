@@ -10,8 +10,7 @@
       gtag("js", new Date());
       gtag("config", "G-69BZRSS6JF");
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt1_ykH6bXZmKuW3xi7pMZMn9qKEgQmFE&libraries=places&loading=async"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt1_ykH6bXZmKuW3xi7pMZMn9qKEgQmFE&libraries=places&loading=async"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt1_ykH6bXZmKuW3xi7pMZMn9qKEgQmFE&libraries=places&loading=async"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pesila Thai Massage Rotterdam | Authentieke Thaise Massage</title>
@@ -311,52 +310,6 @@
         font-style: normal;
         display: block;
         margin-top: 0.75rem;
-      }
-
-      .review-date {
-        font-size: 0.85rem;
-        color: #888;
-        font-style: normal;
-      }
-
-      .google-link {
-        display: inline-block;
-        margin-top: 2rem;
-        padding: 0.75rem 1.5rem;
-        background: #4285f4;
-        color: #fff;
-        border-radius: 25px;
-        text-decoration: none;
-        transition: background 0.3s;
-      }
-
-      .google-link:hover {
-        background: #357ae8;
-        color: #fff;
-      }
-
-      .star-rating {
-        color: #ffc107;
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .star-rating .empty-star {
-        color: #ddd;
-      }
-
-      .review-author {
-        font-weight: bold;
-        color: #6b4e31;
-        font-style: normal;
-        display: block;
-        margin-top: 0.75rem;
-      }
-
-      .review-date {
-        font-size: 0.85rem;
-        color: #888;
-        font-style: normal;
       }
 
       .google-link {
@@ -1336,24 +1289,6 @@
           return starsHtml;
         }
 
-        function formatRelativeTime(timestamp) {
-          const now = Date.now() / 1000;
-          const diff = now - timestamp;
-
-          const minutes = Math.floor(diff / 60);
-          const hours = Math.floor(diff / 3600);
-          const days = Math.floor(diff / 86400);
-          const months = Math.floor(diff / 2592000);
-          const years = Math.floor(diff / 31536000);
-
-          if (years > 0) return `${years} jaar geleden`;
-          if (months > 0) return `${months} ${months === 1 ? 'maand' : 'maanden'} geleden`;
-          if (days > 0) return `${days} ${days === 1 ? 'dag' : 'dagen'} geleden`;
-          if (hours > 0) return `${hours} ${hours === 1 ? 'uur' : 'uren'} geleden`;
-          if (minutes > 0) return `${minutes} ${minutes === 1 ? 'minuut' : 'minuten'} geleden`;
-          return "Zojuist";
-        }
-
         function renderGoogleReviews(placeData) {
           if (!placeData || !placeData.reviews || placeData.reviews.length === 0) {
             console.log("Google Reviews: No reviews to display");
@@ -1394,24 +1329,35 @@
         }
 
         function initGoogleReviews() {
+          // Non-blocking check for Google Maps API
           if (typeof google === 'undefined' || !google.maps || !google.maps.places) {
-            console.log("Google Reviews: Waiting for Google Maps API to load...");
+            // Poll asynchronously without blocking
             setTimeout(initGoogleReviews, 100);
             return;
           }
 
           console.log("Google Reviews: Google Maps API loaded, fetching reviews...");
 
+          // Fetch reviews asynchronously
           fetchGoogleReviews()
             .then(placeData => {
-              renderGoogleReviews(placeData);
+              // Render reviews asynchronously using requestAnimationFrame for better performance
+              requestAnimationFrame(() => {
+                renderGoogleReviews(placeData);
+              });
             })
             .catch(error => {
               console.error("Google Reviews: Initialization failed", error);
             });
         }
 
-        window.addEventListener("load", initGoogleReviews);
+        // Start loading reviews as soon as DOM is ready (doesn't wait for images/stylesheets)
+        if (document.readyState === 'loading') {
+          document.addEventListener("DOMContentLoaded", initGoogleReviews);
+        } else {
+          // DOM already loaded, start immediately
+          initGoogleReviews();
+        }
       })();
     </script>
   </body>
