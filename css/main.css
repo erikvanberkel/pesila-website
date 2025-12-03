@@ -83,6 +83,16 @@ footer {
   text-align: center;
 }
 
+/* WCAG 2.2 - 2.4.11 Focus Not Obscured (Minimum) */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+.service-card:focus {
+  scroll-margin-top: 5rem;
+}
+
 @media (max-width: 992px) {
   .navbar-toggler {
     cursor: pointer;

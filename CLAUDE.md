@@ -570,9 +570,29 @@ const CONFIG = {
 - Language properly identified (lang="nl")
 - Status messages use ARIA live regions
 
+**WCAG 2.2 Level AA**: ✅ Compliant (as of 2025-12-03)
+- Focus not obscured by fixed navbar (scroll-margin-top: 5rem on all focusable elements)
+- Interactive target sizes meet 24×24px minimum (Bootstrap defaults compliant)
+- Consistent help mechanism location across pages
+- No redundant entry required in forms
+- No dragging movements required for any functionality
+- No authentication required (bypasses cognitive function test criteria)
+
 **Color Contrast Fixes Applied**:
 - Placeholder text: #888 → #757575 (2.9:1 → 4.55:1) ✅
 - Empty star icons: #ddd → #c0c0c0 (1.2:1 → 3.0:1) ✅
+
+**WCAG 2.1 Level AAA**: ⚠️ Partially Compliant (50%)
+- Body text contrast: 12.6:1 (exceeds 7:1 requirement) ✅
+- Footer text contrast: 12.6:1 (exceeds 7:1 requirement) ✅
+- Primary color buttons: 6.85:1 (below 7:1, but passes AA) ⚠️
+- See WCAG-AAA-ANALYSIS.md and WCAG-AAA-ROADMAP.md for full analysis
+
+**Accessibility Documentation**:
+- WCAG-AA-AUDIT.md - Detailed Level AA compliance audit
+- WCAG-2.2-AUDIT.md - WCAG 2.2 compliance analysis
+- WCAG-AAA-ANALYSIS.md - Level AAA color contrast analysis
+- WCAG-AAA-ROADMAP.md - Optional AAA enhancement roadmap
 
 **Progressive Enhancement**: ✅ Excellent
 - Core features work for everyone

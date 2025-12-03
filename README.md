@@ -13,7 +13,7 @@ A modern, responsive, and accessible single-page website for a Thai massage salo
 - Photo gallery showcasing the facilities with modal viewer
 - Google Reviews integration with dynamic loading
 - Embedded location map
-- Full WCAG 2.1 Level AA compliance
+- Full WCAG 2.2 Level AA compliance
 
 ## Technology Stack
 
@@ -35,12 +35,14 @@ A modern, responsive, and accessible single-page website for a Thai massage salo
 - ✅ CSS-only animations and transitions
 - ✅ Custom CSS variables for theming
 
-### Accessibility (WCAG 2.1 Level AA Compliant)
+### Accessibility (WCAG 2.2 Level AA Compliant)
 - ✅ Semantic HTML5 structure (header, nav, main, section, article, footer)
 - ✅ ARIA attributes (roles, labels, live regions, expanded states)
 - ✅ Skip navigation link for keyboard users
 - ✅ Full keyboard navigation support (Tab, Enter, Space, Escape)
 - ✅ Focus management and visible focus indicators (3px solid outlines)
+- ✅ Focus not obscured by fixed navbar (scroll-margin-top on all focusable elements)
+- ✅ Interactive target sizes meet 24×24px minimum (WCAG 2.2)
 - ✅ Proper form labels and error associations
 - ✅ Modal focus trapping
 - ✅ Screen reader friendly
@@ -49,6 +51,8 @@ A modern, responsive, and accessible single-page website for a Thai massage salo
 - ✅ Content reflows at 320px width
 - ✅ Multiple navigation methods
 - ✅ Consistent navigation and identification
+- ✅ Consistent help location across pages
+- ✅ No redundant entry in forms
 
 ### SEO & Performance
 - ✅ Schema.org LocalBusiness structured data
@@ -80,6 +84,10 @@ pesila-website/
 ├── gallery.html                  # Photo gallery with modal viewer
 ├── CLAUDE.md                     # Comprehensive technical documentation
 ├── README.md                     # This file
+├── WCAG-AA-AUDIT.md              # WCAG 2.1 Level AA compliance audit
+├── WCAG-2.2-AUDIT.md             # WCAG 2.2 compliance audit
+├── WCAG-AAA-ANALYSIS.md          # WCAG 2.1 Level AAA analysis
+├── WCAG-AAA-ROADMAP.md           # Roadmap for optional AAA enhancements
 ├── CNAME                         # Custom domain configuration
 ├── .prettierrc                   # Code formatting rules
 ├── css/
@@ -113,6 +121,14 @@ pesila-website/
   - Placeholder text: #888 → #757575 (4.55:1 ratio)
   - Empty star icons: #ddd → #c0c0c0 (3.0:1 ratio)
 
+### WCAG 2.2 Compliance (New Success Criteria)
+- ✅ Added scroll-margin-top to all focusable elements (prevents focus obscuring by fixed navbar)
+- ✅ Verified interactive target sizes meet 24×24px minimum
+- ✅ Consistent help mechanism location across pages
+- ✅ No redundant entry required in forms
+- ✅ No dragging movements required
+- ✅ No authentication required
+
 ### Code Quality & Performance
 - ✅ Refactored JavaScript into modular, maintainable sections
 - ✅ Centralized all configuration in CONFIG object
@@ -120,7 +136,13 @@ pesila-website/
 - ✅ Added noscript fallbacks for graceful degradation
 - ✅ Updated Treatwell fallback URL to salon-specific page
 
-These improvements ensure the website meets **WCAG 2.1 Level AA** standards for accessibility.
+### Documentation
+- ✅ Created WCAG-AA-AUDIT.md (detailed AA compliance audit)
+- ✅ Created WCAG-2.2-AUDIT.md (WCAG 2.2 compliance analysis)
+- ✅ Created WCAG-AAA-ANALYSIS.md (AAA color contrast analysis)
+- ✅ Created WCAG-AAA-ROADMAP.md (optional AAA enhancement roadmap)
+
+These improvements ensure the website meets **WCAG 2.2 Level AA** standards for accessibility.
 
 ## Deployment
 
@@ -177,7 +199,14 @@ php -S localhost:8000
 
 ## Documentation
 
-For a comprehensive codebase analysis and technical documentation, see [CLAUDE.md](CLAUDE.md).
+### Technical Documentation
+- [CLAUDE.md](CLAUDE.md) - Comprehensive codebase analysis and technical documentation
+
+### Accessibility Audits
+- [WCAG-AA-AUDIT.md](WCAG-AA-AUDIT.md) - WCAG 2.1 Level AA compliance audit with color contrast analysis
+- [WCAG-2.2-AUDIT.md](WCAG-2.2-AUDIT.md) - WCAG 2.2 compliance audit (9 new success criteria)
+- [WCAG-AAA-ANALYSIS.md](WCAG-AAA-ANALYSIS.md) - WCAG 2.1 Level AAA color contrast analysis
+- [WCAG-AAA-ROADMAP.md](WCAG-AAA-ROADMAP.md) - Roadmap for optional AAA enhancements
 
 ## Contributing
 
