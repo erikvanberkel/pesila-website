@@ -445,6 +445,13 @@
         }
       }
     </script>
+    <noscript>
+      <style>
+        #preloader {
+          display: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Spring naar hoofdinhoud</a>
@@ -982,7 +989,13 @@
         <h2 id="testimonials-heading" class="section-title">Ervaringen van Onze Klanten</h2>
 
         <!-- Google Reviews Container (dynamically populated) -->
-        <div id="google-reviews" class="row"></div>
+        <div id="google-reviews" class="row">
+          <noscript>
+            <div class="col-12 text-center">
+              <p class="text-muted">JavaScript is vereist om recensies te laden.</p>
+            </div>
+          </noscript>
+        </div>
 
         <!-- Link to Google Reviews -->
         <div class="text-center">
@@ -1050,7 +1063,7 @@
         </script>
         <p class="text-center">
           <a
-            href="https://www.treatwell.nl/"
+            href="https://www.treatwell.nl/plaats/pesila-thai-massage/"
             id="wahanda-online-booking-widget"
             onclick='wahanda.openOnlineBookingWidget("https://widget.treatwell.nl/salon/482688/menu/"); return false;'
             target="_blank"
@@ -1168,261 +1181,254 @@
       </div>
     </footer>
     <script async>
-     (function () {
+      (function () {
         "use strict";
 
-        // Show vacation notices only 5 days before vacation starts and hide after vacation ends
-        const vacationStartDate = new Date("2025-12-19T00:00:00");
-        const vacationEndDate = new Date("2026-01-18T23:59:59");
-        const showNoticeFromDate = new Date(vacationStartDate.getTime() - (5 * 24 * 60 * 60 * 1000)); // 5 days before
-        const currentDate = new Date();
-
-        // Hide vacation notices if we're before the 5-day warning period or after vacation ends
-        if (currentDate < showNoticeFromDate || currentDate > vacationEndDate) {
-          const vacationNotices = document.querySelectorAll(".vacation-alert, .hero-vacation-notice");
-          vacationNotices.forEach(notice => {
-            notice.style.display = "none";
-          });
-        }
-
-        window.addEventListener("load", () => {
-          document.getElementById("preloader").style.display = "none";
-        });
-
-        const form = document.getElementById("bookingForm");
-        const emailInput = document.getElementById("email");
-        const phoneInput = document.getElementById("phone");
-
-        function validateContactFields() {
-          const emailValue = emailInput.value.trim();
-          const phoneValue = phoneInput.value.trim();
-          let emailValid = true;
-          let phoneValid = true;
-
-          emailInput.classList.remove("is-invalid", "is-valid");
-          phoneInput.classList.remove("is-invalid", "is-valid");
-
-          // Check if at least one contact method is provided
-          if (!emailValue && !phoneValue) {
-            emailInput.classList.add("is-invalid");
-            phoneInput.classList.add("is-invalid");
-            return false;
+        // ==================== Configuration ====================
+        const CONFIG = {
+          vacation: {
+            startDate: new Date("2025-12-19T00:00:00"),
+            endDate: new Date("2026-01-18T23:59:59"),
+            daysBeforeNotice: 5
+          },
+          google: {
+            placeId: "ChIJayy_TwM1xEcRGWhh99q1o48",
+            cacheDuration: 24 * 60 * 60 * 1000,
+            minRating: 4,
+            maxReviews: 4,
+            retryDelay: 100
+          },
+          validation: {
+            emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            phoneRegex: /^\+?[\d\s\-()]{6,}$/
           }
+        };
 
-          // Validate email if provided
-          if (emailValue) {
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+        // ==================== Vacation Notice Management ====================
+        const handleVacationNotices = () => {
+          const { startDate, endDate, daysBeforeNotice } = CONFIG.vacation;
+          const showNoticeFrom = new Date(startDate.getTime() - daysBeforeNotice * 24 * 60 * 60 * 1000);
+          const now = new Date();
+
+          if (now < showNoticeFrom || now > endDate) {
+            document.querySelectorAll(".vacation-alert, .hero-vacation-notice").forEach((notice) => {
+              notice.style.display = "none";
+            });
+          }
+        };
+
+        // ==================== Preloader ====================
+        const hidePreloader = () => {
+          window.addEventListener("load", () => {
+            document.getElementById("preloader").style.display = "none";
+          });
+        };
+
+        // ==================== Form Validation ====================
+        const initFormValidation = () => {
+          const form = document.getElementById("bookingForm");
+          const emailInput = document.getElementById("email");
+          const phoneInput = document.getElementById("phone");
+
+          const validateContactFields = () => {
+            const emailValue = emailInput.value.trim();
+            const phoneValue = phoneInput.value.trim();
+            let isValid = true;
+
+            emailInput.classList.remove("is-invalid", "is-valid");
+            phoneInput.classList.remove("is-invalid", "is-valid");
+
+            if (!emailValue && !phoneValue) {
               emailInput.classList.add("is-invalid");
-              emailValid = false;
-            } else {
+              phoneInput.classList.add("is-invalid");
+              return false;
+            }
+
+            if (emailValue && !CONFIG.validation.emailRegex.test(emailValue)) {
+              emailInput.classList.add("is-invalid");
+              isValid = false;
+            } else if (emailValue) {
               emailInput.classList.add("is-valid");
             }
-          }
 
-          // Validate phone if provided
-          if (phoneValue) {
-            if (!/^\+?[\d\s\-()]{6,}$/.test(phoneValue)) {
+            if (phoneValue && !CONFIG.validation.phoneRegex.test(phoneValue)) {
               phoneInput.classList.add("is-invalid");
-              phoneValid = false;
-            } else {
+              isValid = false;
+            } else if (phoneValue) {
               phoneInput.classList.add("is-valid");
             }
-          }
 
-          return emailValid && phoneValid;
-        }
+            return isValid;
+          };
 
-        emailInput.addEventListener("blur", function() {
-          validateContactFields();
-        });
+          emailInput.addEventListener("blur", validateContactFields);
+          phoneInput.addEventListener("blur", validateContactFields);
 
-        phoneInput.addEventListener("blur", function() {
-          validateContactFields();
-        });
-
-        form.addEventListener(
-          "submit",
-          function (event) {
+          form.addEventListener("submit", (event) => {
             if (!validateContactFields()) {
               event.preventDefault();
               event.stopPropagation();
 
-              // Focus on the first invalid field
               const firstInvalid = form.querySelector(".is-invalid");
               if (firstInvalid) {
                 firstInvalid.focus();
               }
             }
-          },
-          false
-        );
+          });
+        };
 
-        document.querySelector(".navbar-nav").addEventListener("click", (event) => {
-          if (event.target.classList.contains("nav-link")) {
-            document.querySelector("#navbar-toggle").checked = false;
-          }
-        });
-
-        // Service card expand/collapse functionality
-        document.querySelectorAll(".service-card").forEach((card) => {
-          function toggleCard() {
-            const textContainer = card.querySelector(".text-container");
-            textContainer.classList.toggle("show-full");
-            const isExpanded = textContainer.classList.contains("show-full");
-            card.setAttribute("aria-expanded", isExpanded);
-          }
-
-          card.addEventListener("click", toggleCard);
-
-          card.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              toggleCard();
+        // ==================== Navigation ====================
+        const initNavigation = () => {
+          document.querySelector(".navbar-nav").addEventListener("click", (event) => {
+            if (event.target.classList.contains("nav-link")) {
+              document.querySelector("#navbar-toggle").checked = false;
             }
           });
-        });
+        };
 
-        const GOOGLE_PLACE_ID = "ChIJayy_TwM1xEcRGWhh99q1o48";
-        const CACHE_DURATION = 24 * 60 * 60 * 1000;
+        // ==================== Service Cards ====================
+        const initServiceCards = () => {
+          document.querySelectorAll(".service-card").forEach((card) => {
+            const toggleCard = () => {
+              const textContainer = card.querySelector(".text-container");
+              textContainer.classList.toggle("show-full");
+              card.setAttribute("aria-expanded", textContainer.classList.contains("show-full"));
+            };
 
-        function fetchGoogleReviews() {
-          return new Promise((resolve, reject) => {
-            // Check cache first
+            card.addEventListener("click", toggleCard);
+            card.addEventListener("keydown", (event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                toggleCard();
+              }
+            });
+          });
+        };
+
+        // ==================== Google Reviews ====================
+        const GoogleReviews = {
+          async fetch() {
             const cached = localStorage.getItem("google_reviews_cache");
+
             if (cached) {
               const { data, timestamp } = JSON.parse(cached);
-              const age = Date.now() - timestamp;
-
-              if (age < CACHE_DURATION) {
+              if (Date.now() - timestamp < CONFIG.google.cacheDuration) {
                 console.log("Google Reviews: Using cached data");
-                resolve(data);
-                return;
+                return data;
               }
             }
 
-            // Check if Google Maps API is loaded
-            if (typeof google === 'undefined' || !google.maps || !google.maps.places) {
+            if (typeof google === "undefined" || !google.maps?.places) {
               console.error("Google Reviews: Google Maps API not loaded");
-              resolve(null);
+              return null;
+            }
+
+            return new Promise((resolve) => {
+              const service = new google.maps.places.PlacesService(document.createElement("div"));
+              const request = {
+                placeId: CONFIG.google.placeId,
+                fields: ["reviews", "rating", "user_ratings_total", "name"]
+              };
+
+              service.getDetails(request, (place, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK && place?.reviews) {
+                  const placeData = {
+                    reviews: place.reviews,
+                    rating: place.rating,
+                    user_ratings_total: place.user_ratings_total,
+                    name: place.name
+                  };
+
+                  localStorage.setItem("google_reviews_cache", JSON.stringify({
+                    data: placeData,
+                    timestamp: Date.now()
+                  }));
+
+                  console.log("Google Reviews: Fetched fresh data from API");
+                  resolve(placeData);
+                } else {
+                  console.error("Google Reviews: Failed to fetch", status);
+                  resolve(null);
+                }
+              });
+            });
+          },
+
+          generateStars(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            let html = "";
+
+            for (let i = 0; i < 5; i++) {
+              html += i < fullStars || (i === fullStars && hasHalfStar)
+                ? "★"
+                : '<span class="empty-star">★</span>';
+            }
+
+            return html;
+          },
+
+          render(placeData) {
+            if (!placeData?.reviews?.length) {
+              console.log("Google Reviews: No reviews to display");
               return;
             }
 
-            // Create a temporary div for the PlacesService (required by API)
-            const tempDiv = document.createElement('div');
-            const service = new google.maps.places.PlacesService(tempDiv);
+            const container = document.getElementById("google-reviews");
+            const topReviews = placeData.reviews
+              .filter((review) => review.rating >= CONFIG.google.minRating)
+              .sort((a, b) => b.time - a.time)
+              .slice(0, CONFIG.google.maxReviews);
 
-            // Request place details with reviews
-            const request = {
-              placeId: GOOGLE_PLACE_ID,
-              fields: ['reviews', 'rating', 'user_ratings_total', 'name']
-            };
+            container.innerHTML = topReviews
+              .map((review) => `
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <article class="testimonial-card">
+                    <div class="star-rating">${this.generateStars(review.rating)}</div>
+                    <p class="card-text">"${review.text || ""}"</p>
+                    <cite class="review-author">${review.author_name || "Anoniem"}</cite>
+                  </article>
+                </div>
+              `)
+              .join("");
 
-            service.getDetails(request, (place, status) => {
-              if (status === google.maps.places.PlacesServiceStatus.OK && place && place.reviews) {
-                // Cache the results
-                const placeData = {
-                  reviews: place.reviews,
-                  rating: place.rating,
-                  user_ratings_total: place.user_ratings_total,
-                  name: place.name
-                };
-
-                localStorage.setItem("google_reviews_cache", JSON.stringify({
-                  data: placeData,
-                  timestamp: Date.now()
-                }));
-
-                console.log("Google Reviews: Fetched fresh data from API");
-                resolve(placeData);
-              } else {
-                console.error("Google Reviews: Failed to fetch", status);
-                resolve(null);
-              }
-            });
-          });
-        }
-
-        function generateStars(rating) {
-          const fullStars = Math.floor(rating);
-          const hasHalfStar = rating % 1 >= 0.5;
-          let starsHtml = "";
-
-          for (let i = 0; i < 5; i++) {
-            if (i < fullStars) {
-              starsHtml += "★";
-            } else if (i === fullStars && hasHalfStar) {
-              starsHtml += "★";
-            } else {
-              starsHtml += '<span class="empty-star">★</span>';
+            const googleLink = document.getElementById("google-reviews-link");
+            if (googleLink) {
+              googleLink.href = `https://search.google.com/local/reviews?placeid=${CONFIG.google.placeId}`;
             }
+
+            console.log(`Google Reviews: Displayed ${topReviews.length} reviews`);
+          },
+
+          init() {
+            if (typeof google === "undefined" || !google.maps?.places) {
+              setTimeout(() => this.init(), CONFIG.google.retryDelay);
+              return;
+            }
+
+            console.log("Google Reviews: Google Maps API loaded, fetching reviews...");
+            this.fetch()
+              .then((data) => requestAnimationFrame(() => this.render(data)))
+              .catch((error) => console.error("Google Reviews: Initialization failed", error));
           }
+        };
 
-          return starsHtml;
-        }
+        // ==================== Initialization ====================
+        const init = () => {
+          handleVacationNotices();
+          hidePreloader();
+          initFormValidation();
+          initNavigation();
+          initServiceCards();
 
-        function renderGoogleReviews(placeData) {
-          if (!placeData || !placeData.reviews || placeData.reviews.length === 0) {
-            console.log("Google Reviews: No reviews to display");
-            return;
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", () => GoogleReviews.init());
+          } else {
+            GoogleReviews.init();
           }
+        };
 
-          const reviewsContainer = document.getElementById("google-reviews");
-
-          const topReviews = placeData.reviews
-            .filter(review => review.rating >= 4)
-            .sort((a, b) => b.time - a.time)
-            .slice(0, 4);
-
-          const reviewsHtml = topReviews.map(review => {
-            const stars = generateStars(review.rating);
-            const text = review.text || "";
-            const authorName = review.author_name || "Anoniem";
-
-            return `
-              <div class="col-xl-3 col-md-6 mb-4">
-                <article class="testimonial-card">
-                  <div class="star-rating">${stars}</div>
-                  <p class="card-text">"${text}"</p>
-                  <cite class="review-author">${authorName}</cite>
-                </article>
-              </div>
-            `;
-          }).join("");
-
-          reviewsContainer.innerHTML = reviewsHtml;
-
-          const googleLink = document.getElementById("google-reviews-link");
-          if (googleLink && GOOGLE_PLACE_ID) {
-            googleLink.href = `https://search.google.com/local/reviews?placeid=${GOOGLE_PLACE_ID}`;
-          }
-
-          console.log(`Google Reviews: Displayed ${topReviews.length} reviews`);
-        }
-
-        function initGoogleReviews() {
-          if (typeof google === 'undefined' || !google.maps || !google.maps.places) {
-            setTimeout(initGoogleReviews, 100);
-            return;
-          }
-
-          console.log("Google Reviews: Google Maps API loaded, fetching reviews...");
-
-          fetchGoogleReviews()
-            .then(placeData => {
-              requestAnimationFrame(() => {
-                renderGoogleReviews(placeData);
-              });
-            })
-            .catch(error => {
-              console.error("Google Reviews: Initialization failed", error);
-            });
-        }
-
-        if (document.readyState === 'loading') {
-          document.addEventListener("DOMContentLoaded", initGoogleReviews);
-        } else {
-          initGoogleReviews();
-        }
+        init();
       })();
     </script>
   </body>
