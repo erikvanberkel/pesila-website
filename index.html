@@ -1221,7 +1221,7 @@
 
           // Validate phone if provided
           if (phoneValue) {
-            if (!/^\+?[\d\s-]{7,}$/.test(phoneValue)) {
+            if (!/^\+?[\d\s\-()]{6,}$/.test(phoneValue)) {
               phoneInput.classList.add("is-invalid");
               phoneValid = false;
             } else {
