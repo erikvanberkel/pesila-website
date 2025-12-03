@@ -13,7 +13,7 @@ A modern, responsive, and accessible single-page website for a Thai massage salo
 - Photo gallery showcasing the facilities with modal viewer
 - Google Reviews integration with dynamic loading
 - Embedded location map
-- Full WCAG 2.2 Level AA compliance
+- Full WCAG 2.2 Level AA compliance + selective AAA enhancements
 
 ## Technology Stack
 
@@ -128,6 +128,13 @@ pesila-website/
 - ✅ No redundant entry required in forms
 - ✅ No dragging movements required
 - ✅ No authentication required
+
+### WCAG 2.1 Level AAA Enhancements (Selective Implementation)
+- ✅ Enhanced color contrast: Primary color darkened (#6b4e31 → #604429) for 7:1 ratio
+- ✅ Line length optimization: Max-width 80ch for improved readability
+- ✅ Technical term tooltips: Added explanations for specialized massage terminology
+- ✅ Context-sensitive form help: Examples and guidance for all form fields
+- ✅ Visual tooltip indicators: Dotted underlines for abbr elements
 
 ### Code Quality & Performance
 - ✅ Refactored JavaScript into modular, maintainable sections

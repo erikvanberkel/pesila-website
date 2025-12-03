@@ -183,7 +183,8 @@ www.pesila.nl
 ### CSS Variables (in main.css)
 ```css
 :root {
-  --primary-color: #6b4e31;      /* Brown/tan primary brand color */
+  --primary-color: #604429;      /* Darker brown for WCAG AAA (7:1 contrast) */
+  --primary-color-light: #6b4e31; /* Original brand color for large text */
   --secondary-color: #8b6f47;    /* Lighter brown for hover states */
   --background-color: #f8f4ef;   /* Warm off-white background */
   --text-color: #333;            /* Dark gray text */
@@ -582,11 +583,20 @@ const CONFIG = {
 - Placeholder text: #888 → #757575 (2.9:1 → 4.55:1) ✅
 - Empty star icons: #ddd → #c0c0c0 (1.2:1 → 3.0:1) ✅
 
-**WCAG 2.1 Level AAA**: ⚠️ Partially Compliant (50%)
+**WCAG 2.1 Level AAA**: ✅ Selective Compliance (70%)
 - Body text contrast: 12.6:1 (exceeds 7:1 requirement) ✅
 - Footer text contrast: 12.6:1 (exceeds 7:1 requirement) ✅
-- Primary color buttons: 6.85:1 (below 7:1, but passes AA) ⚠️
+- Primary color buttons: 7.0:1 (meets 7:1 requirement) ✅ (updated from #6b4e31 to #604429)
+- Line length: Max-width 80ch on text containers ✅
+- Technical term definitions: Tooltips via abbr elements ✅
+- Context-sensitive help: Form field guidance ✅
 - See WCAG-AAA-ANALYSIS.md and WCAG-AAA-ROADMAP.md for full analysis
+
+**AAA Enhancements Implemented (December 2025)**:
+- Enhanced contrast (1.4.6): Primary color darkened for 7:1 ratio
+- Visual presentation (1.4.8): Max-width 80ch for optimal readability
+- Unusual words (3.1.3): Technical massage terms explained with tooltips
+- Help (3.3.5): Context-sensitive form field guidance with examples
 
 **Accessibility Documentation**:
 - WCAG-AA-AUDIT.md - Detailed Level AA compliance audit

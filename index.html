@@ -608,7 +608,7 @@
                 <div>
                   <p>
                     Een aroma-olie massage is een vorm van kruidengeneeskunde die gebaseerd is op het gebruik van etherische oliën afkomstig van kruiden,
-                    bloemen en andere plantendelen. Aromatherapie, een combinatie van de woorden aroma (geur) en therapie (behandeling), maakt gebruik van
+                    bloemen en andere plantendelen. <abbr title="Behandeling met geuren uit essentiële oliën om lichamelijk en geestelijk welzijn te bevorderen">Aromatherapie</abbr>, een combinatie van de woorden aroma (geur) en therapie (behandeling), maakt gebruik van
                     geuren om het welzijn te bevorderen. Deze vorm van therapie wordt vooral ingezet bij klachten zoals spanning, angst en slapeloosheid. De
                     geuren zouden inwerken op het onderbewuste en helpen om een verstoord zenuwstelsel weer in balans te brengen.
                   </p>
@@ -639,7 +639,7 @@
           <div class="col-xl-4 col-md-6 mb-4">
             <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="foot-massage">
               <img src="images/services/voeten.avif" loading="lazy" alt="Voetreflexmassage bij Pesila" />
-              <h3 id="foot-massage">Voetreflexmassage</h3>
+              <h3 id="foot-massage"><abbr title="Massagetechniek waarbij drukpunten op de voetzolen worden gestimuleerd die corresponderen met organen en lichaamsdelen">Voetreflexmassage</abbr></h3>
               <div class="text-container">
                 <div>
                   <p>
@@ -732,7 +732,7 @@
                 <div>
                   <div>
                     <p>
-                      De stenen die bij een hot stone-massage worden gebruikt, zijn meestal gemaakt van basalt, een hard vulkanisch gesteente met een hoge
+                      De stenen die bij een hot stone-massage worden gebruikt, zijn meestal gemaakt van <abbr title="Hard vulkanisch gesteente met hoge dichtheid dat warmte goed vasthoudt">basalt</abbr>, een hard vulkanisch gesteente met een hoge
                       dichtheid. Deze eigenschap maakt basalt zeer geschikt om warmte goed vast te houden. De stenen worden opgewarmd in een speciale
                       verwarmingsunit, vaak gevuld met water en verwarmd tot een temperatuur van ongeveer 52 tot 54°C. Tijdens de massage hebben de stenen
                       meestal een werktemperatuur van ongeveer 45°C.
@@ -893,7 +893,7 @@
           <div class="col-xl-4 col-md-6 mb-4">
             <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="deep-tissue-massage">
               <img src="images/services/deep-tissue.avif" loading="lazy" alt="Deep tissue massage bij Pesila" />
-              <h3 id="deep-tissue-massage">Deep Tissue Massage</h3>
+              <h3 id="deep-tissue-massage"><abbr title="Diepe weefselmassage waarbij langzame, krachtige technieken worden gebruikt om diepere spierlagen en bindweefsel te bereiken">Deep Tissue Massage</abbr></h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -935,7 +935,7 @@
           <div class="col-xl-4 col-md-6 mb-4">
             <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="herbal-massage">
               <img src="images/services/kruidenstempel.avif" loading="lazy" alt="Kruidenstempelmassage bij Pesila" />
-              <h3 id="herbal-massage">Kruidenstempelmassage</h3>
+              <h3 id="herbal-massage"><abbr title="Massage waarbij verwarmde katoenen buidels gevuld met geneeskrachtige kruiden worden gebruikt om ontspanning en genezing te bevorderen">Kruidenstempelmassage</abbr></h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -1087,17 +1087,19 @@
             </div>
             <div class="col-md-6 mb-3">
               <label for="email" class="visually-hidden">E-mail</label>
-              <input type="email" name="email" class="form-control" id="email" placeholder="Je e-mailadres" autocomplete="email" aria-describedby="email-error" />
+              <input type="email" name="email" class="form-control" id="email" placeholder="Je e-mailadres" autocomplete="email" aria-describedby="email-error email-help" />
+              <small id="email-help" class="form-text text-muted">Bijvoorbeeld: naam@voorbeeld.nl</small>
               <div class="invalid-feedback" id="email-error">Vul een geldig e-mailadres in of geef een telefoonnummer op</div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="phone" class="visually-hidden">Telefoonnummer</label>
-              <input type="tel" name="Telephone" class="form-control" id="phone" placeholder="Je telefoonnummer" autocomplete="tel" aria-describedby="phone-error" />
+              <input type="tel" name="Telephone" class="form-control" id="phone" placeholder="Je telefoonnummer" autocomplete="tel" aria-describedby="phone-error phone-help" />
+              <small id="phone-help" class="form-text text-muted">Bijvoorbeeld: 06-12345678 of +31612345678</small>
               <div class="invalid-feedback" id="phone-error">Vul een geldig telefoonnummer in of geef een e-mailadres op</div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="service" class="visually-hidden">Massage</label>
-              <select name="Service" class="form-control" id="service">
+              <select name="Service" class="form-control" id="service" aria-describedby="service-help">
                 <option value="" disabled selected>- Kies je massage -</option>
                 <option>Traditionele Thaise massage</option>
                 <option>Aroma-oliemassage</option>
@@ -1110,16 +1112,18 @@
                 <option>Deep tissue massage</option>
                 <option>Kruidenstempelmassage</option>
               </select>
+              <small id="service-help" class="form-text text-muted">Meest populair: Traditionele Thaise massage</small>
             </div>
             <div class="col-md-6 mb-3">
               <label for="duration" class="visually-hidden">Duur</label>
-              <select name="Duration" class="form-control" id="duration">
+              <select name="Duration" class="form-control" id="duration" aria-describedby="duration-help">
                 <option value="" disabled selected>- Kies je tijdsduur -</option>
                 <option>30 minuten</option>
                 <option>60 minuten</option>
                 <option>90 minuten</option>
                 <option>120 minuten</option>
               </select>
+              <small id="duration-help" class="form-text text-muted">Prijzen variëren per massage en duur - zie bovenstaande prijslijst</small>
             </div>
             <div class="col-12">
               <label for="notes" class="visually-hidden">Bericht</label>

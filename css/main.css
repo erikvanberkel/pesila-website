@@ -1,5 +1,6 @@
 :root {
-  --primary-color: #6b4e31;
+  --primary-color: #604429;
+  --primary-color-light: #6b4e31;
   --secondary-color: #8b6f47;
   --background-color: #f8f4ef;
   --text-color: #333;
@@ -91,6 +92,19 @@ select:focus,
 textarea:focus,
 .service-card:focus {
   scroll-margin-top: 5rem;
+}
+
+/* WCAG AAA - 1.4.8 Visual Presentation (line length) */
+.service-card p,
+.testimonial-card p,
+section p {
+  max-width: 80ch;
+}
+
+/* WCAG AAA - 3.1.3 Unusual Words (tooltips for technical terms) */
+abbr {
+  text-decoration: underline dotted;
+  cursor: help;
 }
 
 @media (max-width: 992px) {
