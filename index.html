@@ -1074,13 +1074,13 @@
             </div>
             <div class="col-md-6 mb-3">
               <label for="email" class="visually-hidden">E-mail</label>
-              <input type="email" name="email" class="form-control" id="email" placeholder="Je e-mailadres" autocomplete="email" required aria-describedby="email-error" />
-              <div class="invalid-feedback" id="email-error">Je e-mailadres is nodig, omdat we anders geen contact met je kunnen opnemen</div>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Je e-mailadres" autocomplete="email" aria-describedby="email-error" />
+              <div class="invalid-feedback" id="email-error">Vul een geldig e-mailadres in of geef een telefoonnummer op</div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="phone" class="visually-hidden">Telefoonnummer</label>
               <input type="tel" name="Telephone" class="form-control" id="phone" placeholder="Je telefoonnummer" autocomplete="tel" aria-describedby="phone-error" />
-              <div class="invalid-feedback" id="phone-error">Vul een geldig telefoonnummer in</div>
+              <div class="invalid-feedback" id="phone-error">Vul een geldig telefoonnummer in of geef een e-mailadres op</div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="service" class="visually-hidden">Massage</label>
@@ -1190,41 +1190,69 @@
         });
 
         const form = document.getElementById("bookingForm");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+
+        function validateContactFields() {
+          const emailValue = emailInput.value.trim();
+          const phoneValue = phoneInput.value.trim();
+          let emailValid = true;
+          let phoneValid = true;
+
+          emailInput.classList.remove("is-invalid", "is-valid");
+          phoneInput.classList.remove("is-invalid", "is-valid");
+
+          // Check if at least one contact method is provided
+          if (!emailValue && !phoneValue) {
+            emailInput.classList.add("is-invalid");
+            phoneInput.classList.add("is-invalid");
+            return false;
+          }
+
+          // Validate email if provided
+          if (emailValue) {
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+              emailInput.classList.add("is-invalid");
+              emailValid = false;
+            } else {
+              emailInput.classList.add("is-valid");
+            }
+          }
+
+          // Validate phone if provided
+          if (phoneValue) {
+            if (!/^\+?[\d\s-]{7,}$/.test(phoneValue)) {
+              phoneInput.classList.add("is-invalid");
+              phoneValid = false;
+            } else {
+              phoneInput.classList.add("is-valid");
+            }
+          }
+
+          return emailValid && phoneValid;
+        }
+
+        emailInput.addEventListener("blur", function() {
+          validateContactFields();
+        });
+
+        phoneInput.addEventListener("blur", function() {
+          validateContactFields();
+        });
+
         form.addEventListener(
           "submit",
           function (event) {
-            const emailInput = document.getElementById("email");
-            const phoneInput = document.getElementById("phone");
-            const emailValue = emailInput.value.trim();
-            const phoneValue = phoneInput.value.trim();
-
-            emailInput.classList.remove("is-invalid", "is-valid");
-            phoneInput.classList.remove("is-invalid", "is-valid");
-
-            if (!emailValue && !phoneValue) {
+            if (!validateContactFields()) {
               event.preventDefault();
               event.stopPropagation();
-              emailInput.classList.add("is-invalid");
-              phoneInput.classList.add("is-invalid");
-            } else {
-              if (emailValue && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
-                event.preventDefault();
-                event.stopPropagation();
-                emailInput.classList.add("is-invalid");
-              } else if (emailValue) {
-                emailInput.classList.add("is-valid");
-              }
 
-              if (phoneValue && !/^\+?[\d\s-]{7,}$/.test(phoneValue)) {
-                event.preventDefault();
-                event.stopPropagation();
-                phoneInput.classList.add("is-invalid");
-              } else if (phoneValue) {
-                phoneInput.classList.add("is-valid");
+              // Focus on the first invalid field
+              const firstInvalid = form.querySelector(".is-invalid");
+              if (firstInvalid) {
+                firstInvalid.focus();
               }
             }
-
-            form.classList.add("was-validated");
           },
           false
         );
