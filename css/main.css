@@ -84,7 +84,6 @@ footer {
   text-align: center;
 }
 
-/* WCAG 2.2 - 2.4.11 Focus Not Obscured (Minimum) */
 a:focus,
 button:focus,
 input:focus,
@@ -94,9 +93,10 @@ textarea:focus,
   scroll-margin-top: 5rem;
 }
 
-/* WCAG AAA - 1.4.8 Visual Presentation (line length) */
 .service-card p,
-.testimonial-card p,
+.testimonial-card p {
+  max-width: 80ch;
+}
 
 @media (max-width: 992px) {
   .navbar-toggler {
