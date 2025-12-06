@@ -167,14 +167,10 @@
         box-shadow: 0 6px 20px rgba(107, 78, 49, 0.4);
       }
 
-      .btn-custom:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.5), 0 4px 20px rgba(107, 78, 49, 0.35);
-      }
-
+      .btn-custom:focus,
       .btn-custom:focus-visible {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.6), 0 4px 20px rgba(107, 78, 49, 0.35);
+        outline: none !important;
+        box-shadow: 0 4px 15px rgba(107, 78, 49, 0.3);
       }
 
       .service-card,
@@ -214,16 +210,7 @@
         position: relative;
       }
 
-      .service-card h3::after {
-        content: "";
-        display: block;
-        width: 40px;
-        height: 2px;
-        background: linear-gradient(90deg, #c9a961, #e8d5a3);
-        margin: 0.75rem auto 0;
-        border-radius: 1px;
-      }
-
+      
       .service-card .text-container {
         padding: 0 1.5rem;
       }
@@ -331,12 +318,15 @@
 
       .contact-section .btn-custom {
         background: #c9a961;
-        color: #2d2926;
+        color: #3d2e1e;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .contact-section .btn-custom:hover {
-        background: #d4b872;
-        color: #2d2926;
+        background: #d9bc7a;
+        color: #3d2e1e;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       }
 
       .contact-section a {
@@ -357,12 +347,9 @@
         color: #fff;
       }
 
-      .contact-section .section-title {
+      .contact-section p,
+      .contact-section h2 {
         color: #fff;
-      }
-
-      .contact-section .section-title::after {
-        background: linear-gradient(90deg, #c9a961, #e8d5a3);
       }
 
       .form-control {
@@ -1430,11 +1417,38 @@
 
         // ==================== Navigation ====================
         const initNavigation = () => {
+          const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+          const sections = document.querySelectorAll("section[id]");
+
+          // Close mobile nav on click
           document.querySelector(".navbar-nav").addEventListener("click", (event) => {
             if (event.target.classList.contains("nav-link")) {
               document.querySelector("#navbar-toggle").checked = false;
             }
           });
+
+          // Update active nav link on scroll
+          const updateActiveLink = () => {
+            const scrollY = window.scrollY + 100;
+
+            sections.forEach((section) => {
+              const sectionTop = section.offsetTop;
+              const sectionHeight = section.offsetHeight;
+              const sectionId = section.getAttribute("id");
+
+              if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                navLinks.forEach((link) => {
+                  link.classList.remove("active");
+                  if (link.getAttribute("href")?.includes(`#${sectionId}`)) {
+                    link.classList.add("active");
+                  }
+                });
+              }
+            });
+          };
+
+          window.addEventListener("scroll", updateActiveLink, { passive: true });
+          updateActiveLink();
         };
 
         // ==================== Service Cards ====================

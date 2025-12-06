@@ -154,6 +154,11 @@ footer p {
   color: var(--primary-color);
 }
 
+.nav-link.active {
+  color: var(--gold-accent);
+  font-weight: 600;
+}
+
 /* Enhanced section titles */
 .section-title {
   font-family: "Playfair Display", serif;
@@ -174,6 +179,7 @@ footer p {
   margin: 1rem auto 2rem;
   border-radius: 2px;
 }
+
 
 /* Focus states */
 a:focus,
