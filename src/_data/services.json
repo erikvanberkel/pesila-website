@@ -1,0 +1,126 @@
+[
+  {
+    "id": "traditional-massage",
+    "name": "Traditionele Thaise Massage",
+    "image": "traditioneel.avif",
+    "alt": "Traditionele Thaise massage bij Pesila",
+    "description": "De Traditionele Thaise massage, ook wel nuat phaen boran (Thai: นวดแผนโบราณ, \"antieke massage stijl\") genoemd, is een van de oudste genezingsmethoden ter wereld. In de Thaise cultuur werd ziekte beschouwd als een onbalans in lichaam of geest, en mensen zochten hulp in lokale tempels. Daar werden zij behandeld volgens de vier pijlers van de traditionele geneeskunde: spirituele begeleiding, voeding, kruiden en massage.",
+    "pricing": [
+      { "duration": "30 min.", "price": "€ 40,-" },
+      { "duration": "60 min.", "price": "€ 65,-" },
+      { "duration": "90 min.", "price": "€ 95,-" },
+      { "duration": "120 min.", "price": "€ 125,-" }
+    ]
+  },
+  {
+    "id": "aroma-massage",
+    "name": "Aroma-oliemassage",
+    "image": "aroma.avif",
+    "alt": "Aroma-oliemassage bij Pesila",
+    "description": "Een aroma-olie massage is een vorm van kruidengeneeskunde die gebaseerd is op het gebruik van etherische oliën afkomstig van kruiden, bloemen en andere plantendelen. <abbr title=\"Behandeling met geuren uit essentiële oliën om lichamelijk en geestelijk welzijn te bevorderen\">Aromatherapie</abbr>, een combinatie van de woorden aroma (geur) en therapie (behandeling), maakt gebruik van geuren om het welzijn te bevorderen. Deze vorm van therapie wordt vooral ingezet bij klachten zoals spanning, angst en slapeloosheid. De geuren zouden inwerken op het onderbewuste en helpen om een verstoord zenuwstelsel weer in balans te brengen.",
+    "pricing": [
+      { "duration": "60 min.", "price": "€ 75,-" },
+      { "duration": "90 min.", "price": "€ 105,-" },
+      { "duration": "120 min.", "price": "€ 135,-" }
+    ]
+  },
+  {
+    "id": "foot-massage",
+    "name": "<abbr title=\"Massagetechniek waarbij drukpunten op de voetzolen worden gestimuleerd die corresponderen met organen en lichaamsdelen\">Voetreflexmassage</abbr>",
+    "nameClean": "Voetreflexmassage",
+    "image": "voeten.avif",
+    "alt": "Voetreflexmassage bij Pesila",
+    "description": "Ontspan met een Thaise voetreflexmassage, waarbij drukpunten op de voetzolen worden gestimuleerd met een massagestokje. Deze behandeling verbetert de doorbloeding, verlicht spanning en activeert je energie.",
+    "pricing": [
+      { "duration": "30 min.", "price": "€ 40,-" },
+      { "duration": "60 min.", "price": "€ 65,-" },
+      { "duration": "90 min.", "price": "€ 95,-" },
+      { "duration": "120 min.", "price": "€ 125,-" }
+    ]
+  },
+  {
+    "id": "neck-shoulder-massage",
+    "name": "Nek-schouder-hoofdmassage",
+    "image": "nek-schouder.avif",
+    "alt": "Nek-schouder-hoofdmassage bij Pesila",
+    "description": "<p>Spanning manifesteert zich bij veel mensen in de schouders en nek, vaak als gevolg van een verkeerde werkhouding en langdurig zittend werk. Daarnaast kunnen werkstress en een hoog werktempo leiden tot aanzienlijke spierspanning en verkramping. We vinden vaak te weinig manieren om zowel lichamelijke als geestelijke spanning los te laten, waardoor fysieke klachten zich kunnen ontwikkelen.</p><p>Als deze spanningen niet worden aangepakt en de spieren herhaaldelijk overbelast raken, kunnen er langdurige pijnklachten ontstaan. Zo kan bijvoorbeeld hoofdpijn optreden doordat de spieren in de nek, rug en schouders te gespannen raken, verharden en spierknopen vormen. Deze pijn kan vervolgens uitstralen naar andere delen van het lichaam, met verdere gevolgen.</p><p>Een rug-, nek- en schoudermassage biedt een ontspannende behandeling die zich volledig richt op deze problematische gebieden. Door middel van speciale massagetechnieken worden stijve en pijnlijke spieren losgemaakt, wat zorgt voor snelle verlichting van specifieke klachten.</p>",
+    "pricing": [
+      { "duration": "30 min.", "price": "€ 40,-" },
+      { "duration": "60 min.", "price": "€ 65,-" },
+      { "duration": "90 min.", "price": "€ 95,-" },
+      { "duration": "120 min.", "price": "€ 125,-" }
+    ]
+  },
+  {
+    "id": "hot-stone-massage",
+    "name": "Hot Stone Massage",
+    "image": "hotstone.avif",
+    "alt": "Hot stone massage bij Pesila",
+    "description": "<p>De stenen die bij een hot stone-massage worden gebruikt, zijn meestal gemaakt van <abbr title=\"Hard vulkanisch gesteente met hoge dichtheid dat warmte goed vasthoudt\">basalt</abbr>, een hard vulkanisch gesteente met een hoge dichtheid. Deze eigenschap maakt basalt zeer geschikt om warmte goed vast te houden. De stenen worden opgewarmd in een speciale verwarmingsunit, vaak gevuld met water en verwarmd tot een temperatuur van ongeveer 52 tot 54°C. Tijdens de massage hebben de stenen meestal een werktemperatuur van ongeveer 45°C.</p><p>De massage begint doorgaans met handmatige technieken, waarna de hete stenen worden ingezet. Enkele stenen worden op specifieke punten van het lichaam geplaatst, zoals de rug of handen, terwijl andere stenen door de masseur worden gebruikt om de spieren te masseren en te ontspannen.</p><p>In sommige stijlen van hot stone-massage worden ook gekoelde stenen gebruikt, meestal gemaakt van marmer. Deze stenen worden in ijswater gekoeld en dienen als aanvulling op de warme stenen voor een afwisselend thermisch effect.</p>",
+    "pricing": [
+      { "duration": "60 min.", "price": "€ 75,-" },
+      { "duration": "90 min.", "price": "€ 105,-" },
+      { "duration": "120 min.", "price": "€ 135,-" }
+    ]
+  },
+  {
+    "id": "duo-massage",
+    "name": "Duo-massage",
+    "image": "duo.avif",
+    "alt": "Duo-massage bij Pesila",
+    "description": "<p>Ontsnap aan de dagelijkse stress in onze traditionele Thaise massagesalon! Ervaar een duo-massage, waarbij jullie samen genieten van authentieke Thaise technieken die lichaam en geest ontspannen. Onze ervaren masseurs zorgen voor een harmonieuze en rustgevende ervaring.</p><p>Laat je verwennen in een serene omgeving. Onze duo-massage biedt perfecte ontspanning voor koppels of vrienden, met eeuwenoude Thaise methoden die spanning verlichten. Boek nu voor een unieke, gedeelde wellness-ervaring die jullie dichter bij elkaar brengt.</p>",
+    "pricing": [
+      { "duration": "60 min.", "price": "€ 125,-" },
+      { "duration": "90 min.", "price": "€ 190,-" },
+      { "duration": "120 min.", "price": "€ 250,-" }
+    ]
+  },
+  {
+    "id": "pregnancy-massage",
+    "name": "Zwangerschapsmassage",
+    "image": "zwangerschap.avif",
+    "alt": "Zwangerschapsmassage bij Pesila",
+    "description": "<p>Ervaar een unieke zwangerschapsmassage met Thaise invloeden in onze salon. Deze zachte, traditionele technieken verlichten spanning, rugpijn en vermoeidheid, terwijl ze je innerlijke rust versterken.</p><p>In een serene omgeving combineren onze ervaren masseuses Thaise wijsheid met zorg, voor een onvergetelijke, ontspannende ervaring voor aanstaande moeders.</p>",
+    "pricing": [
+      { "duration": "60 min.", "price": "€ 65,-" }
+    ]
+  },
+  {
+    "id": "sports-massage",
+    "name": "Sportmassage",
+    "image": "sport.avif",
+    "alt": "Sportmassage bij Pesila",
+    "description": "<p>Sportmassage is een specifieke vorm waarbij verschillende technieken worden gebruikt om de prestaties van sporters te verbeteren. Deze massagevorm is echter ook geschikt voor niet-sporters, omdat het bijdraagt aan het verbeteren van de algehele lichamelijke conditie.</p><p>Bij elke vorm van fysieke inspanning, groot of klein, ontstaan er afvalstoffen in het lichaam. Soms is het lichaam niet in staat deze afvalstoffen snel genoeg af te voeren, wat kan leiden tot stijve en pijnlijke spieren die minder goed functioneren. Spanningen of stijfheid in spieren en gewrichten kunnen niet alleen ongemak veroorzaken, maar je ook beperken in je dagelijkse activiteiten. Voor sporters is een snel herstel essentieel om bij de volgende training of activiteit weer optimaal te kunnen presteren.</p><p>Sportmassage helpt de doorbloeding te verbeteren en afvalstoffen sneller af te voeren. Dit vermindert spanning en stijfheid in de spieren, waardoor je weer in topvorm komt. Of je nu traint voor een marathon of een rondje hardloopt, een goede sportmasseur weet welke technieken nodig zijn om je te ondersteunen in het bereiken van jouw beste prestaties.</p>",
+    "pricing": [
+      { "duration": "60 min.", "price": "€ 65,-" },
+      { "duration": "90 min.", "price": "€ 95,-" },
+      { "duration": "120 min.", "price": "€ 125,-" }
+    ]
+  },
+  {
+    "id": "deep-tissue-massage",
+    "name": "<abbr title=\"Diepe weefselmassage waarbij langzame, krachtige technieken worden gebruikt om diepere spierlagen en bindweefsel te bereiken\">Deep Tissue Massage</abbr>",
+    "nameClean": "Deep Tissue Massage",
+    "image": "deep-tissue.avif",
+    "alt": "Deep tissue massage bij Pesila",
+    "description": "<p>Een deep tissue massage is een krachtige manier om de balans in je lichaam te herstellen. Diepe, langzame massagetechnieken bevorderen de energiestroom in je lichaam, waardoor opgebouwde stress en spanning geleidelijk worden losgelaten. Deze massage werkt niet alleen op fysiek niveau, maar heeft ook een kalmerend effect op de geest. Het is daarom bijzonder geschikt voor mensen met langdurige spanning in zowel lichaam als geest.</p><p>Het resultaat laat meestal niet lang op zich wachten. Al snel voel je je lichter en energieker, waardoor je weer klaar bent om de wereld aan te kunnen.</p>",
+    "pricing": [
+      { "duration": "60 min.", "price": "€ 65,-" },
+      { "duration": "90 min.", "price": "€ 95,-" },
+      { "duration": "120 min.", "price": "€ 125,-" }
+    ]
+  },
+  {
+    "id": "herbal-massage",
+    "name": "<abbr title=\"Massage waarbij verwarmde katoenen buidels gevuld met geneeskrachtige kruiden worden gebruikt om ontspanning en genezing te bevorderen\">Kruidenstempelmassage</abbr>",
+    "nameClean": "Kruidenstempelmassage",
+    "image": "kruidenstempel.avif",
+    "alt": "Kruidenstempelmassage bij Pesila",
+    "description": "<p>Een kruidenstempelmassage is een unieke massagetechniek waarbij gebruik wordt gemaakt van verwarmde kruidenstempels. Deze stempels, gemaakt van katoenen buideltjes gevuld met zorgvuldig geselecteerde kruiden, zijn gebaseerd op eeuwenoude Oosterse recepten. Vaak wordt een essentiële olie toegevoegd om de werking van de massage te versterken.</p><p>Door de warmte van de stempels komen de geuren en geneeskrachtige eigenschappen van de kruiden optimaal vrij, wat zorgt voor een diepe ontspanning en een weldadig effect op lichaam en geest.</p>",
+    "pricing": [
+      { "duration": "60 min.", "price": "€ 75,-" },
+      { "duration": "90 min.", "price": "€ 105,-" },
+      { "duration": "120 min.", "price": "€ 135,-" }
+    ]
+  }
+]

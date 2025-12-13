@@ -1,0 +1,17 @@
+{
+  "name": "Pesila Thai Massage",
+  "address": "Schiedamseweg 17A, 3026 AB Rotterdam",
+  "phone": "+31623899709",
+  "phoneDisplay": "06-23899709",
+  "email": "pesilawellness@gmail.com",
+  "url": "https://www.pesila.nl",
+  "year": 2025,
+  "googlePlaceId": "ChIJayy_TwM1xEcRGWhh99q1o48",
+  "googleAnalyticsId": "G-69BZRSS6JF",
+  "vacation": {
+    "startDate": "2025-12-19",
+    "endDate": "2026-01-18",
+    "returnDate": "2026-01-19",
+    "daysBeforeNotice": 5
+  }
+}

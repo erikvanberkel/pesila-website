@@ -1,0 +1,10 @@
+[
+  { "title": "Home", "url": "/#home" },
+  { "title": "Openingstijden", "url": "/#timetable" },
+  { "title": "Massages", "url": "/#services" },
+  { "title": "Recensies", "url": "/#testimonials" },
+  { "title": "Over ons", "url": "/#about" },
+  { "title": "Boek nu", "url": "/#booking" },
+  { "title": "Contact", "url": "/#contact" },
+  { "title": "Gallerij", "url": "/gallery/" }
+]

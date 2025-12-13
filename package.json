@@ -1,0 +1,17 @@
+{
+  "name": "pesila-website",
+  "version": "1.0.0",
+  "description": "Official website for Pesila Thai Massage, located at Schiedamseweg 17A, 3026 AB Rotterdam, Netherlands.",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "rimraf _site"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

@@ -1,0 +1,1019 @@
+---
+layout: base.njk
+title: Authentieke Thaise Massage
+description: Ontspan met authentieke Thaise massages bij Pesila Thai Massage in Rotterdam. Boek nu voor traditionele, aroma-olie, of sportmassages op Schiedamseweg 17A!
+keywords: Thaise massage Rotterdam, Pesila Thai Massage, traditionele Thaise massage, aroma-oliemassage, voetreflexmassage, nek-schouder-massage, hot stone massage, duo-massage, zwangerschapsmassage, sportmassage, deep tissue massage, kruidenstempelmassage, massage Rotterdam
+canonical: https://www.pesila.nl
+permalink: /index.html
+---
+
+{% block head_early %}
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt1_ykH6bXZmKuW3xi7pMZMn9qKEgQmFE&libraries=places&loading=async"></script>
+{% endblock %}
+
+{% block og_tags %}
+<meta property="og:title" content="Pesila Thai Massage Rotterdam - Authentieke Thaise Wellness" />
+<meta property="og:description" content="Ervaar traditionele Thaise massages bij Pesila in Rotterdam. Boek nu voor ontspanning en herstel op Schiedamseweg 17A!" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:url" content="https://www.pesila.nl" />
+<meta property="og:site_name" content="Pesila Thai Massage" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://www.pesila.nl/images/logo-color-512.png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:image:alt" content="Pesila Thai Massage Logo" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Pesila Thai Massage Rotterdam - Authentieke Thaise Wellness" />
+<meta name="twitter:description" content="Ervaar traditionele Thaise massages bij Pesila in Rotterdam. Boek nu voor ontspanning en herstel op Schiedamseweg 17A!" />
+<meta name="twitter:image" content="https://www.pesila.nl/images/logo-color-512.png" />
+{% endblock %}
+
+{% block head %}
+<style>
+  a#wahanda-online-booking-widget {
+    background: linear-gradient(135deg, #6b4e31 0%, #5a4128 100%);
+    color: #fff;
+    border-radius: 30px;
+    border: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: none;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(107, 78, 49, 0.3);
+  }
+  a#wahanda-online-booking-widget:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #8b6f47 0%, #6b4e31 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(107, 78, 49, 0.4);
+  }
+  .hero-section {
+    scroll-margin-top: 5rem;
+    margin-top: 63px;
+    background: url("/images/ladies1920.jpg") no-repeat center center;
+    background-size: cover;
+    background-image: url("/images/ladies1920.webp");
+    min-height: calc(100vh - 63px);
+    min-height: calc(100dvh - 63px);
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    padding: 0 0 2rem 0;
+    transition: min-height 0.5s;
+  }
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(45, 41, 38, 0.3) 0%, rgba(45, 41, 38, 0.6) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 1.5rem;
+    animation: slideUp 0.6s ease forwards;
+  }
+  .hero-content img {
+    margin-bottom: 2.5rem;
+    width: min(30vw, 280px);
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+  }
+  .hero-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+  .hero-content p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin: 0 auto 2rem;
+    max-width: 600px;
+    line-height: 1.7;
+    opacity: 0.95;
+  }
+  .hero-content small {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+  .btn-custom {
+    background: linear-gradient(135deg, #6b4e31 0%, #5a4128 100%);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(107, 78, 49, 0.3);
+  }
+  .btn-custom:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #8b6f47 0%, #6b4e31 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 78, 49, 0.4);
+  }
+  .btn-custom:focus,
+  .btn-custom:focus-visible {
+    outline: none !important;
+    box-shadow: 0 4px 15px rgba(107, 78, 49, 0.3);
+  }
+  .service-card,
+  .testimonial-card {
+    transition: all 0.3s ease;
+    background: linear-gradient(180deg, #ffffff 0%, #faf7f2 100%);
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(96, 68, 41, 0.08);
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(201, 169, 97, 0.1);
+    height: 100%;
+  }
+  .service-card:hover,
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(96, 68, 41, 0.12);
+  }
+  .service-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+  .service-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #604429;
+    padding: 1.5rem 1.5rem 0.75rem;
+    margin: 0;
+    position: relative;
+  }
+  .service-card .text-container {
+    padding: 0 1.5rem;
+  }
+  .service-card p {
+    margin-bottom: 1rem;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  .service-card {
+    cursor: pointer;
+  }
+  .service-card:focus {
+    outline: 3px solid #c9a961;
+    outline-offset: 2px;
+  }
+  .testimonial-card {
+    padding: 2rem;
+    background: linear-gradient(180deg, #ffffff 0%, #faf7f2 100%);
+  }
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #6b4e31;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 4px 0;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+  .text-container > div {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s;
+  }
+  .text-container > div > * {
+    overflow: hidden;
+  }
+  .text-container.show-full > div {
+    grid-template-rows: 1fr;
+  }
+  .pricing-table {
+    background: linear-gradient(180deg, #faf7f2 0%, #f5f0e8 100%);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin: 1rem 1.5rem 1.5rem;
+    border: 1px solid rgba(201, 169, 97, 0.2);
+  }
+  .pricing-table th,
+  .pricing-table td {
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+  }
+  .pricing-table tr:last-child td {
+    border-bottom: none;
+  }
+  .pricing-table th {
+    font-weight: 600;
+    color: #604429;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pricing-table td {
+    color: #555;
+  }
+  .pricing-table td:last-child {
+    color: #604429;
+    font-weight: 600;
+  }
+  .testimonial-card p {
+    font-style: italic;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .testimonial-card cite {
+    display: block;
+    margin-top: 1.25rem;
+    font-weight: 600;
+    color: #604429;
+    font-style: normal;
+  }
+  .contact-section .btn-custom {
+    background: #c9a961;
+    color: #3d2e1e;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .contact-section .btn-custom:hover {
+    background: #d9bc7a;
+    color: #3d2e1e;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  .contact-section a {
+    color: #e8d5a3;
+    text-decoration: underline;
+  }
+  .contact-section a:hover {
+    color: #fff;
+  }
+  .booking-section {
+    background: linear-gradient(180deg, #e8e1d9 0%, #ddd5c9 100%) !important;
+  }
+  .contact-section {
+    background: #5a4128 !important;
+    color: #fff;
+  }
+  .contact-section p,
+  .contact-section h2 {
+    color: #fff;
+  }
+  .form-control {
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 0.9rem 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+  }
+  .form-control:focus {
+    border-color: #c9a961;
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
+    background: #fff;
+  }
+  .form-control.is-invalid {
+    border-color: #dc3545;
+  }
+  .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875rem;
+  }
+  .map iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 16px;
+    margin-top: 3rem;
+    box-shadow: 0 8px 30px rgba(96, 68, 41, 0.15);
+  }
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background-color);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img.gallery {
+    width: 75%;
+    aspect-ratio: 4/3;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(96, 68, 41, 0.1);
+  }
+  .hero-vacation-notice {
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.95) 0%, rgba(168, 141, 74, 0.95) 100%);
+    padding: 0.9rem 1.75rem;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #2d2926;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  .star-rating {
+    color: #c9a961;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 2px;
+  }
+  .star-rating .empty-star {
+    color: #d4cfc5;
+  }
+  .review-author {
+    font-weight: 600;
+    color: #604429;
+    font-style: normal;
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  .google-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #604429 0%, #4a3420 100%);
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(96, 68, 41, 0.25);
+  }
+  .google-link:hover {
+    background: linear-gradient(135deg, #8b6f47 0%, #604429 100%);
+    color: #fff;
+  }
+  @keyframes slideUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @media (max-width: 768px) {
+    .hero-content img {
+      width: min(50vw, 200px);
+      margin-bottom: 2rem;
+    }
+    .hero-content h1 {
+      font-size: 1.75rem;
+    }
+    .hero-content p {
+      font-size: 0.95rem;
+    }
+    .hero-content small {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+    }
+    .hero-vacation-notice {
+      font-size: 0.85rem;
+      padding: 0.75rem 1.25rem;
+    }
+    .pricing-table {
+      font-size: 0.8rem;
+      margin: 1rem 1rem 1rem;
+      padding: 1rem;
+    }
+    .pricing-table th,
+    .pricing-table td {
+      padding: 0.4rem 0.25rem;
+    }
+    .service-card img {
+      height: 240px;
+    }
+    .service-card h3 {
+      font-size: 1.2rem;
+      padding: 1.25rem 1rem 0.5rem;
+    }
+    .service-card .text-container {
+      padding: 0 1rem;
+    }
+    img.gallery {
+      width: 90%;
+    }
+    .btn-custom {
+      padding: 12px 24px;
+      font-size: 0.95rem;
+    }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pesila Thai Massage",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Schiedamseweg 17A",
+    "addressLocality": "Rotterdam",
+    "postalCode": "3026 AB",
+    "addressCountry": "NL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.9154,
+    "longitude": 4.4658
+  },
+  "telephone": "+31623899709",
+  "email": "pesilawellness@gmail.com",
+  "url": "https://www.pesila.nl",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "00:00",
+      "closes": "00:00",
+      "description": "Op afspraak"
+    }
+  ],
+  "image": "https://www.pesila.nl/images/logo-color-512.png",
+  "description": "Authentieke Thaise massages in Rotterdam voor ontspanning en herstel bij Pesila Thai Massage op Schiedamseweg 17A.",
+  "priceRange": "€40-€220",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Massage Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Traditionele Thaise Massage",
+          "description": "60 minuten traditionele Thaise massage voor ontspanning en balans."
+        },
+        "price": "65",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Aroma-olie Massage",
+          "description": "60 minuten aroma-oliemassage met etherische oliën."
+        },
+        "price": "65",
+        "priceCurrency": "EUR"
+      }
+    ]
+  }
+}
+</script>
+{% endblock %}
+
+{% block preloader %}
+<div id="preloader">
+  <img src="/images/logo.png" alt="Pesila Thai Massage wordt geladen" style="max-width: 100px" />
+</div>
+{% endblock %}
+
+<!-- Hero Section -->
+<section id="home" class="hero-section" aria-labelledby="hero-heading">
+  <div class="hero-content">
+    <img src="/images/logo-white-1024.png" alt="Wit logo van Pesila Thai Massage" />
+    <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
+    <p>Ontspan en herstel met traditionele Thaise massages bij Pesila Thai Massage op Schiedamseweg 17A, Rotterdam.</p>
+    <p><a href="#booking" class="btn btn-primary btn-custom">Boek nu jouw massage</a></p>
+    <small class="small mt-4">✓ Professionele therapeutische massage</small>
+    <p class="hero-vacation-notice">🌴 VAKANTIE: Gesloten van 19 december 2025 t/m 18 januari 2026</p>
+  </div>
+</section>
+
+<!-- Timetable Section -->
+<section id="timetable" class="timetable-section" aria-labelledby="timetable-heading">
+  <div class="container">
+    <h2 id="timetable-heading" class="section-title">Onze openingstijden</h2>
+    <p class="text-center">Plan je bezoek aan Pesila Thai Massage op een tijd die jou uitkomt.</p>
+
+    <!-- Vacation Notice -->
+    <div class="alert alert-info vacation-alert" role="alert" aria-live="polite" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #0c5460;">
+      <h4 class="alert-heading" style="margin-bottom: 0.75rem;">🌴 Vakantie - Tijdelijk gesloten</h4>
+      <p style="margin-bottom: 0.5rem;"><strong>Wij zijn gesloten van 19 december 2025 t/m 18 januari 2026</strong></p>
+      <p style="margin-bottom: 0.5rem;">We genieten van een welverdiende vakantie en zijn weer terug op 19 januari 2026.</p>
+      <p style="margin-bottom: 0;">Bedankt voor uw begrip en tot snel!</p>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <table class="table" aria-label="Openingstijden van Pesila Thai Massage">
+          <tbody>
+            <tr>
+              <td class="text-end w-50">Maandag - Zaterdag</td>
+              <td>10:00 - 21:00</td>
+            </tr>
+            <tr>
+              <td class="text-end w-50">Zondag</td>
+              <td>Op afspraak <span class="text-nowrap">(neem contact op)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <img src="/images/gallery/entree1.jpg" class="gallery" loading="lazy" alt="Entree van Pesila Thai Massage in Rotterdam" />
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section" aria-labelledby="services-heading">
+  <div class="container">
+    <h2 id="services-heading" class="section-title">Massages & Prijzen</h2>
+    <p class="text-center">Kies uit ons brede aanbod van traditionele en moderne massages, afgestemd op jouw behoeften.</p>
+    <div class="row">
+      {%- for service in services -%}
+        {% include "service-card.njk" %}
+      {%- endfor -%}
+    </div>
+    <p class="text-center">
+      <a href="#booking" class="btn btn-primary btn-custom">Boek je massage vandaag</a>
+    </p>
+    <div class="text-center mt-5">
+      <img src="/images/gallery/entree2.jpg" class="gallery" loading="lazy" alt="Ingang van Pesila Thai Massage in Rotterdam" />
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <h2 id="testimonials-heading" class="section-title">Ervaringen van Onze Klanten</h2>
+
+    <!-- Google Reviews Container (dynamically populated) -->
+    <div id="google-reviews" class="row">
+      <noscript>
+        <div class="col-12 text-center">
+          <p class="text-muted">JavaScript is vereist om recensies te laden.</p>
+        </div>
+      </noscript>
+    </div>
+
+    <!-- Link to Google Reviews -->
+    <div class="text-center">
+      <a href="https://search.google.com/local/reviews?placeid={{ site.googlePlaceId }}" target="_blank" rel="noopener" class="google-link" id="google-reviews-link">
+        📝 Bekijk alle recensies op Google
+      </a>
+    </div>
+
+    <div class="text-center mt-5">
+      <img src="/images/gallery/room1.jpg" class="gallery" loading="lazy" alt="Behandelkamer van Pesila Thai Massage in Rotterdam" />
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section" aria-labelledby="about-heading">
+  <div class="container">
+    <h2 id="about-heading" class="section-title">Wie wij zijn</h2>
+    <div class="card">
+      <div class="card-body">
+        <p class="text-center">
+          Bij Pesila Thai Massage in Rotterdam bieden we authentieke Thaise wellness met persoonlijke zorg. Onze ervaren masseuses helpen je spanning los te laten en je energie te herstellen.
+        </p>
+        <p class="text-center">
+          Geniet van een rustgevende sfeer en sluit je behandeling af met een kopje thee. Boek vandaag nog voor een moment van pure ontspanning!
+        </p>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <img src="/images/gallery/room2.jpg" class="gallery" loading="lazy" alt="Behandelkamer van Pesila Thai Massage in Rotterdam" />
+    </div>
+  </div>
+</section>
+
+<!-- Booking Section -->
+<section id="booking" class="booking-section" aria-labelledby="booking-heading">
+  <div class="container">
+    <h2 class="section-title">Maak nu je afspraak</h2>
+    <div class="alert alert-warning" role="alert" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #856404;">
+      <strong>⚠️ Belangrijk:</strong> Wij bieden uitsluitend professionele therapeutische massages in een respectvolle omgeving. Ongepast gedrag wordt niet getolereerd.
+    </div>
+
+    <!-- Vacation Notice -->
+    <div class="alert alert-info vacation-alert" role="alert" aria-live="polite" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #0c5460;">
+      <h4 class="alert-heading" style="margin-bottom: 0.75rem;">🌴 Vakantieperiode</h4>
+      <p style="margin-bottom: 0.5rem;"><strong>Wij accepteren geen nieuwe boekingen voor 19 december 2025 - 18 januari 2026</strong></p>
+      <p style="margin-bottom: 0;">Vanaf 19 januari 2026 zijn we weer volledig beschikbaar voor afspraken.</p>
+    </div>
+
+    <p class="text-center mt-5">
+      Als je direct online een afspraak wilt maken op basis van onze beschikbaarheid, kies dan Boek nu.<br />
+      Snel, eenvoudig en 24/7 beschikbaar!
+    </p>
+    <script src="https://widget.treatwell.nl/common/venue-menu/javascript/widget-button.js?v1"></script>
+    <script>
+      (function () {
+        var link = document.createElement("link");
+        link.type = "text/css";
+        link.href = "https://widget.treatwell.nl/common/venue-menu/css/widget-button.css";
+        link.rel = "stylesheet";
+        link.media = "screen";
+        document.getElementsByTagName("head")[0].appendChild(link);
+      })();
+    </script>
+    <p class="text-center">
+      <a
+        href="https://www.treatwell.nl/plaats/pesila-thai-massage/"
+        id="wahanda-online-booking-widget"
+        onclick='wahanda.openOnlineBookingWidget("https://widget.treatwell.nl/salon/482688/menu/"); return false;'
+        target="_blank"
+      >
+        <span>Boek nu</span>
+      </a>
+    </p>
+
+    <p class="text-center mt-5">Als je vragen hebt, vul dan het formulier in en wij nemen zo snel mogelijk contact met je op.</p>
+    <div id="form-instructions" class="text-center mb-3" style="font-size: 0.95rem; color: #555;">
+      <strong>Let op:</strong> Vul minimaal je e-mailadres of telefoonnummer in, zodat we contact met je kunnen opnemen.
+    </div>
+    <form id="bookingForm" novalidate action="https://formsubmit.co/df50c71d97c0a3fa7a5952d3850057c8" method="POST" aria-describedby="form-instructions">
+      <input type="hidden" name="_redirect" value="https://www.pesila.nl/" />
+      <input type="hidden" name="_subject" value="Nieuwe afspraak - Pesila Thai Massage" />
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="fullName" class="visually-hidden">Naam</label>
+          <input type="text" name="Name" class="form-control" id="fullName" placeholder="Je naam" autocomplete="name" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="email" class="visually-hidden">E-mail</label>
+          <input type="email" name="email" class="form-control" id="email" placeholder="Je e-mailadres" autocomplete="email" aria-describedby="email-error email-help" />
+          <small id="email-help" class="form-text text-muted d-none">Bijvoorbeeld: naam@voorbeeld.nl</small>
+          <div class="invalid-feedback" id="email-error">Vul een geldig e-mailadres in of geef een telefoonnummer op</div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="phone" class="visually-hidden">Telefoonnummer</label>
+          <input type="tel" name="Telephone" class="form-control" id="phone" placeholder="Je telefoonnummer" autocomplete="tel" aria-describedby="phone-error phone-help" />
+          <small id="phone-help" class="form-text text-muted d-none">Bijvoorbeeld: 06-12345678 of +31612345678</small>
+          <div class="invalid-feedback" id="phone-error">Vul een geldig telefoonnummer in of geef een e-mailadres op</div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="service" class="visually-hidden">Massage</label>
+          <select name="Service" class="form-control" id="service" aria-describedby="service-help">
+            <option value="" disabled selected>- Kies je massage -</option>
+            {%- for service in services -%}
+            <option>{{ service.nameClean or service.name | striptags }}</option>
+            {%- endfor -%}
+          </select>
+          <small id="service-help" class="form-text text-muted d-none">Meest populair: Traditionele Thaise massage</small>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="duration" class="visually-hidden">Duur</label>
+          <select name="Duration" class="form-control" id="duration" aria-describedby="duration-help">
+            <option value="" disabled selected>- Kies je tijdsduur -</option>
+            <option>30 minuten</option>
+            <option>60 minuten</option>
+            <option>90 minuten</option>
+            <option>120 minuten</option>
+          </select>
+          <small id="duration-help" class="form-text text-muted d-none">Prijzen variëren per massage en duur - zie bovenstaande prijslijst</small>
+        </div>
+        <div class="col-12">
+          <label for="notes" class="visually-hidden">Bericht</label>
+          <textarea name="Message" class="form-control" id="notes" rows="4" placeholder="Eventuele opmerkingen en gewenste datum/tijd"></textarea>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary btn-custom mt-3">Verstuur je aanvraag</button>
+        </div>
+      </div>
+    </form>
+    <div class="map">
+      <iframe
+        title="Locatie van Pesila Thai Massage op Google Maps"
+        src="https://www.google.com/maps?q=Pesila+Schiedamseweg+17A,+Rotterdam,+Netherlands&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section" aria-labelledby="contact-heading">
+  <div class="container">
+    <h2 id="contact-heading" class="section-title">Neem contact met ons op</h2>
+    <p class="text-center">Heb je vragen of wil je een afspraak maken? Neem contact op via telefoon, e-mail of bezoek ons in Rotterdam!</p>
+    <p class="text-center">
+      Telefoon: <a href="tel:{{ site.phone }}" class="text-nowrap">{{ site.phoneDisplay }}</a><br />
+      E-mail: <a href="mailto:{{ site.email }}" class="text-nowrap">{{ site.email }}</a><br />
+      Adres: {{ site.address | replace(", ", ", <span class=\"text-nowrap\">") | safe }}</span>
+    </p>
+    <p class="text-center">
+      <a href="#booking" class="btn btn-primary btn-custom">Boek direct</a>
+    </p>
+    <div class="text-center mt-5">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="/images/gallery/w1920/photo-16.avif" type="image/avif" />
+        <source media="(min-width: 768px)" srcset="/images/gallery/w1280/photo-16.avif" type="image/avif" />
+        <source media="(min-width: 320px)" srcset="/images/gallery/w640/photo-16.avif" type="image/avif" />
+        <source media="(max-width: 319px)" srcset="/images/gallery/w320/photo-16.avif" type="image/avif" />
+        <source media="(min-width: 1200px)" srcset="/images/gallery/w1920/photo-16.webp" type="image/webp" />
+        <source media="(min-width: 768px)" srcset="/images/gallery/w1280/photo-16.webp" type="image/webp" />
+        <source media="(min-width: 320px)" srcset="/images/gallery/w640/photo-16.webp" type="image/webp" />
+        <source media="(max-width: 319px)" srcset="/images/gallery/w320/photo-16.webp" type="image/webp" />
+        <img class="gallery" src="/images/gallery/w320/photo-16.avif" alt="Voorgevel van Pesila Thai Massage in Rotterdam" loading="lazy" />
+      </picture>
+    </div>
+  </div>
+</section>
+
+{% block scripts %}
+<script async>
+  (function () {
+    "use strict";
+
+    const CONFIG = {
+      vacation: {
+        startDate: new Date("{{ site.vacation.startDate }}T00:00:00"),
+        endDate: new Date("{{ site.vacation.endDate }}T23:59:59"),
+        daysBeforeNotice: {{ site.vacation.daysBeforeNotice }}
+      },
+      google: {
+        placeId: "{{ site.googlePlaceId }}",
+        cacheDuration: 24 * 60 * 60 * 1000,
+        minRating: 4,
+        maxReviews: 4,
+        retryDelay: 100
+      },
+      validation: {
+        emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        phoneRegex: /^\+?[\d\s\-()]{6,}$/
+      }
+    };
+
+    const handleVacationNotices = () => {
+      const { startDate, endDate, daysBeforeNotice } = CONFIG.vacation;
+      const showNoticeFrom = new Date(startDate.getTime() - daysBeforeNotice * 24 * 60 * 60 * 1000);
+      const now = new Date();
+
+      if (now < showNoticeFrom || now > endDate) {
+        document.querySelectorAll(".vacation-alert, .hero-vacation-notice").forEach((notice) => {
+          notice.style.display = "none";
+        });
+      }
+    };
+
+    const hidePreloader = () => {
+      window.addEventListener("load", () => {
+        document.getElementById("preloader").style.display = "none";
+      });
+    };
+
+    const initFormValidation = () => {
+      const form = document.getElementById("bookingForm");
+      const emailInput = document.getElementById("email");
+      const phoneInput = document.getElementById("phone");
+
+      const validateContactFields = () => {
+        const emailValue = emailInput.value.trim();
+        const phoneValue = phoneInput.value.trim();
+        let isValid = true;
+
+        emailInput.classList.remove("is-invalid", "is-valid");
+        phoneInput.classList.remove("is-invalid", "is-valid");
+
+        if (!emailValue && !phoneValue) {
+          emailInput.classList.add("is-invalid");
+          phoneInput.classList.add("is-invalid");
+          return false;
+        }
+
+        if (emailValue && !CONFIG.validation.emailRegex.test(emailValue)) {
+          emailInput.classList.add("is-invalid");
+          isValid = false;
+        } else if (emailValue) {
+          emailInput.classList.add("is-valid");
+        }
+
+        if (phoneValue && !CONFIG.validation.phoneRegex.test(phoneValue)) {
+          phoneInput.classList.add("is-invalid");
+          isValid = false;
+        } else if (phoneValue) {
+          phoneInput.classList.add("is-valid");
+        }
+
+        return isValid;
+      };
+
+      emailInput.addEventListener("blur", validateContactFields);
+      phoneInput.addEventListener("blur", validateContactFields);
+
+      form.addEventListener("submit", (event) => {
+        if (!validateContactFields()) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const firstInvalid = form.querySelector(".is-invalid");
+          if (firstInvalid) {
+            firstInvalid.focus();
+          }
+        }
+      });
+    };
+
+    const initNavigation = () => {
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+      const sections = document.querySelectorAll("section[id]");
+
+      document.querySelector(".navbar-nav").addEventListener("click", (event) => {
+        if (event.target.classList.contains("nav-link")) {
+          document.querySelector("#navbar-toggle").checked = false;
+        }
+      });
+
+      const updateActiveLink = () => {
+        const scrollY = window.scrollY + 100;
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute("id");
+
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            navLinks.forEach((link) => {
+              link.classList.remove("active");
+              if (link.getAttribute("href")?.includes(`#${sectionId}`)) {
+                link.classList.add("active");
+              }
+            });
+          }
+        });
+      };
+
+      window.addEventListener("scroll", updateActiveLink, { passive: true });
+      updateActiveLink();
+    };
+
+    const initServiceCards = () => {
+      document.querySelectorAll(".service-card").forEach((card) => {
+        const toggleCard = () => {
+          const textContainer = card.querySelector(".text-container");
+          textContainer.classList.toggle("show-full");
+          card.setAttribute("aria-expanded", textContainer.classList.contains("show-full"));
+        };
+
+        card.addEventListener("click", toggleCard);
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleCard();
+          }
+        });
+      });
+    };
+
+    const GoogleReviews = {
+      async fetch() {
+        const cached = localStorage.getItem("google_reviews_cache");
+
+        if (cached) {
+          const { data, timestamp } = JSON.parse(cached);
+          if (Date.now() - timestamp < CONFIG.google.cacheDuration) {
+            return data;
+          }
+        }
+
+        if (typeof google === "undefined" || !google.maps?.places) {
+          return null;
+        }
+
+        return new Promise((resolve) => {
+          const service = new google.maps.places.PlacesService(document.createElement("div"));
+          const request = {
+            placeId: CONFIG.google.placeId,
+            fields: ["reviews", "rating", "user_ratings_total", "name"]
+          };
+
+          service.getDetails(request, (place, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK && place?.reviews) {
+              const placeData = {
+                reviews: place.reviews,
+                rating: place.rating,
+                user_ratings_total: place.user_ratings_total,
+                name: place.name
+              };
+
+              localStorage.setItem("google_reviews_cache", JSON.stringify({
+                data: placeData,
+                timestamp: Date.now()
+              }));
+
+              resolve(placeData);
+            } else {
+              resolve(null);
+            }
+          });
+        });
+      },
+
+      generateStars(rating) {
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 >= 0.5;
+        let html = "";
+
+        for (let i = 0; i < 5; i++) {
+          html += i < fullStars || (i === fullStars && hasHalfStar)
+            ? "★"
+            : '<span class="empty-star">★</span>';
+        }
+
+        return html;
+      },
+
+      render(placeData) {
+        if (!placeData?.reviews?.length) {
+          return;
+        }
+
+        const container = document.getElementById("google-reviews");
+        const topReviews = placeData.reviews
+          .filter((review) => review.rating >= CONFIG.google.minRating)
+          .sort((a, b) => b.time - a.time)
+          .slice(0, CONFIG.google.maxReviews);
+
+        container.innerHTML = topReviews
+          .map((review) => `
+            <div class="col-xl-3 col-md-6 mb-4">
+              <article class="testimonial-card">
+                <div class="star-rating">${this.generateStars(review.rating)}</div>
+                <p class="card-text">"${review.text || ""}"</p>
+                <cite class="review-author">${review.author_name || "Anoniem"}</cite>
+              </article>
+            </div>
+          `)
+          .join("");
+
+        const googleLink = document.getElementById("google-reviews-link");
+        if (googleLink) {
+          googleLink.href = `https://search.google.com/local/reviews?placeid=${CONFIG.google.placeId}`;
+        }
+      },
+
+      init() {
+        if (typeof google === "undefined" || !google.maps?.places) {
+          setTimeout(() => this.init(), CONFIG.google.retryDelay);
+          return;
+        }
+
+        this.fetch()
+          .then((data) => requestAnimationFrame(() => this.render(data)))
+          .catch((error) => console.error("Google Reviews: Initialization failed", error));
+      }
+    };
+
+    const init = () => {
+      handleVacationNotices();
+      hidePreloader();
+      initFormValidation();
+      initNavigation();
+      initServiceCards();
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => GoogleReviews.init());
+      } else {
+        GoogleReviews.init();
+      }
+    };
+
+    init();
+  })();
+</script>
+{% endblock %}

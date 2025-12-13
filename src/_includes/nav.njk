@@ -1,0 +1,23 @@
+<a href="#main-content" class="skip-link">Spring naar hoofdinhoud</a>
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top" aria-label="Hoofdnavigatie">
+    <div class="container">
+      <a class="navbar-brand" href="/#home">
+        <img src="/images/logo.png" alt="Pesila Thai Massage Logo" />
+      </a>
+      <input type="checkbox" id="navbar-toggle" class="d-none" />
+      <label for="navbar-toggle" class="navbar-toggler" aria-label="Navigatie in-/uitschakelen">
+        <span class="navbar-toggler-icon"></span>
+      </label>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          {%- for item in navigation -%}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
