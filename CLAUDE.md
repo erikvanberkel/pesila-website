@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static HTML website for Pesila Thai Massage (www.pesila.nl), a Thai massage salon in Rotterdam, Netherlands. No build process - pure HTML/CSS/JS deployed directly to GitHub Pages.
+Static HTML website for Pesila Thai Massage (www.pesila.nl), a Thai massage salon in Rotterdam, Netherlands. Deployed via GitHub Actions to GitHub Pages.
 
 ## Development Commands
 
@@ -12,8 +12,8 @@ Static HTML website for Pesila Thai Massage (www.pesila.nl), a Thai massage salo
 # Local development (no build required)
 python -m http.server 8000    # or: npx http-server
 
-# Deploy (automatic via GitHub Pages)
-git push origin master        # Changes go live within minutes
+# Deploy (via GitHub Actions)
+git push origin master        # Triggers workflow, injects secrets, deploys
 
 # Code formatting
 npx prettier --write .        # Uses .prettierrc config
@@ -57,6 +57,19 @@ GoogleReviews.init()      // Dynamic loading with cache
 | FormSubmit.co | Contact form | Phone/email displayed |
 | Google Maps API | Reviews | External link to Google Reviews |
 | Google Analytics | Tracking | Site works without it |
+
+## GitHub Secrets
+
+The Google Maps API key is stored as a GitHub secret and injected during deployment.
+
+**Required secret:** `GOOGLE_MAPS_API_KEY`
+
+To set up (repository owner):
+1. Go to repository Settings → Secrets and variables → Actions
+2. Click "New repository secret"
+3. Name: `GOOGLE_MAPS_API_KEY`, Value: the API key
+
+For local development, Google Reviews will not load (requires valid API key). The site gracefully degrades to show a link to Google Reviews instead.
 
 ## Important Conventions
 
