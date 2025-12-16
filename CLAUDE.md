@@ -82,6 +82,10 @@ Four breakpoints: 320px, 640px, 1280px, 1920px in `images/gallery/w*/`
 - Mobile nav toggle is CSS-only (checkbox hack)
 - `<noscript>` tags hide preloader and show fallback messages
 
+### Git Commits
+- Do NOT add Claude references, co-author tags, or "Generated with Claude Code" to commit messages
+- Keep commit messages concise and focused on what changed
+
 ## Business Context
 
 - **Address**: Schiedamseweg 17A, 3026 AB Rotterdam

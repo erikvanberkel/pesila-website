@@ -10,7 +10,7 @@
       gtag("js", new Date());
       gtag("config", "G-69BZRSS6JF");
     </script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt1_ykH6bXZmKuW3xi7pMZMn9qKEgQmFE&libraries=places&loading=async"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpL6NK9wD3dnd_mrCsvfSbVE7ofnl_l3o&libraries=places&loading=async"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pesila Thai Massage Rotterdam | Authentieke Thaise Massage</title>
@@ -405,19 +405,6 @@
         box-shadow: 0 8px 25px rgba(96, 68, 41, 0.1);
       }
 
-      .hero-vacation-notice {
-        background: linear-gradient(135deg, rgba(201, 169, 97, 0.95) 0%, rgba(168, 141, 74, 0.95) 100%);
-        padding: 0.9rem 1.75rem;
-        border-radius: 30px;
-        display: inline-block;
-        margin-top: 1.5rem;
-        font-weight: 600;
-        font-size: 1rem;
-        color: #2d2926;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-      }
-
       .star-rating {
         color: #c9a961;
         font-size: 1.1rem;
@@ -480,10 +467,6 @@
         .hero-content small {
           font-size: 0.8rem;
           padding: 0.4rem 1rem;
-        }
-        .hero-vacation-notice {
-          font-size: 0.85rem;
-          padding: 0.75rem 1.25rem;
         }
         .pricing-table {
           font-size: 0.8rem;
@@ -644,8 +627,7 @@
         <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
         <p>Ontspan en herstel met traditionele Thaise massages bij Pesila Thai Massage op Schiedamseweg 17A, Rotterdam.</p>
         <p><a href="#booking" class="btn btn-primary btn-custom">Boek nu jouw massage</a></p>
-        <small class="small mt-4">✓ Professionele therapeutische massage</small>
-        <p class="hero-vacation-notice">🌴 VAKANTIE: Gesloten van 19 december 2025 t/m 18 januari 2026</p>
+        <small class="small mb-4">✓ Professionele therapeutische massage</small>
       </div>
     </section>
 
@@ -654,14 +636,6 @@
       <div class="container">
         <h2 id="timetable-heading" class="section-title">Onze openingstijden</h2>
         <p class="text-center">Plan je bezoek aan Pesila Thai Massage op een tijd die jou uitkomt.</p>
-
-        <!-- Vacation Notice -->
-        <div class="alert alert-info vacation-alert" role="alert" aria-live="polite" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #0c5460;">
-          <h4 class="alert-heading" style="margin-bottom: 0.75rem;">🌴 Vakantie - Tijdelijk gesloten</h4>
-          <p style="margin-bottom: 0.5rem;"><strong>Wij zijn gesloten van 19 december 2025 t/m 18 januari 2026</strong></p>
-          <p style="margin-bottom: 0.5rem;">We genieten van een welverdiende vakantie en zijn weer terug op 19 januari 2026.</p>
-          <p style="margin-bottom: 0;">Bedankt voor uw begrip en tot snel!</p>
-        </div>
 
         <div class="card">
           <div class="card-body">
@@ -1173,13 +1147,6 @@
           <strong>⚠️ Belangrijk:</strong> Wij bieden uitsluitend professionele therapeutische massages in een respectvolle omgeving. Ongepast gedrag wordt niet getolereerd.
         </div>
 
-        <!-- Vacation Notice -->
-        <div class="alert alert-info vacation-alert" role="alert" aria-live="polite" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #0c5460;">
-          <h4 class="alert-heading" style="margin-bottom: 0.75rem;">🌴 Vakantieperiode</h4>
-          <p style="margin-bottom: 0.5rem;"><strong>Wij accepteren geen nieuwe boekingen voor 19 december 2025 - 18 januari 2026</strong></p>
-          <p style="margin-bottom: 0;">Vanaf 19 januari 2026 zijn we weer volledig beschikbaar voor afspraken.</p>
-        </div>
-
         <p class="text-center mt-5">
           Als je direct online een afspraak wilt maken op basis van onze beschikbaarheid, kies dan Boek nu.<br />
           Snel, eenvoudig en 24/7 beschikbaar!
@@ -1324,11 +1291,6 @@
 
         // ==================== Configuration ====================
         const CONFIG = {
-          vacation: {
-            startDate: new Date("2025-12-19T00:00:00"),
-            endDate: new Date("2026-01-18T23:59:59"),
-            daysBeforeNotice: 5
-          },
           google: {
             placeId: "ChIJayy_TwM1xEcRGWhh99q1o48",
             cacheDuration: 24 * 60 * 60 * 1000,
@@ -1339,19 +1301,6 @@
           validation: {
             emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
             phoneRegex: /^\+?[\d\s\-()]{6,}$/
-          }
-        };
-
-        // ==================== Vacation Notice Management ====================
-        const handleVacationNotices = () => {
-          const { startDate, endDate, daysBeforeNotice } = CONFIG.vacation;
-          const showNoticeFrom = new Date(startDate.getTime() - daysBeforeNotice * 24 * 60 * 60 * 1000);
-          const now = new Date();
-
-          if (now < showNoticeFrom || now > endDate) {
-            document.querySelectorAll(".vacation-alert, .hero-vacation-notice").forEach((notice) => {
-              notice.style.display = "none";
-            });
           }
         };
 
@@ -1483,40 +1432,45 @@
               }
             }
 
-            if (typeof google === "undefined" || !google.maps?.places) {
+            if (typeof google === "undefined" || !google.maps?.places?.Place) {
               console.error("Google Reviews: Google Maps API not loaded");
               return null;
             }
 
-            return new Promise((resolve) => {
-              const service = new google.maps.places.PlacesService(document.createElement("div"));
-              const request = {
-                placeId: CONFIG.google.placeId,
-                fields: ["reviews", "rating", "user_ratings_total", "name"]
-              };
-
-              service.getDetails(request, (place, status) => {
-                if (status === google.maps.places.PlacesServiceStatus.OK && place?.reviews) {
-                  const placeData = {
-                    reviews: place.reviews,
-                    rating: place.rating,
-                    user_ratings_total: place.user_ratings_total,
-                    name: place.name
-                  };
-
-                  localStorage.setItem("google_reviews_cache", JSON.stringify({
-                    data: placeData,
-                    timestamp: Date.now()
-                  }));
-
-                  console.log("Google Reviews: Fetched fresh data from API");
-                  resolve(placeData);
-                } else {
-                  console.error("Google Reviews: Failed to fetch", status);
-                  resolve(null);
-                }
+            try {
+              const place = new google.maps.places.Place({ id: CONFIG.google.placeId });
+              const { place: placeResult } = await place.fetchFields({
+                fields: ["reviews", "rating", "userRatingCount", "displayName"]
               });
-            });
+
+              if (placeResult?.reviews?.length) {
+                const placeData = {
+                  reviews: placeResult.reviews.map(review => ({
+                    rating: review.rating,
+                    text: review.text,
+                    author_name: review.authorAttribution?.displayName || "Anoniem",
+                    time: review.publishTime ? new Date(review.publishTime).getTime() / 1000 : 0
+                  })),
+                  rating: placeResult.rating,
+                  user_ratings_total: placeResult.userRatingCount,
+                  name: placeResult.displayName
+                };
+
+                localStorage.setItem("google_reviews_cache", JSON.stringify({
+                  data: placeData,
+                  timestamp: Date.now()
+                }));
+
+                console.log("Google Reviews: Fetched fresh data from API");
+                return placeData;
+              }
+
+              console.error("Google Reviews: No reviews found");
+              return null;
+            } catch (error) {
+              console.error("Google Reviews: Failed to fetch", error);
+              return null;
+            }
           },
 
           generateStars(rating) {
@@ -1566,7 +1520,7 @@
           },
 
           init() {
-            if (typeof google === "undefined" || !google.maps?.places) {
+            if (typeof google === "undefined" || !google.maps?.places?.Place) {
               setTimeout(() => this.init(), CONFIG.google.retryDelay);
               return;
             }
@@ -1580,7 +1534,6 @@
 
         // ==================== Initialization ====================
         const init = () => {
-          handleVacationNotices();
           hidePreloader();
           initFormValidation();
           initNavigation();
