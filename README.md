@@ -107,7 +107,7 @@ pesila-website/
     └── index.html
 ```
 
-## Recent Improvements (December 2025)
+## Recent Improvements (December 2026)
 
 ### Accessibility Enhancements (WCAG 2.1 Level AA)
 - ✅ Fixed language declaration in gallery.html (nl instead of en)
@@ -221,4 +221,4 @@ This is a production website for a local business. For bug reports or suggestion
 
 ## License
 
-© 2025 Pesila Thai Massage. All rights reserved.
+© 2026 Pesila Thai Massage. All rights reserved.
