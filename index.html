@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
   <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69BZRSS6JF"></script>
@@ -6,7 +6,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
-      } 
+      }
       gtag("js", new Date());
       gtag("config", "G-69BZRSS6JF");
     </script>
@@ -24,13 +24,8 @@
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Pesila Thai Massage" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" preload />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap"
-      as="style"
-      preload
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" type="image/png" href="images/icon.png" />
     <link rel="canonical" href="https://www.pesila.nl" />
@@ -186,6 +181,10 @@
         height: 100%;
       }
 
+      .service-card {
+        position: relative;
+      }
+
       .service-card:hover,
       .testimonial-card:hover {
         transform: translateY(-4px);
@@ -210,7 +209,6 @@
         position: relative;
       }
 
-      
       .service-card .text-container {
         padding: 0 1.5rem;
       }
@@ -252,17 +250,29 @@
       }
 
       .text-container > div {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.5s;
+        max-height: 3.5em;
+        overflow: hidden;
+        position: relative;
+        transition: max-height 0.5s ease;
       }
 
-      .text-container > div > * {
-        overflow: hidden;
+      .text-container > div::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2em;
+        background: linear-gradient(transparent, #faf7f2);
+        transition: opacity 0.3s ease;
       }
 
       .text-container.show-full > div {
-        grid-template-rows: 1fr;
+        max-height: 500px;
+      }
+
+      .text-container.show-full > div::after {
+        opacity: 0;
       }
 
       .pricing-table {
@@ -562,6 +572,54 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Moet ik van tevoren reserveren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, het is aan te raden om van tevoren een afspraak te maken via onze online boekingstool of telefonisch. Walk-ins zijn welkom, maar een reservering garandeert beschikbaarheid."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is er parkeergelegenheid in de buurt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Er is straatparkeren beschikbaar op de Schiedamseweg en omliggende straten. Het dichtstbijzijnde parkeergarage is op loopafstand."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kan ik een massage cadeau geven?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja! Neem contact met ons op voor een cadeaubon. Een massage is een perfect cadeau voor elke gelegenheid."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wat als ik mijn afspraak wil annuleren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Annuleringen zijn kosteloos tot 24 uur voor de afspraak. Neem contact met ons op via telefoon of WhatsApp."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is de massage geschikt bij lichamelijke klachten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Onze masseuses zijn ervaren in het werken met verschillende klachten. Laat het ons van tevoren weten, zodat we de massage kunnen aanpassen aan jouw behoeften."
+            }
+          }
+        ]
+      }
+    </script>
     <noscript>
       <style>
         #preloader {
@@ -632,7 +690,7 @@
     </section>
 
     <!-- Timetable Section -->
-    <section id="timetable" class="timetable-section" aria-labelledby="timetable-heading">
+    <section id="timetable" class="timetable-section reveal" aria-labelledby="timetable-heading">
       <div class="container">
         <h2 id="timetable-heading" class="section-title">Onze openingstijden</h2>
         <p class="text-center">Plan je bezoek aan Pesila Thai Massage op een tijd die jou uitkomt.</p>
@@ -656,13 +714,14 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section" aria-labelledby="services-heading">
+    <section id="services" class="services-section reveal" aria-labelledby="services-heading">
       <div class="container">
         <h2 id="services-heading" class="section-title">Massages & Prijzen</h2>
         <p class="text-center">Kies uit ons brede aanbod van traditionele en moderne massages, afgestemd op jouw behoeften.</p>
         <div class="row">
           <div class="col-xl-4 col-md-6 mb-4">
             <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="traditional-massage">
+              <span class="badge-popular">Meest gekozen</span>
               <img src="images/services/traditioneel.avif" loading="lazy" alt="Traditionele Thaise massage bij Pesila" />
               <h3 id="traditional-massage">Traditionele Thaise Massage</h3>
               <div class="text-container">
@@ -709,9 +768,11 @@
                 <div>
                   <p>
                     Een aroma-olie massage is een vorm van kruidengeneeskunde die gebaseerd is op het gebruik van etherische oliën afkomstig van kruiden,
-                    bloemen en andere plantendelen. <abbr title="Behandeling met geuren uit essentiële oliën om lichamelijk en geestelijk welzijn te bevorderen">Aromatherapie</abbr>, een combinatie van de woorden aroma (geur) en therapie (behandeling), maakt gebruik van
-                    geuren om het welzijn te bevorderen. Deze vorm van therapie wordt vooral ingezet bij klachten zoals spanning, angst en slapeloosheid. De
-                    geuren zouden inwerken op het onderbewuste en helpen om een verstoord zenuwstelsel weer in balans te brengen.
+                    bloemen en andere plantendelen.
+                    <abbr title="Behandeling met geuren uit essentiële oliën om lichamelijk en geestelijk welzijn te bevorderen">Aromatherapie</abbr>, een
+                    combinatie van de woorden aroma (geur) en therapie (behandeling), maakt gebruik van geuren om het welzijn te bevorderen. Deze vorm van
+                    therapie wordt vooral ingezet bij klachten zoals spanning, angst en slapeloosheid. De geuren zouden inwerken op het onderbewuste en helpen
+                    om een verstoord zenuwstelsel weer in balans te brengen.
                   </p>
                 </div>
               </div>
@@ -740,7 +801,11 @@
           <div class="col-xl-4 col-md-6 mb-4">
             <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="foot-massage">
               <img src="images/services/voeten.avif" loading="lazy" alt="Voetreflexmassage bij Pesila" />
-              <h3 id="foot-massage"><abbr title="Massagetechniek waarbij drukpunten op de voetzolen worden gestimuleerd die corresponderen met organen en lichaamsdelen">Voetreflexmassage</abbr></h3>
+              <h3 id="foot-massage">
+                <abbr title="Massagetechniek waarbij drukpunten op de voetzolen worden gestimuleerd die corresponderen met organen en lichaamsdelen"
+                  >Voetreflexmassage</abbr
+                >
+              </h3>
               <div class="text-container">
                 <div>
                   <p>
@@ -833,8 +898,9 @@
                 <div>
                   <div>
                     <p>
-                      De stenen die bij een hot stone-massage worden gebruikt, zijn meestal gemaakt van <abbr title="Hard vulkanisch gesteente met hoge dichtheid dat warmte goed vasthoudt">basalt</abbr>, een hard vulkanisch gesteente met een hoge
-                      dichtheid. Deze eigenschap maakt basalt zeer geschikt om warmte goed vast te houden. De stenen worden opgewarmd in een speciale
+                      De stenen die bij een hot stone-massage worden gebruikt, zijn meestal gemaakt van
+                      <abbr title="Hard vulkanisch gesteente met hoge dichtheid dat warmte goed vasthoudt">basalt</abbr>, een hard vulkanisch gesteente met een
+                      hoge dichtheid. Deze eigenschap maakt basalt zeer geschikt om warmte goed vast te houden. De stenen worden opgewarmd in een speciale
                       verwarmingsunit, vaak gevuld met water en verwarmd tot een temperatuur van ongeveer 52 tot 54°C. Tijdens de massage hebben de stenen
                       meestal een werktemperatuur van ongeveer 45°C.
                     </p>
@@ -874,6 +940,7 @@
           </div>
           <div class="col-xl-4 col-md-6 mb-4">
             <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="duo-massage">
+              <span class="badge-popular">Meest gekozen</span>
               <img src="images/services/duo.avif" loading="lazy" alt="Duo-massage bij Pesila" />
               <h3 id="duo-massage">Duo-massage</h3>
               <div class="text-container">
@@ -994,7 +1061,11 @@
           <div class="col-xl-4 col-md-6 mb-4">
             <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="deep-tissue-massage">
               <img src="images/services/deep-tissue.avif" loading="lazy" alt="Deep tissue massage bij Pesila" />
-              <h3 id="deep-tissue-massage"><abbr title="Diepe weefselmassage waarbij langzame, krachtige technieken worden gebruikt om diepere spierlagen en bindweefsel te bereiken">Deep Tissue Massage</abbr></h3>
+              <h3 id="deep-tissue-massage">
+                <abbr title="Diepe weefselmassage waarbij langzame, krachtige technieken worden gebruikt om diepere spierlagen en bindweefsel te bereiken"
+                  >Deep Tissue Massage</abbr
+                >
+              </h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -1036,7 +1107,12 @@
           <div class="col-xl-4 col-md-6 mb-4">
             <article class="service-card" tabindex="0" role="button" aria-expanded="false" aria-labelledby="herbal-massage">
               <img src="images/services/kruidenstempel.avif" loading="lazy" alt="Kruidenstempelmassage bij Pesila" />
-              <h3 id="herbal-massage"><abbr title="Massage waarbij verwarmde katoenen buidels gevuld met geneeskrachtige kruiden worden gebruikt om ontspanning en genezing te bevorderen">Kruidenstempelmassage</abbr></h3>
+              <h3 id="herbal-massage">
+                <abbr
+                  title="Massage waarbij verwarmde katoenen buidels gevuld met geneeskrachtige kruiden worden gebruikt om ontspanning en genezing te bevorderen"
+                  >Kruidenstempelmassage</abbr
+                >
+              </h3>
               <div class="text-container">
                 <div>
                   <div>
@@ -1079,15 +1155,28 @@
           <a href="#booking" class="btn btn-primary btn-custom">Boek je massage vandaag</a>
         </p>
         <div class="text-center mt-5">
-          <img src="images/gallery/entree2.jpg" class="gallery" loading="lazy" alt="Ingang van Pesila Thai Massage in Rotterdam" />
+          <picture>
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-04.avif" type="image/avif" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-04.avif" type="image/avif" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-04.avif" type="image/avif" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-04.avif" type="image/avif" />
+            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-04.webp" type="image/webp" />
+            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-04.webp" type="image/webp" />
+            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-04.webp" type="image/webp" />
+            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-04.webp" type="image/webp" />
+            <img class="gallery" src="images/gallery/w640/photo-04.webp" alt="Sfeerbeeld van Pesila Thai Massage in Rotterdam" loading="lazy" />
+          </picture>
         </div>
       </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
+    <section id="testimonials" class="testimonials-section reveal" aria-labelledby="testimonials-heading">
       <div class="container">
         <h2 id="testimonials-heading" class="section-title">Ervaringen van Onze Klanten</h2>
+
+        <!-- Aggregate Review Summary (dynamically populated) -->
+        <div id="review-summary"></div>
 
         <!-- Google Reviews Container (dynamically populated) -->
         <div id="google-reviews" class="row">
@@ -1100,7 +1189,13 @@
 
         <!-- Link to Google Reviews -->
         <div class="text-center">
-          <a href="https://search.google.com/local/reviews?placeid=ChIJayy_TwM1xEcRGWhh99q1o48" target="_blank" rel="noopener" class="google-link" id="google-reviews-link">
+          <a
+            href="https://search.google.com/local/reviews?placeid=ChIJayy_TwM1xEcRGWhh99q1o48"
+            target="_blank"
+            rel="noopener"
+            class="google-link"
+            id="google-reviews-link"
+          >
             📝 Bekijk alle recensies op Google
           </a>
         </div>
@@ -1112,17 +1207,26 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section" aria-labelledby="about-heading">
+    <section id="about" class="about-section reveal" aria-labelledby="about-heading">
       <div class="container">
         <h2 id="about-heading" class="section-title">Wie wij zijn</h2>
         <div class="card">
           <div class="card-body">
             <p class="text-center">
-              Bij Pesila Thai Massage in Rotterdam bieden we authentieke Thaise wellness met persoonlijke zorg. Onze ervaren masseuses helpen je spanning los te
-              laten en je energie te herstellen.
+              Pesila Thai Massage verwelkomt je in het hart van Rotterdam-West. Onze salon op de Schiedamseweg staat bekend om authentieke Thaise
+              massages, uitgevoerd door ervaren masseuses die hun vakmanschap in Thailand hebben geleerd.
             </p>
             <p class="text-center">
-              Geniet van een rustgevende sfeer en sluit je behandeling af met een kopje thee. Boek vandaag nog voor een moment van pure ontspanning!
+              Onze masseuses zijn opgeleid in traditionele Thaise massagetechnieken en brengen jarenlange ervaring mee. Ze combineren eeuwenoude methoden met
+              persoonlijke aandacht, afgestemd op jouw lichaam en behoeften.
+            </p>
+            <p class="text-center">
+              Wat Pesila uniek maakt, is de warme sfeer en de persoonlijke benadering. Vanaf het moment dat je binnenstapt, word je omringd door rust en
+              gastvrijheid. Wij geloven dat een goede massage begint bij een gevoel van welkom.
+            </p>
+            <p class="text-center">
+              Na je behandeling sluiten we graag af met een kopje thee, zodat je volledig ontspannen de deur uit gaat. Boek vandaag nog voor een moment van pure
+              ontspanning!
             </p>
           </div>
         </div>
@@ -1132,12 +1236,58 @@
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section reveal" aria-labelledby="faq-heading">
+      <div class="container">
+        <h2 id="faq-heading" class="section-title">Veelgestelde vragen</h2>
+        <div style="max-width: 800px; margin: 0 auto">
+          <details class="faq-item">
+            <summary>Moet ik van tevoren reserveren?</summary>
+            <div class="faq-answer">
+              <p>
+                Ja, het is aan te raden om van tevoren een afspraak te maken via onze online boekingstool of telefonisch. Walk-ins zijn welkom, maar een
+                reservering garandeert beschikbaarheid.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Is er parkeergelegenheid in de buurt?</summary>
+            <div class="faq-answer">
+              <p>Er is straatparkeren beschikbaar op de Schiedamseweg en omliggende straten. Het dichtstbijzijnde parkeergarage is op loopafstand.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Kan ik een massage cadeau geven?</summary>
+            <div class="faq-answer">
+              <p>Ja! Neem contact met ons op voor een cadeaubon of koop er een bij ons in de salon. Een massage is een perfect cadeau voor elke gelegenheid.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Wat als ik mijn afspraak wil annuleren?</summary>
+            <div class="faq-answer">
+              <p>Annuleringen zijn kosteloos tot 24 uur voor de afspraak. Neem contact met ons op via telefoon of WhatsApp.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Is de massage geschikt bij lichamelijke klachten?</summary>
+            <div class="faq-answer">
+              <p>
+                Onze masseuses zijn ervaren in het werken met verschillende klachten. Laat het ons van tevoren weten, zodat we de massage kunnen aanpassen aan
+                jouw behoeften.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- Booking Section -->
-    <section id="booking" class="booking-section" aria-labelledby="booking-heading">
+    <section id="booking" class="booking-section reveal" aria-labelledby="booking-heading">
       <div class="container">
         <h2 class="section-title">Maak nu je afspraak</h2>
-        <div class="alert alert-warning" role="alert" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #856404;">
-          <strong>⚠️ Belangrijk:</strong> Wij bieden uitsluitend professionele therapeutische massages in een respectvolle omgeving. Ongepast gedrag wordt niet getolereerd.
+        <div class="alert alert-warning" role="alert" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #856404">
+          <strong>⚠️ Belangrijk:</strong> Wij bieden uitsluitend professionele therapeutische massages in een respectvolle omgeving. Ongepast gedrag wordt niet
+          getolereerd.
         </div>
 
         <p class="text-center mt-5">
@@ -1159,15 +1309,32 @@
           <a
             href="https://www.treatwell.nl/plaats/pesila-thai-massage/"
             id="wahanda-online-booking-widget"
-            onclick='wahanda.openOnlineBookingWidget("https://widget.treatwell.nl/salon/482688/menu/"); return false;'
+            onclick="
+              wahanda.openOnlineBookingWidget('https://widget.treatwell.nl/salon/482688/menu/');
+              return false;
+            "
             target="_blank"
           >
             <span>Boek nu</span>
           </a>
         </p>
 
+        <div class="gift-callout">
+          <p>
+            🎁 <strong>Geef ontspanning cadeau!</strong> Informeer naar onze cadeaubonnen via
+            <a href="tel:+31623899709" style="color: var(--primary-color); text-decoration: underline">telefoon</a> of
+            <a
+              href="https://wa.me/31623899709?text=Hallo,%20ik%20wil%20graag%20informatie%20over%20cadeaubonnen."
+              style="color: var(--primary-color); text-decoration: underline"
+              target="_blank"
+              rel="noopener"
+              >WhatsApp</a
+            >.
+          </p>
+        </div>
+
         <p class="text-center mt-5">Als je vragen hebt, vul dan het formulier in en wij nemen zo snel mogelijk contact met je op.</p>
-        <div id="form-instructions" class="text-center mb-3" style="font-size: 0.95rem; color: #555;">
+        <div id="form-instructions" class="text-center mb-3" style="font-size: 0.95rem; color: #555">
           <strong>Let op:</strong> Vul minimaal je e-mailadres of telefoonnummer in, zodat we contact met je kunnen opnemen.
         </div>
         <form id="bookingForm" novalidate action="https://formsubmit.co/df50c71d97c0a3fa7a5952d3850057c8" method="POST" aria-describedby="form-instructions">
@@ -1181,13 +1348,29 @@
             </div>
             <div class="col-md-6 mb-3">
               <label for="email" class="visually-hidden">E-mail</label>
-              <input type="email" name="email" class="form-control" id="email" placeholder="Je e-mailadres" autocomplete="email" aria-describedby="email-error email-help" />
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="email"
+                placeholder="Je e-mailadres"
+                autocomplete="email"
+                aria-describedby="email-error email-help"
+              />
               <small id="email-help" class="form-text text-muted d-none">Bijvoorbeeld: naam@voorbeeld.nl</small>
               <div class="invalid-feedback" id="email-error">Vul een geldig e-mailadres in of geef een telefoonnummer op</div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="phone" class="visually-hidden">Telefoonnummer</label>
-              <input type="tel" name="Telephone" class="form-control" id="phone" placeholder="Je telefoonnummer" autocomplete="tel" aria-describedby="phone-error phone-help" />
+              <input
+                type="tel"
+                name="Telephone"
+                class="form-control"
+                id="phone"
+                placeholder="Je telefoonnummer"
+                autocomplete="tel"
+                aria-describedby="phone-error phone-help"
+              />
               <small id="phone-help" class="form-text text-muted d-none">Bijvoorbeeld: 06-12345678 of +31612345678</small>
               <div class="invalid-feedback" id="phone-error">Vul een geldig telefoonnummer in of geef een e-mailadres op</div>
             </div>
@@ -1210,7 +1393,13 @@
             </div>
             <div class="col-12">
               <label for="notes" class="visually-hidden">Bericht</label>
-              <textarea name="Message" class="form-control" id="notes" rows="4" placeholder="Uw specifieke vraag. Gebruik de knop 'Boek nu' om een afspraak te maken."></textarea>
+              <textarea
+                name="Message"
+                class="form-control"
+                id="notes"
+                rows="4"
+                placeholder="Uw specifieke vraag. Gebruik de knop 'Boek nu' om een afspraak te maken."
+              ></textarea>
             </div>
             <div class="col-12 text-center">
               <button type="submit" class="btn btn-primary btn-custom mt-3">Verstuur je aanvraag</button>
@@ -1229,18 +1418,40 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+    <section id="contact" class="contact-section reveal" aria-labelledby="contact-heading">
       <div class="container">
         <h2 id="contact-heading" class="section-title">Neem contact met ons op</h2>
         <p class="text-center">Heb je vragen of wil je een afspraak maken? Neem contact op via telefoon, e-mail of bezoek ons in Rotterdam!</p>
-        <p class="text-center">
-          Telefoon:
-          <a href="tel:+31623899709" class="text-nowrap">06-23899709</a><br />
-          E-mail:
-          <a href="mailto:pesilawellness@gmail.com" class="text-nowrap">pesilawellness@gmail.com</a><br />
-          Adres: Schiedamseweg 17A,
-          <span class="text-nowrap">3026 AB Rotterdam</span>
-        </p>
+        <div class="text-center mb-4" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap">
+          <a href="tel:+31623899709" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #e8d5a3; text-decoration: none">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+              />
+            </svg>
+            06-23899709
+          </a>
+          <a href="mailto:pesilawellness@gmail.com" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #e8d5a3; text-decoration: none">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            pesilawellness@gmail.com
+          </a>
+          <a
+            href="https://wa.me/31623899709?text=Hallo,%20ik%20wil%20graag%20een%20afspraak%20maken."
+            target="_blank"
+            rel="noopener"
+            style="display: inline-flex; align-items: center; gap: 0.5rem; color: #e8d5a3; text-decoration: none"
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"
+              />
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+        <p class="text-center">Adres: Schiedamseweg 17A, <span class="text-nowrap">3026 AB Rotterdam</span></p>
         <p class="text-center">
           <a href="#booking" class="btn btn-primary btn-custom">Boek direct</a>
         </p>
@@ -1263,10 +1474,74 @@
     <!-- Footer -->
     <footer>
       <div class="container">
-        <p>Pesila Thai Massage | Schiedamseweg 17A, 3026 AB Rotterdam | <a href="tel:+31623899709">06-23899709</a></p>
-        <p>© 2026 Pesila Thai Massage. Alle rechten voorbehouden.</p>
+        <div class="footer-content">
+          <div>
+            <h4>Pesila Thai Massage</h4>
+            <p>Authentieke Thaise wellness in het hart van Rotterdam. Ontspan, herstel en geniet.</p>
+            <div class="footer-social">
+              <a href="tel:+31623899709" aria-label="Bel ons">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                  />
+                </svg>
+              </a>
+              <a href="mailto:pesilawellness@gmail.com" aria-label="E-mail ons">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+              </a>
+              <a href="https://wa.me/31623899709" aria-label="WhatsApp" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4>Snelle links</h4>
+            <ul>
+              <li><a href="/index.html#home">Home</a></li>
+              <li><a href="/index.html#services">Massages</a></li>
+              <li><a href="/index.html#booking">Boek nu</a></li>
+              <li><a href="/gallery.html">Gallerij</a></li>
+              <li><a href="/index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact & Openingstijden</h4>
+            <p>
+              <a href="tel:+31623899709">06-23899709</a><br />
+              <a href="mailto:pesilawellness@gmail.com">pesilawellness@gmail.com</a><br />
+              Schiedamseweg 17A<br />
+              3026 AB Rotterdam
+            </p>
+            <p>Ma - Zo: 10:00 - 21:00</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Pesila Thai Massage. Alle rechten voorbehouden.</p>
+        </div>
       </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/31623899709"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat met ons via WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"
+        />
+      </svg>
+    </a>
+
     <script async>
       (function () {
         "use strict";
@@ -1278,12 +1553,12 @@
             cacheDuration: 24 * 60 * 60 * 1000,
             minRating: 4,
             maxReviews: 4,
-            retryDelay: 100
+            retryDelay: 100,
           },
           validation: {
             emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-            phoneRegex: /^\+?[\d\s\-()]{6,}$/
-          }
+            phoneRegex: /^\+?[\d\s\-()]{6,}$/,
+          },
         };
 
         // ==================== Preloader ====================
@@ -1385,10 +1660,19 @@
         // ==================== Service Cards ====================
         const initServiceCards = () => {
           document.querySelectorAll(".service-card").forEach((card) => {
+            const textContainer = card.querySelector(".text-container");
+
+            const hint = document.createElement("div");
+            hint.className = "read-more-hint";
+            hint.textContent = "Lees meer";
+            hint.setAttribute("aria-hidden", "true");
+            textContainer.after(hint);
+
             const toggleCard = () => {
-              const textContainer = card.querySelector(".text-container");
               textContainer.classList.toggle("show-full");
-              card.setAttribute("aria-expanded", textContainer.classList.contains("show-full"));
+              const isExpanded = textContainer.classList.contains("show-full");
+              card.setAttribute("aria-expanded", isExpanded);
+              hint.textContent = isExpanded ? "Lees minder" : "Lees meer";
             };
 
             card.addEventListener("click", toggleCard);
@@ -1422,26 +1706,29 @@
             try {
               const place = new google.maps.places.Place({ id: CONFIG.google.placeId });
               const { place: placeResult } = await place.fetchFields({
-                fields: ["reviews", "rating", "userRatingCount", "displayName"]
+                fields: ["reviews", "rating", "userRatingCount", "displayName"],
               });
 
               if (placeResult?.reviews?.length) {
                 const placeData = {
-                  reviews: placeResult.reviews.map(review => ({
+                  reviews: placeResult.reviews.map((review) => ({
                     rating: review.rating,
                     text: review.text,
                     author_name: review.authorAttribution?.displayName || "Anoniem",
-                    time: review.publishTime ? new Date(review.publishTime).getTime() / 1000 : 0
+                    time: review.publishTime ? new Date(review.publishTime).getTime() / 1000 : 0,
                   })),
                   rating: placeResult.rating,
                   user_ratings_total: placeResult.userRatingCount,
-                  name: placeResult.displayName
+                  name: placeResult.displayName,
                 };
 
-                localStorage.setItem("google_reviews_cache", JSON.stringify({
-                  data: placeData,
-                  timestamp: Date.now()
-                }));
+                localStorage.setItem(
+                  "google_reviews_cache",
+                  JSON.stringify({
+                    data: placeData,
+                    timestamp: Date.now(),
+                  }),
+                );
 
                 console.log("Google Reviews: Fetched fresh data from API");
                 return placeData;
@@ -1461,9 +1748,7 @@
             let html = "";
 
             for (let i = 0; i < 5; i++) {
-              html += i < fullStars || (i === fullStars && hasHalfStar)
-                ? "★"
-                : '<span class="empty-star">★</span>';
+              html += i < fullStars || (i === fullStars && hasHalfStar) ? "★" : '<span class="empty-star">★</span>';
             }
 
             return html;
@@ -1475,6 +1760,17 @@
               return;
             }
 
+            const summaryEl = document.getElementById("review-summary");
+            if (summaryEl && placeData.rating) {
+              summaryEl.innerHTML = `
+                <div class="review-summary">
+                  <div class="rating-number">${placeData.rating.toFixed(1)}</div>
+                  <div class="star-rating">${this.generateStars(placeData.rating)}</div>
+                  <div class="rating-count">Gebaseerd op ${placeData.user_ratings_total}+ recensies op Google</div>
+                </div>
+              `;
+            }
+
             const container = document.getElementById("google-reviews");
             const topReviews = placeData.reviews
               .filter((review) => review.rating >= CONFIG.google.minRating)
@@ -1482,7 +1778,8 @@
               .slice(0, CONFIG.google.maxReviews);
 
             container.innerHTML = topReviews
-              .map((review) => `
+              .map(
+                (review) => `
                 <div class="col-xl-3 col-md-6 mb-4">
                   <article class="testimonial-card">
                     <div class="star-rating">${this.generateStars(review.rating)}</div>
@@ -1490,7 +1787,8 @@
                     <cite class="review-author">${review.author_name || "Anoniem"}</cite>
                   </article>
                 </div>
-              `)
+              `,
+              )
               .join("");
 
             const googleLink = document.getElementById("google-reviews-link");
@@ -1511,7 +1809,25 @@
             this.fetch()
               .then((data) => requestAnimationFrame(() => this.render(data)))
               .catch((error) => console.error("Google Reviews: Initialization failed", error));
-          }
+          },
+        };
+
+        // ==================== Scroll Animations ====================
+        const initScrollAnimations = () => {
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
+                }
+              });
+            },
+            { threshold: 0.1 },
+          );
+
+          document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
         };
 
         // ==================== Initialization ====================
@@ -1520,6 +1836,7 @@
           initFormValidation();
           initNavigation();
           initServiceCards();
+          initScrollAnimations();
 
           if (document.readyState === "loading") {
             document.addEventListener("DOMContentLoaded", () => GoogleReviews.init());
