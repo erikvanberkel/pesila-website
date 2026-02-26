@@ -1,633 +1,638 @@
 <!doctype html>
 <html lang="nl">
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-69BZRSS6JF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-69BZRSS6JF");
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fotogalerij | Pesila Thai Massage Rotterdam</title>
-    <meta name="description" content="Bekijk de fotogalerij van Pesila Thai Massage in Rotterdam. Zie onze professionele behandelkamers, sfeer en inrichting op Schiedamseweg 17A." />
-    <meta name="keywords" content="massage salon Rotterdam, Pesila Thai Massage foto's, behandelkamer Rotterdam, Thaise massage sfeer, massage studio Rotterdam" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.pesila.nl/gallery.html" />
-    <meta property="og:title" content="Fotogalerij | Pesila Thai Massage Rotterdam" />
-    <meta property="og:description" content="Bekijk de professionele behandelkamers en sfeer van Pesila Thai Massage in Rotterdam." />
-    <meta property="og:url" content="https://www.pesila.nl/gallery.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.pesila.nl/images/gallery/w1920/photo-32.avif" />
-    <meta property="og:image:alt" content="Duo-massageruimte bij Pesila Thai Massage Rotterdam" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="icon" type="image/png" href="images/icon.png" />
-    <style>
-      body.no-scroll {
-        overflow: hidden;
-      }
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-69BZRSS6JF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background: #6b4e31;
-        color: white;
-        padding: 8px 16px;
-        text-decoration: none;
-        z-index: 10000;
-        border-radius: 0 0 4px 0;
-      }
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-      .skip-link:focus {
-        top: 0;
-      }
+    gtag("js", new Date());
+    gtag("config", "G-69BZRSS6JF");
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fotogalerij | Pesila Thai Massage Rotterdam</title>
+  <meta name="description" content="Bekijk de fotogalerij van Pesila Thai Massage in Rotterdam. Zie onze professionele behandelkamers, sfeer en inrichting op Schiedamseweg 17A." />
+  <meta name="keywords" content="massage salon Rotterdam, Pesila Thai Massage foto's, behandelkamer Rotterdam, Thaise massage sfeer, massage studio Rotterdam" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Fotogalerij | Pesila Thai Massage Rotterdam" />
+  <meta property="og:description" content="Bekijk de professionele behandelkamers en sfeer van Pesila Thai Massage in Rotterdam." />
+  <meta property="og:url" content="https://www.pesila.nl/gallery.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.pesila.nl/images/gallery/w1920/photo-32.avif" />
+  <meta property="og:image:alt" content="Duo-massageruimte bij Pesila Thai Massage Rotterdam" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" type="image/png" href="images/icon.png" />
+  <link rel="canonical" href="https://www.pesila.nl/gallery.html" />
+  <style>
+    body.no-scroll {
+      overflow: hidden;
+    }
 
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #6b4e31;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      z-index: 10000;
+      border-radius: 0 0 4px 0;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin: 0 auto;
+    }
+
+    .gallery img,
+    .gallery picture {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.025);
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Landscape images (4x3) */
+    .landscape {
+      grid-column: span 2 / auto;
+    }
+
+    /* Portrait images (3x4) */
+    .portrait {
+      grid-column: span 2 / auto;
+      grid-row: span 2 / auto;
+    }
+
+    /* Fullscreen modal */
+    .fullscreen-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      background-color: #000;
+      justify-content: center;
+      align-items: center;
+      z-index: 1040;
+    }
+
+    .fullscreen-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .btn-custom {
+      background: linear-gradient(135deg, #6b4e31 0%, #5a4128 100%);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(107, 78, 49, 0.3);
+    }
+
+    .btn-custom:hover {
+      color: #fff;
+      background: linear-gradient(135deg, #8b6f47 0%, #6b4e31 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(107, 78, 49, 0.4);
+    }
+
+    @media (max-width: 600px) {
       .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 2rem;
-        margin: 0 auto;
+        grid-template-columns: 1fr;
       }
-
-      .gallery img,
-      .gallery picture {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: var(--transition);
-      }
-
-      .gallery img:hover {
-        transform: scale(1.025);
-        box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
-      }
-
-      /* Landscape images (4x3) */
-      .landscape {
-        grid-column: span 2 / auto;
-      }
-
-      /* Portrait images (3x4) */
-      .portrait {
-        grid-column: span 2 / auto;
-        grid-row: span 2 / auto;
-      }
-
-      /* Fullscreen modal */
-      .fullscreen-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        height: 100dvh;
-        background-color: #000;
-        justify-content: center;
-        align-items: center;
-        z-index: 1040;
-      }
-
-      .fullscreen-modal img {
-        max-width: 90%;
-        max-height: 90%;
-        object-fit: contain;
-        border-radius: 8px;
-      }
-
-      .close-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 40px;
-        color: white;
-        cursor: pointer;
-        background: none;
-        border: none;
-      }
-
-      .btn-custom {
-        background: linear-gradient(135deg, #6b4e31 0%, #5a4128 100%);
-        color: #fff;
-        padding: 14px 32px;
-        border-radius: 30px;
-        border: none;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(107, 78, 49, 0.3);
-      }
-
-      .btn-custom:hover {
-        color: #fff;
-        background: linear-gradient(135deg, #8b6f47 0%, #6b4e31 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(107, 78, 49, 0.4);
-      }
-
-      @media (max-width: 600px) {
-        .gallery {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <a href="#main-content" class="skip-link">Spring naar hoofdinhoud</a>
-    <!-- Navigation -->
-    <header>
-      <nav class="navbar navbar-expand-lg fixed-top" aria-label="Hoofdnavigatie">
-        <div class="container">
-          <a class="navbar-brand" href="#home">
-            <img src="images/logo.png" alt="Pesila Thai Massage Logo" />
-          </a>
-          <input type="checkbox" id="navbar-toggle" class="d-none" />
-          <label for="navbar-toggle" class="navbar-toggler" aria-label="Navigatie in-/uitschakelen">
-            <span class="navbar-toggler-icon"></span>
-          </label>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#timetable">Openingstijden</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#services">Massages</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#about">Over ons</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#faq">FAQ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#booking">Boek nu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#testimonials">Recensies</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html#contact">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/gallery.html">Gallerij</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <section aria-labelledby="gallery-heading">
-      <div id="main-content"></div>
-      <div class="container">
-        <h2 id="gallery-heading" class="section-title">Gallerij</h2>
-        <div class="gallery">
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-01.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-01.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-01.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-01.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-01.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-01.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-01.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-01.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-01.webp" alt="Wachtruimte met stoelen, planten en lotusdecoratie bij Pesila Thai Massage" class="landscape" />
-          </picture>
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-02.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-02.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-02.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-02.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-02.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-02.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-02.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-02.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-02.webp" alt="Ontvangstruimte met Thaise beelden, olifantenschilderij en zitbank" class="landscape" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-03.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-03.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-03.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-03.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-03.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-03.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-03.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-03.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-03.webp" alt="Receptiebalie met Boeddhabeeld en Thaise olifantenkunst" class="portrait" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-05.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-05.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-05.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-05.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-05.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-05.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-05.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-05.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-05.webp" alt="Zithoek met Thaise kussens en olifantenschilderij aan de muur" class="portrait" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-06.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-06.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-06.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-06.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-06.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-06.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-06.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-06.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-06.webp" alt="Twee Thaise sawasdee-beelden bij de trap met Boeddhaschilderij" class="portrait" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-08.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-08.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-08.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-08.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-08.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-08.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-08.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-08.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-08.webp" alt="Uitzicht vanaf de balie richting de ingang met bloemen en Thaise kunst" class="landscape" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-09.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-09.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-09.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-09.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-09.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-09.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-09.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-09.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-09.webp" alt="Receptie met Boeddhabeeld, gouden levensboom en Thaise beeldjes" class="landscape" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-10.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-10.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-10.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-10.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-10.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-10.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-10.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-10.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-10.webp" alt="Close-up van Thais welkomstbeeld met bloemenkrans" class="portrait" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-11.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-11.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-11.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-11.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-11.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-11.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-11.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-11.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-11.webp" alt="Ruime wachtruimte met gestreepte fauteuils en Thaise sfeer" class="landscape" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-12.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-12.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-12.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-12.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-12.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-12.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-12.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-12.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-12.webp" alt="Balie en trap naar behandelkamers met Thaise beelden" class="portrait" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-13.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-13.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-13.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-13.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-13.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-13.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-13.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-13.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-13.webp" alt="Zithoek bij het raam met Boeddha, olifantenkunst en planten" class="landscape" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-14.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-14.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-14.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-14.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-14.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-14.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-14.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-14.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-14.webp" alt="Gevel van Pesila Traditional Thai Massage op de Schiedamseweg in Rotterdam" class="portrait" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-16.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-16.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-16.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-16.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-16.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-16.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-16.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-16.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-16.webp" alt="Winkelpui met gouden uithangbord Pesila Traditional Thai Massage" class="landscape" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-17.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-17.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-17.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-17.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-17.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-17.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-17.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-17.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-17.webp" alt="Buitenaanzicht van het pand aan de Schiedamseweg in Rotterdam-West" class="landscape" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-19.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-19.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-19.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-19.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-19.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-19.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-19.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-19.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-19.webp" alt="Ontvangstruimte met receptiebalie, Thaise beelden en warme sfeer" class="landscape" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-22.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-22.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-22.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-22.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-22.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-22.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-22.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-22.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-22.webp" alt="Entree met hangplanten, planten en natuurlijk licht" class="portrait" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-23.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-23.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-23.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-23.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-23.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-23.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-23.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-23.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-23.webp" alt="Thaise welkomstbeelden naast trap naar de behandelkamers" class="portrait" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-24.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-24.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-24.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-24.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-24.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-24.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-24.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-24.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-24.webp" alt="Wachtruimte met fauteuils, hangplanten en uitzicht op de straat" class="landscape" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-29.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-29.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-29.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-29.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-29.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-29.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-29.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-29.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-29.webp" alt="Wachthoek met fauteuils, lotusbloemen en Thais houtsnijwerk" class="portrait" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-27.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-27.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-27.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-27.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-27.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-27.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-27.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-27.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-27.webp" alt="Salon interieur met lotusbloemen, olifantenschilderij en zitbank" class="landscape" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-30.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-30.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-30.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-30.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-30.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-30.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-30.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-30.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-30.webp" alt="Volledig overzicht van de salon met zithoek, balie en Thaise decoratie" class="landscape" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-31.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-31.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-31.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-31.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-31.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-31.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-31.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-31.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-31.webp" alt="Thaise kunstschilderijen en sfeerverlichting in de behandelgang" class="portrait" />
-          </picture>
-
-          <picture class="portrait">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-33.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-33.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-33.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-33.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-33.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-33.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-33.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-33.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-33.webp" alt="Behandelkamer met massagebed, Thais kleed en tropisch behang" class="portrait" />
-          </picture>
-
-          <picture class="landscape">
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-32.avif" type="image/avif" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-32.avif" type="image/avif" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-32.avif" type="image/avif" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-32.avif" type="image/avif" />
-            <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-32.webp" type="image/webp" />
-            <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-32.webp" type="image/webp" />
-            <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-32.webp" type="image/webp" />
-            <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-32.webp" type="image/webp" />
-            <img src="images/gallery/w640/photo-32.webp" alt="Duo-massageruimte met twee massagebedden en tropisch stranddecor" class="landscape" />
-          </picture>
-        </div>
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Spring naar hoofdinhoud</a>
+<!-- Navigation -->
+<header>
+  <nav aria-label="Hoofdnavigatie" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <img alt="Pesila Thai Massage Logo" src="images/logo.png"/>
+      </a>
+      <input class="d-none" id="navbar-toggle" type="checkbox"/>
+      <label aria-label="Navigatie in-/uitschakelen" class="navbar-toggler" for="navbar-toggle">
+        <span class="navbar-toggler-icon"></span>
+      </label>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html#timetable">Openingstijden</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html#services">Massages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html#about">Over ons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html#faq">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html#booking">Boek nu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html#testimonials">Recensies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/gallery.html">Gallerij</a>
+          </li>
+        </ul>
       </div>
-    </section>
-
-    <!-- Booking CTA -->
-    <section class="gallery-cta" aria-labelledby="gallery-cta-heading">
-      <div class="container">
-        <h2 id="gallery-cta-heading" class="section-title">Overtuigd? Boek nu je massage</h2>
-        <p>Ervaar zelf de ontspanning bij Pesila Thai Massage. Kies uit onze <a href="/index.html#services" style="color: var(--primary-color); text-decoration: underline">traditionele Thaise massages</a>, ontspannende duo-massages en meer.</p>
-        <p><a href="/index.html#booking" class="btn btn-primary btn-custom">Boek je massage</a></p>
-      </div>
-    </section>
-
-    <div class="fullscreen-modal" id="fullscreenModal" role="dialog" aria-modal="true" aria-label="Vergroot afbeelding">
-      <button class="close-button" id="closeButton" aria-label="Sluit galerij">&times;</button>
-      <img id="fullscreenImage" src="" alt="" />
     </div>
+  </nav>
+</header>
 
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div>
-            <h4>Pesila Thai Massage</h4>
-            <p>Authentieke Thaise wellness in het hart van Rotterdam. Ontspan, herstel en geniet.</p>
-            <div class="footer-social">
-              <a href="tel:+31623899709" aria-label="Bel ons">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                  />
-                </svg>
-              </a>
-              <a href="mailto:pesilawellness@gmail.com" aria-label="E-mail ons">
-                <svg viewBox="0 0 24 24">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                </svg>
-              </a>
-              <a href="https://wa.me/31623899709" aria-label="WhatsApp" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div>
-            <h4>Snelle links</h4>
-            <ul>
-              <li><a href="/index.html#home">Home</a></li>
-              <li><a href="/index.html#services">Massages</a></li>
-              <li><a href="/index.html#booking">Boek nu</a></li>
-              <li><a href="/gallery.html">Gallerij</a></li>
-              <li><a href="/index.html#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact & Openingstijden</h4>
-            <p>
-              <a href="tel:+31623899709">06-23899709</a><br />
-              <a href="mailto:pesilawellness@gmail.com">pesilawellness@gmail.com</a><br />
-              Schiedamseweg 17A<br />
-              3026 AB Rotterdam
-            </p>
-            <p>Ma - Zo: 10:00 - 21:00</p>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2026 Pesila Thai Massage. Alle rechten voorbehouden.</p>
+<section aria-labelledby="gallery-heading">
+  <div id="main-content"></div>
+  <div class="container">
+    <h2 class="section-title" id="gallery-heading">Gallerij</h2>
+    <div class="gallery">
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-01.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-01.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-01.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-01.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-01.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-01.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-01.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-01.webp" type="image/webp"/>
+        <img alt="Wachtruimte met stoelen, planten en lotusdecoratie bij Pesila Thai Massage" class="landscape" src="images/gallery/w640/photo-01.webp"/>
+      </picture>
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-02.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-02.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-02.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-02.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-02.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-02.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-02.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-02.webp" type="image/webp"/>
+        <img alt="Ontvangstruimte met Thaise beelden, olifantenschilderij en zitbank" class="landscape" src="images/gallery/w640/photo-02.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-03.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-03.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-03.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-03.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-03.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-03.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-03.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-03.webp" type="image/webp"/>
+        <img alt="Receptiebalie met Boeddhabeeld en Thaise olifantenkunst" class="portrait" src="images/gallery/w640/photo-03.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-05.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-05.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-05.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-05.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-05.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-05.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-05.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-05.webp" type="image/webp"/>
+        <img alt="Zithoek met Thaise kussens en olifantenschilderij aan de muur" class="portrait" src="images/gallery/w640/photo-05.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-06.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-06.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-06.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-06.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-06.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-06.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-06.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-06.webp" type="image/webp"/>
+        <img alt="Twee Thaise sawasdee-beelden bij de trap met Boeddhaschilderij" class="portrait" src="images/gallery/w640/photo-06.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-08.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-08.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-08.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-08.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-08.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-08.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-08.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-08.webp" type="image/webp"/>
+        <img alt="Uitzicht vanaf de balie richting de ingang met bloemen en Thaise kunst" class="landscape" src="images/gallery/w640/photo-08.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-09.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-09.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-09.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-09.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-09.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-09.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-09.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-09.webp" type="image/webp"/>
+        <img alt="Receptie met Boeddhabeeld, gouden levensboom en Thaise beeldjes" class="landscape" src="images/gallery/w640/photo-09.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-10.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-10.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-10.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-10.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-10.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-10.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-10.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-10.webp" type="image/webp"/>
+        <img alt="Close-up van Thais welkomstbeeld met bloemenkrans" class="portrait" src="images/gallery/w640/photo-10.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-11.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-11.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-11.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-11.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-11.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-11.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-11.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-11.webp" type="image/webp"/>
+        <img alt="Ruime wachtruimte met gestreepte fauteuils en Thaise sfeer" class="landscape" src="images/gallery/w640/photo-11.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-12.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-12.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-12.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-12.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-12.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-12.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-12.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-12.webp" type="image/webp"/>
+        <img alt="Balie en trap naar behandelkamers met Thaise beelden" class="portrait" src="images/gallery/w640/photo-12.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-13.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-13.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-13.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-13.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-13.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-13.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-13.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-13.webp" type="image/webp"/>
+        <img alt="Zithoek bij het raam met Boeddha, olifantenkunst en planten" class="landscape" src="images/gallery/w640/photo-13.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-14.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-14.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-14.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-14.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-14.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-14.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-14.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-14.webp" type="image/webp"/>
+        <img alt="Gevel van Pesila Traditional Thai Massage op de Schiedamseweg in Rotterdam" class="portrait" src="images/gallery/w640/photo-14.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-16.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-16.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-16.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-16.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-16.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-16.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-16.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-16.webp" type="image/webp"/>
+        <img alt="Winkelpui met gouden uithangbord Pesila Traditional Thai Massage" class="landscape" src="images/gallery/w640/photo-16.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-17.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-17.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-17.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-17.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-17.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-17.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-17.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-17.webp" type="image/webp"/>
+        <img alt="Buitenaanzicht van het pand aan de Schiedamseweg in Rotterdam-West" class="landscape" src="images/gallery/w640/photo-17.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-19.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-19.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-19.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-19.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-19.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-19.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-19.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-19.webp" type="image/webp"/>
+        <img alt="Ontvangstruimte met receptiebalie, Thaise beelden en warme sfeer" class="landscape" src="images/gallery/w640/photo-19.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-22.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-22.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-22.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-22.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-22.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-22.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-22.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-22.webp" type="image/webp"/>
+        <img alt="Entree met hangplanten, planten en natuurlijk licht" class="portrait" src="images/gallery/w640/photo-22.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-23.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-23.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-23.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-23.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-23.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-23.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-23.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-23.webp" type="image/webp"/>
+        <img alt="Thaise welkomstbeelden naast trap naar de behandelkamers" class="portrait" src="images/gallery/w640/photo-23.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-24.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-24.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-24.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-24.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-24.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-24.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-24.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-24.webp" type="image/webp"/>
+        <img alt="Wachtruimte met fauteuils, hangplanten en uitzicht op de straat" class="landscape" src="images/gallery/w640/photo-24.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-29.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-29.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-29.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-29.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-29.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-29.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-29.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-29.webp" type="image/webp"/>
+        <img alt="Wachthoek met fauteuils, lotusbloemen en Thais houtsnijwerk" class="portrait" src="images/gallery/w640/photo-29.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-27.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-27.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-27.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-27.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-27.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-27.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-27.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-27.webp" type="image/webp"/>
+        <img alt="Salon interieur met lotusbloemen, olifantenschilderij en zitbank" class="landscape" src="images/gallery/w640/photo-27.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-30.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-30.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-30.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-30.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-30.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-30.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-30.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-30.webp" type="image/webp"/>
+        <img alt="Volledig overzicht van de salon met zithoek, balie en Thaise decoratie" class="landscape" src="images/gallery/w640/photo-30.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-31.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-31.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-31.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-31.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-31.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-31.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-31.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-31.webp" type="image/webp"/>
+        <img alt="Thaise kunstschilderijen en sfeerverlichting in de behandelgang" class="portrait" src="images/gallery/w640/photo-31.webp"/>
+      </picture>
+
+      <picture class="portrait">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-33.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-33.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-33.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-33.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-33.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-33.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-33.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-33.webp" type="image/webp"/>
+        <img alt="Behandelkamer met massagebed, Thais kleed en tropisch behang" class="portrait" src="images/gallery/w640/photo-33.webp"/>
+      </picture>
+
+      <picture class="landscape">
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-32.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-32.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-32.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-32.avif" type="image/avif"/>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/photo-32.webp" type="image/webp"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/photo-32.webp" type="image/webp"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/photo-32.webp" type="image/webp"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/photo-32.webp" type="image/webp"/>
+        <img alt="Duo-massageruimte met twee massagebedden en tropisch stranddecor" class="landscape" src="images/gallery/w640/photo-32.webp"/>
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- Booking CTA -->
+<section aria-labelledby="gallery-cta-heading" class="gallery-cta">
+  <div class="container">
+    <h2 class="section-title" id="gallery-cta-heading">Overtuigd? Boek nu je massage</h2>
+    <p>Ervaar zelf de ontspanning bij Pesila Thai Massage. Kies uit onze <a href="/index.html#services"
+                                                                            style="color: var(--primary-color); text-decoration: underline">traditionele Thaise
+      massages</a>, ontspannende duo-massages en meer.</p>
+    <p><a class="btn btn-primary btn-custom" href="/index.html#booking">Boek je massage</a></p>
+  </div>
+</section>
+
+<div aria-label="Vergroot afbeelding" aria-modal="true" class="fullscreen-modal" id="fullscreenModal" role="dialog">
+  <button aria-label="Sluit galerij" class="close-button" id="closeButton">&times;</button>
+  <img alt="" id="fullscreenImage" src=""/>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <h4>Pesila Thai Massage</h4>
+        <p>Authentieke Thaise wellness in het hart van Rotterdam. Ontspan, herstel en geniet.</p>
+        <div class="footer-social">
+          <a aria-label="Bel ons" href="tel:+31623899709">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+              />
+            </svg>
+          </a>
+          <a aria-label="E-mail ons" href="mailto:pesilawellness@gmail.com">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </a>
+          <a aria-label="WhatsApp" href="https://wa.me/31623899709" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"
+              />
+            </svg>
+          </a>
         </div>
       </div>
-    </footer>
+      <div>
+        <h4>Snelle links</h4>
+        <ul>
+          <li><a href="/index.html#home">Home</a></li>
+          <li><a href="/index.html#services">Massages</a></li>
+          <li><a href="/index.html#booking">Boek nu</a></li>
+          <li><a href="/gallery.html">Gallerij</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact & Openingstijden</h4>
+        <p>
+          <a href="tel:+31623899709">06-23899709</a><br/>
+          <a href="mailto:pesilawellness@gmail.com">pesilawellness@gmail.com</a><br/>
+          Schiedamseweg 17A<br/>
+          3026 AB Rotterdam
+        </p>
+        <p>Ma - Zo: 10:00 - 21:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pesila Thai Massage. Alle rechten voorbehouden.</p>
+    </div>
+  </div>
+</footer>
 
-    <!-- WhatsApp Floating Button -->
-    <!-- <a
-      href="https://wa.me/31623899709"
-      class="whatsapp-float"
-      target="_blank"
-      rel="noopener"
-      aria-label="Chat met ons via WhatsApp"
-    >
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"
-        />
-      </svg>
-    </a> -->
+<!-- WhatsApp Floating Button -->
+<!-- <a
+  href="https://wa.me/31623899709"
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat met ons via WhatsApp"
+>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"
+    />
+  </svg>
+</a> -->
 
-    <script src="https://pesila-ai-receptionist-production.up.railway.app/static/chat-widget.js" data-api-url="https://pesila-ai-receptionist-production.up.railway.app"></script>
+<script data-api-url="https://pesila-ai-receptionist-production.up.railway.app"
+        src="https://pesila-ai-receptionist-production.up.railway.app/static/chat-widget.js"></script>
 
-    <script>
-      const galleryImages = document.querySelectorAll(".gallery img");
-      const fullscreenModal = document.getElementById("fullscreenModal");
-      const fullscreenImage = document.getElementById("fullscreenImage");
-      const closeButton = document.getElementById("closeButton");
-      const body = document.body;
-      let lastFocusedElement = null;
+<script>
+  const galleryImages = document.querySelectorAll(".gallery img");
+  const fullscreenModal = document.getElementById("fullscreenModal");
+  const fullscreenImage = document.getElementById("fullscreenImage");
+  const closeButton = document.getElementById("closeButton");
+  const body = document.body;
+  let lastFocusedElement = null;
 
-      function openModal(image) {
-        lastFocusedElement = document.activeElement;
-        fullscreenImage.src = image.src.replace(/w\d+/, "w1920");
-        fullscreenImage.alt = image.alt;
-        fullscreenModal.style.display = "flex";
-        body.classList.add("no-scroll");
-        closeButton.focus();
+  function openModal(image) {
+    lastFocusedElement = document.activeElement;
+    fullscreenImage.src = image.src.replace(/w\d+/, "w1920");
+    fullscreenImage.alt = image.alt;
+    fullscreenModal.style.display = "flex";
+    body.classList.add("no-scroll");
+    closeButton.focus();
+  }
+
+  function closeModal() {
+    fullscreenModal.style.display = "none";
+    body.classList.remove("no-scroll");
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  galleryImages.forEach((image) => {
+    image.addEventListener("click", () => openModal(image));
+  });
+
+  closeButton.addEventListener("click", closeModal);
+
+  fullscreenModal.addEventListener("click", (e) => {
+    if (e.target === fullscreenModal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && fullscreenModal.style.display === "flex") {
+      closeModal();
+    }
+  });
+
+  // Focus trapping within modal
+  fullscreenModal.addEventListener("keydown", (e) => {
+    if (e.key === "Tab") {
+      const focusableElements = fullscreenModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
       }
-
-      function closeModal() {
-        fullscreenModal.style.display = "none";
-        body.classList.remove("no-scroll");
-        if (lastFocusedElement) {
-          lastFocusedElement.focus();
-        }
-      }
-
-      galleryImages.forEach((image) => {
-        image.addEventListener("click", () => openModal(image));
-      });
-
-      closeButton.addEventListener("click", closeModal);
-
-      fullscreenModal.addEventListener("click", (e) => {
-        if (e.target === fullscreenModal) {
-          closeModal();
-        }
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && fullscreenModal.style.display === "flex") {
-          closeModal();
-        }
-      });
-
-      // Focus trapping within modal
-      fullscreenModal.addEventListener("keydown", (e) => {
-        if (e.key === "Tab") {
-          const focusableElements = fullscreenModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-          const firstElement = focusableElements[0];
-          const lastElement = focusableElements[focusableElements.length - 1];
-
-          if (e.shiftKey && document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement.focus();
-          } else if (!e.shiftKey && document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement.focus();
-          }
-        }
-      });
-    </script>
-  </body>
+    }
+  });
+</script>
+</body>
 </html>

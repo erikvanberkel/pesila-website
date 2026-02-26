@@ -16,7 +16,7 @@ python -m http.server 8000    # or: npx http-server
 git push origin master        # Triggers workflow, injects secrets, deploys
 
 # Code formatting
-npx prettier --write .        # Uses .prettierrc config
+npx prettier --write .        # Uses .editorconfig
 ```
 
 ## Architecture

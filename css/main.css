@@ -266,6 +266,24 @@ textarea:focus,
 /* FAQ Section */
 .faq-section {
   scroll-margin-top: 5rem;
+  interpolate-size: allow-keywords;
+}
+
+.faq-item::details-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease,
+  content-visibility 0.3s allow-discrete;
+}
+
+.faq-item[open]::details-content {
+  height: auto;
+}
+
+@starting-style {
+  .faq-item[open]::details-content {
+    height: 0;
+  }
 }
 
 .faq-item {
@@ -314,6 +332,10 @@ textarea:focus,
   padding: 0 1.5rem 1.25rem;
   color: #555;
   line-height: 1.7;
+
+  p {
+    margin-inline: 0;
+  }
 }
 
 /* Service card read-more hint */
@@ -385,7 +407,6 @@ textarea:focus,
   margin: 0;
   color: var(--primary-color);
 }
-
 
 /* Richer footer */
 .footer-content {
