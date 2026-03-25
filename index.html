@@ -1732,6 +1732,31 @@
   </svg>
 </a> -->
 
+<script>
+  (function () {
+    var TTL = 5 * 60 * 60 * 1000;
+    var tsKey = "pesila_chat_timestamp";
+    var ts = Number(localStorage.getItem(tsKey));
+    if (!ts || Date.now() - ts > TTL) {
+      localStorage.removeItem("pesila_chat_session_id");
+      localStorage.removeItem("pesila_chat_history");
+      localStorage.setItem(tsKey, Date.now());
+    }
+
+    var origAttachShadow = Element.prototype.attachShadow;
+    Element.prototype.attachShadow = function (opts) {
+      var shadow = origAttachShadow.call(this, opts);
+      if (this.id === "pesila-chat-root") {
+        var style = document.createElement("style");
+        style.textContent =
+          ".chat-header { box-shadow: 0 3px 6px rgba(0,0,0,0.5); z-index: 1; position: relative; }";
+        shadow.appendChild(style);
+        Element.prototype.attachShadow = origAttachShadow;
+      }
+      return shadow;
+    };
+  })();
+</script>
 <script data-api-url="https://pesila-ai-receptionist-production.up.railway.app"
         src="https://pesila-ai-receptionist-production.up.railway.app/static/chat-widget.js"></script>
 
