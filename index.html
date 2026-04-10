@@ -154,7 +154,8 @@
 
     .btn-custom:focus,
     .btn-custom:focus-visible {
-      outline: none !important;
+      outline: 3px solid #c9a961;
+      outline-offset: 2px;
       box-shadow: 0 4px 15px rgba(107, 78, 49, 0.3);
     }
 
@@ -832,7 +833,13 @@
       </div>
     </div>
     <div class="text-center mt-5">
-      <img alt="Entree van Pesila Thai Massage in Rotterdam" class="gallery" loading="lazy" src="images/gallery/entree1.jpg"/>
+      <picture>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/entree1.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/entree1.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/entree1.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/entree1.avif" type="image/avif"/>
+        <img alt="Entree van Pesila Thai Massage in Rotterdam" class="gallery" loading="lazy" src="images/gallery/entree1.jpg"/>
+      </picture>
     </div>
   </div>
 </section>
@@ -1325,7 +1332,13 @@
       </div>
     </div>
     <div class="text-center mt-5">
-      <img alt="Behandelkamer van Pesila Thai Massage in Rotterdam" class="gallery" loading="lazy" src="images/gallery/room2.jpg"/>
+      <picture>
+        <source media="(min-width: 1200px)" srcset="images/gallery/w1920/room2.avif" type="image/avif"/>
+        <source media="(min-width: 768px)" srcset="images/gallery/w1280/room2.avif" type="image/avif"/>
+        <source media="(min-width: 320px)" srcset="images/gallery/w640/room2.avif" type="image/avif"/>
+        <source media="(max-width: 319px)" srcset="images/gallery/w320/room2.avif" type="image/avif"/>
+        <img alt="Behandelkamer van Pesila Thai Massage in Rotterdam" class="gallery" loading="lazy" src="images/gallery/room2.jpg"/>
+      </picture>
     </div>
   </div>
 </section>
