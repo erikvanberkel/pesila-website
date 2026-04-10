@@ -203,6 +203,17 @@ textarea:focus,
   outline-offset: 2px;
 }
 
+a:not(.btn-custom):focus {
+  border-radius: 30px;
+  padding-inline: 0.3em;
+}
+
+a.btn.btn-custom,
+a.btn.btn-custom:hover,
+a.btn.btn-custom:focus {
+  text-decoration: none;
+}
+
 /* Text containers */
 
 /* Decorative elements */
