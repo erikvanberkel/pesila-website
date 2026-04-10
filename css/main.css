@@ -419,7 +419,7 @@ textarea:focus,
   margin-bottom: 1.5rem;
 }
 
-.footer-content h4 {
+.footer-content h3 {
   font-family: "Playfair Display", serif;
   font-size: 1.1rem;
   margin-bottom: 1rem;
@@ -509,5 +509,16 @@ textarea:focus,
 
   .footer-social {
     justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
