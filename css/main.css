@@ -414,18 +414,51 @@ a.btn.btn-custom:focus {
 
 /* Gift certificate callout */
 .gift-callout {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1.5rem 2rem;
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
   background: linear-gradient(135deg, #faf7f2 0%, #f5f0e8 100%);
-  border-radius: 16px;
-  border: 1px solid rgba(201, 169, 97, 0.3);
+  border-radius: 20px;
+  border: 1px solid rgba(201, 169, 97, 0.25);
   text-align: center;
+  box-shadow: var(--shadow-soft);
 }
 
 .gift-callout p {
   margin: 0;
   color: var(--primary-color);
+}
+
+.gift-callout-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem !important;
+}
+
+.gift-callout-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.gift-callout-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.gift-callout-link:hover {
+  color: var(--secondary-color);
+}
+
+.gift-callout-link svg {
+  flex-shrink: 0;
 }
 
 /* Richer footer */
