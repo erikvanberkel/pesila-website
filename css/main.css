@@ -66,6 +66,15 @@ a {
   transition: var(--transition-fast);
 }
 
+.link-primary {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.link-primary:hover {
+  color: var(--secondary-color);
+}
+
 p {
   text-wrap-style: pretty;
   line-height: 1.7;

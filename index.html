@@ -12,7 +12,24 @@
       gtag("js", new Date());
       gtag("config", "G-69BZRSS6JF");
     </script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=__GOOGLE_MAPS_API_KEY__&libraries=places&loading=async"></script>
+    <script>
+      (function () {
+        var cache = localStorage.getItem("google_reviews_cache");
+        var fresh = false;
+        if (cache) {
+          try {
+            var parsed = JSON.parse(cache);
+            fresh = Date.now() - parsed.timestamp < 24 * 60 * 60 * 1000;
+          } catch (e) {}
+        }
+        if (!fresh) {
+          var s = document.createElement("script");
+          s.src = "https://maps.googleapis.com/maps/api/js?key=__GOOGLE_MAPS_API_KEY__&libraries=places&loading=async";
+          s.async = true;
+          document.head.appendChild(s);
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Pesila Thai Massage Rotterdam | Authentieke Thaise Massage</title>
@@ -1263,12 +1280,12 @@
           <div class="card">
             <div class="card-body">
               <p class="text-center">Pesila Thai Massage verwelkomt je in het hart van Rotterdam-West. Onze salon op de Schiedamseweg staat bekend om authentieke Thaise massages, uitgevoerd door ervaren masseuses die hun vakmanschap in Thailand hebben geleerd.</p>
-              <p class="text-center">Onze masseuses zijn opgeleid in traditionele Thaise massagetechnieken en brengen jarenlange ervaring mee. Ze combineren eeuwenoude methoden met persoonlijke aandacht, afgestemd op jouw lichaam en behoeften. Bekijk ons volledige <a href="#services" style="color: var(--primary-color); text-decoration: underline">massage-aanbod</a>.</p>
+              <p class="text-center">Onze masseuses zijn opgeleid in traditionele Thaise massagetechnieken en brengen jarenlange ervaring mee. Ze combineren eeuwenoude methoden met persoonlijke aandacht, afgestemd op jouw lichaam en behoeften. Bekijk ons volledige <a href="#services" class="link-primary">massage-aanbod</a>.</p>
               <p class="text-center">Wat Pesila uniek maakt, is de warme sfeer en de persoonlijke benadering. Vanaf het moment dat je binnenstapt, word je omringd door rust en gastvrijheid. Wij geloven dat een goede massage begint bij een gevoel van welkom.</p>
               <p class="text-center">Onze massage salon bevindt zich op de <strong>Schiedamseweg 17A</strong> in Rotterdam-West. Station Delfshaven (metro A, B, C en tram 8) ligt op 2 minuten lopen. Er is betaald straatparkeren in de directe omgeving (€2,24/uur, ma-za 09:00-23:00, zo 12:00-23:00).</p>
               <p class="text-center">
                 Na je behandeling sluiten we graag af met een kopje thee, zodat je volledig ontspannen de deur uit gaat.
-                <a href="#booking" style="color: var(--primary-color); text-decoration: underline">Boek vandaag nog</a> voor een moment van pure ontspanning! Bekijk ook onze <a href="/gallery.html" style="color: var(--primary-color); text-decoration: underline">fotogalerij</a> voor een indruk van onze salon.
+                <a href="#booking" class="link-primary">Boek vandaag nog</a> voor een moment van pure ontspanning! Bekijk ook onze <a href="/gallery.html" class="link-primary">fotogalerij</a> voor een indruk van onze salon.
               </p>
             </div>
           </div>
@@ -1294,7 +1311,7 @@
               <div class="faq-answer">
                 <p>
                   Ja, het is aan te raden om van tevoren een afspraak te maken via onze
-                  <a href="#booking" style="color: var(--primary-color); text-decoration: underline">online boekingstool</a> of telefonisch. Walk-ins zijn welkom, maar een reservering garandeert beschikbaarheid.
+                  <a href="#booking" class="link-primary">online boekingstool</a> of telefonisch. Walk-ins zijn welkom, maar een reservering garandeert beschikbaarheid.
                 </p>
               </div>
             </details>
@@ -1307,7 +1324,7 @@
             <details class="faq-item" name="faq-item">
               <summary>Kan ik een massage cadeau geven?</summary>
               <div class="faq-answer">
-                <p>Ja! Neem <a href="#contact" style="color: var(--primary-color); text-decoration: underline">contact met ons op</a> voor een cadeaubon of koop er een bij ons in de salon. Een massage is een perfect cadeau voor elke gelegenheid.</p>
+                <p>Ja! Neem <a href="#contact" class="link-primary">contact met ons op</a> voor een cadeaubon of koop er een bij ons in de salon. Een massage is een perfect cadeau voor elke gelegenheid.</p>
               </div>
             </details>
             <details class="faq-item" name="faq-item">
@@ -1315,7 +1332,7 @@
               <div class="faq-answer">
                 <p>
                   Annuleringen zijn kosteloos tot 24 uur voor de afspraak. Neem contact met ons op via
-                  <a href="tel:+31623899709" style="color: var(--primary-color); text-decoration: underline">telefoon</a> of <a href="https://wa.me/31623899709" rel="noopener" style="color: var(--primary-color); text-decoration: underline" target="_blank">WhatsApp<span class="visually-hidden"> (opent in nieuw venster)</span></a>.
+                  <a href="tel:+31623899709" class="link-primary">telefoon</a> of <a href="https://wa.me/31623899709" rel="noopener" class="link-primary" target="_blank">WhatsApp<span class="visually-hidden"> (opent in nieuw venster)</span></a>.
                 </p>
               </div>
             </details>
@@ -1324,7 +1341,7 @@
               <div class="faq-answer">
                 <p>
                   Onze masseuses zijn ervaren in het werken met verschillende klachten. Bekijk ons
-                  <a href="#services" style="color: var(--primary-color); text-decoration: underline">massage-aanbod</a> en laat het ons van tevoren weten, zodat we de massage kunnen aanpassen aan jouw behoeften.
+                  <a href="#services" class="link-primary">massage-aanbod</a> en laat het ons van tevoren weten, zodat we de massage kunnen aanpassen aan jouw behoeften.
                 </p>
               </div>
             </details>
@@ -1333,7 +1350,7 @@
               <div class="faq-answer">
                 <p>
                   Onze prijzen beginnen vanaf €40 voor een 30-minuten massage. Een sessie van 60 minuten kost vanaf €65, en 90 minuten vanaf €95. Duo-massages starten vanaf €125 voor 60 minuten. Bekijk alle prijzen bij onze
-                  <a href="#services" style="color: var(--primary-color); text-decoration: underline">massages & prijzen</a>.
+                  <a href="#services" class="link-primary">massages & prijzen</a>.
                 </p>
               </div>
             </details>
@@ -1341,7 +1358,7 @@
               <summary>Wat is het verschil tussen traditionele Thaise massage en aroma-oliemassage?</summary>
               <div class="faq-answer">
                 <p>
-                  Bij een <a href="#services" style="color: var(--primary-color); text-decoration: underline">traditionele Thaise massage</a> worden drukpunten en stretchtechnieken gebruikt zonder olie — dit is een actievere vorm van massage. Een <a href="#services" style="color: var(--primary-color); text-decoration: underline">aroma-oliemassage</a> werkt met geurige etherische oliën en is meer gericht op diepe ontspanning. Voor stressverlichting raden wij de aroma-oliemassage aan, voor meer
+                  Bij een <a href="#services" class="link-primary">traditionele Thaise massage</a> worden drukpunten en stretchtechnieken gebruikt zonder olie — dit is een actievere vorm van massage. Een <a href="#services" class="link-primary">aroma-oliemassage</a> werkt met geurige etherische oliën en is meer gericht op diepe ontspanning. Voor stressverlichting raden wij de aroma-oliemassage aan, voor meer
                   energie de traditionele variant.
                 </p>
               </div>
@@ -1355,7 +1372,7 @@
             <details class="faq-item" name="faq-item">
               <summary>Hoe bereik ik Pesila Thai Massage?</summary>
               <div class="faq-answer">
-                <p>Wij bevinden ons op Schiedamseweg 17A in Rotterdam-West. Station Delfshaven ligt op 2 minuten lopen en wordt bediend door metro A, B en C, tram 8 en buslijnen 32, 33, 40 en 44. Per auto is er betaald straatparkeren in de omgeving (€2,24/uur, gratis buiten betaaltijden). Neem gerust <a href="#contact" style="color: var(--primary-color); text-decoration: underline">contact</a> op als je de weg niet kunt vinden.</p>
+                <p>Wij bevinden ons op Schiedamseweg 17A in Rotterdam-West. Station Delfshaven ligt op 2 minuten lopen en wordt bediend door metro A, B en C, tram 8 en buslijnen 32, 33, 40 en 44. Per auto is er betaald straatparkeren in de omgeving (€2,24/uur, gratis buiten betaaltijden). Neem gerust <a href="#contact" class="link-primary">contact</a> op als je de weg niet kunt vinden.</p>
               </div>
             </details>
             <details class="faq-item" name="faq-item">
@@ -1398,13 +1415,14 @@
                 return false;
               "
               target="_blank"
+              rel="noopener"
             >
               <span>Boek nu</span><span class="visually-hidden"> (opent in nieuw venster)</span>
             </a>
           </p>
 
           <div class="gift-callout">
-            <p>🎁 <strong>Geef ontspanning cadeau!</strong> Informeer naar onze cadeaubonnen via <a href="tel:+31623899709" style="color: var(--primary-color); text-decoration: underline">telefoon</a> of <a href="https://wa.me/31623899709" rel="noopener" style="color: var(--primary-color); text-decoration: underline" target="_blank">WhatsApp<span class="visually-hidden"> (opent in nieuw venster)</span></a>.</p>
+            <p>🎁 <strong>Geef ontspanning cadeau!</strong> Informeer naar onze cadeaubonnen via <a href="tel:+31623899709" class="link-primary">telefoon</a> of <a href="https://wa.me/31623899709" rel="noopener" class="link-primary" target="_blank">WhatsApp<span class="visually-hidden"> (opent in nieuw venster)</span></a>.</p>
           </div>
 
           <p class="text-center mt-5">Als je vragen hebt, vul dan het formulier in en wij nemen zo snel mogelijk contact met je op.</p>
@@ -1645,6 +1663,7 @@
             minRating: 4,
             maxReviews: 4,
             retryDelay: 100,
+            maxRetries: 10,
           },
           validation: {
             emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -1890,15 +1909,19 @@
             console.log(`Google Reviews: Displayed ${topReviews.length} reviews`);
           },
 
-          init() {
-            if (typeof google === "undefined" || !google.maps?.places?.Place) {
-              setTimeout(() => this.init(), CONFIG.google.retryDelay);
-              return;
-            }
+          retryCount: 0,
 
-            console.log("Google Reviews: Google Maps API loaded, fetching reviews...");
+          init() {
             this.fetch()
-              .then((data) => requestAnimationFrame(() => this.render(data)))
+              .then((data) => {
+                if (data) {
+                  requestAnimationFrame(() => this.render(data));
+                } else if (this.retryCount++ < CONFIG.google.maxRetries) {
+                  setTimeout(() => this.init(), CONFIG.google.retryDelay);
+                } else {
+                  console.warn("Google Reviews: API not loaded after " + CONFIG.google.maxRetries + " retries");
+                }
+              })
               .catch((error) => console.error("Google Reviews: Initialization failed", error));
           },
         };
