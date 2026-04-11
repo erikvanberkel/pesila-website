@@ -297,19 +297,25 @@
         margin-left: 0.5rem;
       }
 
-      /* Expanded detail area */
+      /* Expanded detail area - grid row transition for content-based height */
       .service-detail {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.5s ease;
       }
 
       .service-card[aria-expanded="true"] .service-detail {
-        max-height: 800px;
+        grid-template-rows: 1fr;
       }
 
       .service-detail-inner {
-        padding: 0 1.25rem 1.25rem;
+        overflow: hidden;
+        min-height: 0;
+        padding: 0 1.25rem;
+      }
+
+      .service-card[aria-expanded="true"] .service-detail-inner {
+        padding-bottom: 1.25rem;
         border-top: 1px solid rgba(201, 169, 97, 0.1);
       }
 
