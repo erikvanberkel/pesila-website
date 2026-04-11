@@ -62,17 +62,22 @@ h2 {
 }
 
 a {
-  color: #fff;
+  color: var(--primary-color);
   transition: var(--transition-fast);
 }
 
+a:hover {
+  color: var(--secondary-color);
+}
+
 .link-primary {
-  color: var(--primary-color);
-  text-decoration: underline;
+  color: var(--primary-color) !important;
+  text-decoration-color: var(--primary-color) !important;
 }
 
 .link-primary:hover {
-  color: var(--secondary-color);
+  color: var(--secondary-color) !important;
+  text-decoration-color: var(--secondary-color) !important;
 }
 
 p {
