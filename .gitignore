@@ -1,4 +1,9 @@
 # Claude Code local settings
 .claude/settings.local.json
 
+# IDE
 .idea/
+
+# Tool artifacts
+.superpowers/
+docs/superpowers/
