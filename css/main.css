@@ -308,7 +308,7 @@ a.btn.btn-custom:focus {
 
 .faq-item {
   border: 1px solid rgba(201, 169, 97, 0.2);
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 0.75rem;
   background: rgba(255, 255, 255, 0.8);
   overflow: hidden;
@@ -356,31 +356,6 @@ a.btn.btn-custom:focus {
   p {
     margin-inline: 0;
   }
-}
-
-/* Service card read-more hint */
-.service-card .read-more-hint {
-  color: var(--gold-accent);
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 0.5rem 1.5rem 1rem;
-  transition: color 0.3s ease;
-}
-
-/* Popular badge */
-.badge-popular {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: linear-gradient(135deg, var(--gold-accent), #d4b96a);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.35rem 0.75rem;
-  border-radius: 20px;
-  letter-spacing: 0.02em;
-  box-shadow: 0 2px 8px rgba(201, 169, 97, 0.4);
-  z-index: 2;
 }
 
 /* Review summary */
@@ -540,6 +515,18 @@ a.btn.btn-custom:focus {
 
 .gallery-cta h2 {
   font-family: "Playfair Display", serif;
+}
+
+/* Pricing pills - compact price capsules */
+.pricing-pill {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  background: transparent;
+  border-radius: 14px;
+  font-size: 0.65rem;
+  border: 1px solid rgba(201, 169, 97, 0.12);
+  color: var(--secondary-color);
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
