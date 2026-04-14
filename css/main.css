@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: only light;
 }
 
 /* Subtle grain texture overlay */
