@@ -3,6 +3,7 @@
 
 # IDE
 .idea/
+*.DotSettings
 
 # Tool artifacts
 .superpowers/
