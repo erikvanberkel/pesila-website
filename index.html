@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="nl">
   <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="preload" as="image" href="images/ladies1920.webp" type="image/webp" fetchpriority="high" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69BZRSS6JF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,26 +15,6 @@
       gtag("js", new Date());
       gtag("config", "G-69BZRSS6JF");
     </script>
-    <script>
-      (function () {
-        var cache = localStorage.getItem("google_reviews_cache");
-        var fresh = false;
-        if (cache) {
-          try {
-            var parsed = JSON.parse(cache);
-            fresh = Date.now() - parsed.timestamp < 24 * 60 * 60 * 1000;
-          } catch (e) {}
-        }
-        if (!fresh) {
-          var s = document.createElement("script");
-          s.src = "https://maps.googleapis.com/maps/api/js?key=__GOOGLE_MAPS_API_KEY__&libraries=places&loading=async";
-          s.async = true;
-          document.head.appendChild(s);
-        }
-      })();
-    </script>
-    <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Pesila Thai Massage Rotterdam | Authentieke Thaise Massage</title>
     <meta content="Ontspan met authentieke Thaise massages bij Pesila Thai Massage in Rotterdam. Boek nu voor traditionele, aroma-olie, of sportmassages op Schiedamseweg 17A!" name="description" />
     <meta content="Thaise massage Rotterdam, Pesila Thai Massage, traditionele Thaise massage, aroma-oliemassage, voetreflexmassage, nek-schouder-massage, hot stone massage, duo-massage, zwangerschapsmassage, sportmassage, deep tissue massage, kruidenstempelmassage, massage Rotterdam" name="keywords" />
@@ -40,11 +23,10 @@
     <meta content="Pesila Thai Massage" name="author" />
     <meta content="#604429" name="theme-color" />
     <link href="images/icon192.png" rel="apple-touch-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    <link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <link href="images/icon.png" rel="icon" type="image/png" />
     <link href="https://www.pesila.nl" rel="canonical" />
@@ -126,6 +108,7 @@
       .hero-content img {
         margin-bottom: 2.5rem;
         width: min(30vw, 280px);
+        height: auto;
         filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
       }
 
@@ -878,7 +861,7 @@
   <body>
     <a class="skip-link" href="#main-content">Spring naar hoofdinhoud</a>
     <div id="preloader">
-      <img alt="Pesila Thai Massage wordt geladen" src="images/logo.png" style="max-width: 100px" />
+      <img alt="Pesila Thai Massage wordt geladen" src="images/logo.png" width="500" height="229" style="max-width: 100px; height: auto" />
     </div>
 
     <!-- Navigation -->
@@ -886,7 +869,7 @@
       <nav aria-label="Hoofdnavigatie" class="navbar navbar-expand-lg fixed-top">
         <div class="container">
           <a class="navbar-brand" href="#home">
-            <img alt="Pesila Thai Massage Logo" src="images/logo.png" />
+            <img alt="Pesila Thai Massage Logo" src="images/logo.png" width="500" height="229" />
           </a>
           <input class="d-none" id="navbar-toggle" type="checkbox" />
           <label aria-label="Navigatie in-/uitschakelen" class="navbar-toggler" for="navbar-toggle">
@@ -932,7 +915,7 @@
       <!-- Hero Section -->
       <section aria-labelledby="hero-heading" class="hero-section" id="home">
         <div class="hero-content">
-          <img alt="Wit logo van Pesila Thai Massage" src="images/logo-white-1024.png" />
+          <img alt="Wit logo van Pesila Thai Massage" src="images/logo-white-1024.png" width="645" height="807" fetchpriority="high" />
           <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
           <p>Ontspan en herstel met traditionele Thaise massages bij Pesila Thai Massage op Schiedamseweg 17A, Rotterdam.</p>
           <p><a class="btn btn-primary btn-custom" href="#booking">Boek nu jouw massage</a></p>
@@ -1518,7 +1501,7 @@
             Als je direct online een afspraak wilt maken op basis van onze beschikbaarheid, kies dan Boek nu.<br />
             Snel, eenvoudig en 24/7 beschikbaar!
           </p>
-          <script src="https://widget.treatwell.nl/common/venue-menu/javascript/widget-button.js?v1"></script>
+          <script defer src="https://widget.treatwell.nl/common/venue-menu/javascript/widget-button.js?v1"></script>
           <script>
             (function () {
               var link = document.createElement("link");
@@ -1782,7 +1765,7 @@
         };
       })();
     </script>
-    <script data-api-url="https://pesila-ai-receptionist-production.up.railway.app" src="https://pesila-ai-receptionist-production.up.railway.app/static/chat-widget.js"></script>
+    <script defer data-api-url="https://pesila-ai-receptionist-production.up.railway.app" src="https://pesila-ai-receptionist-production.up.railway.app/static/chat-widget.js"></script>
 
     <script async>
       (function () {
@@ -1806,9 +1789,15 @@
 
         // ==================== Preloader ====================
         const hidePreloader = () => {
-          window.addEventListener("load", () => {
-            document.getElementById("preloader").style.display = "none";
-          });
+          const hide = () => {
+            const el = document.getElementById("preloader");
+            if (el) el.style.display = "none";
+          };
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", hide);
+          } else {
+            hide();
+          }
         };
 
         // ==================== Form Validation ====================
@@ -1930,6 +1919,20 @@
         };
 
         // ==================== Google Reviews ====================
+        let mapsLoaderPromise = null;
+        const loadGoogleMaps = () => {
+          if (mapsLoaderPromise) return mapsLoaderPromise;
+          mapsLoaderPromise = new Promise((resolve, reject) => {
+            const s = document.createElement("script");
+            s.src = "https://maps.googleapis.com/maps/api/js?key=__GOOGLE_MAPS_API_KEY__&libraries=places&loading=async";
+            s.async = true;
+            s.onload = resolve;
+            s.onerror = reject;
+            document.head.appendChild(s);
+          });
+          return mapsLoaderPromise;
+        };
+
         const GoogleReviews = {
           async fetch() {
             const cached = localStorage.getItem("google_reviews_cache");
@@ -2045,18 +2048,59 @@
 
           retryCount: 0,
 
-          init() {
+          run() {
             this.fetch()
               .then((data) => {
                 if (data) {
                   requestAnimationFrame(() => this.render(data));
                 } else if (this.retryCount++ < CONFIG.google.maxRetries) {
-                  setTimeout(() => this.init(), CONFIG.google.retryDelay);
+                  setTimeout(() => this.run(), CONFIG.google.retryDelay);
                 } else {
                   console.warn("Google Reviews: API not loaded after " + CONFIG.google.maxRetries + " retries");
                 }
               })
               .catch((error) => console.error("Google Reviews: Initialization failed", error));
+          },
+
+          hasFreshCache() {
+            try {
+              const cached = localStorage.getItem("google_reviews_cache");
+              if (!cached) return false;
+              const { timestamp } = JSON.parse(cached);
+              return Date.now() - timestamp < CONFIG.google.cacheDuration;
+            } catch (e) {
+              return false;
+            }
+          },
+
+          init() {
+            if (this.hasFreshCache()) {
+              this.run();
+              return;
+            }
+
+            const target = document.getElementById("testimonials");
+            const triggerLoad = () => {
+              loadGoogleMaps()
+                .then(() => this.run())
+                .catch((error) => console.error("Google Reviews: Failed to load Maps API", error));
+            };
+
+            if (!target || !("IntersectionObserver" in window)) {
+              triggerLoad();
+              return;
+            }
+
+            const observer = new IntersectionObserver(
+              (entries, obs) => {
+                if (entries.some((e) => e.isIntersecting)) {
+                  obs.disconnect();
+                  triggerLoad();
+                }
+              },
+              { rootMargin: "600px 0px" },
+            );
+            observer.observe(target);
           },
         };
 
