@@ -93,7 +93,6 @@ Four breakpoints: 320px, 640px, 1280px, 1920px in `images/gallery/w*/`
 - Core functionality must work without JavaScript
 - All forms work without JS (FormSubmit.co handles submission)
 - Mobile nav toggle is CSS-only (checkbox hack)
-- `<noscript>` tags hide preloader and show fallback messages
 
 ### Git Commits
 - Do NOT add Claude references, co-author tags, or "Generated with Claude Code" to commit messages
