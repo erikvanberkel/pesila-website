@@ -941,7 +941,10 @@
           <img src="images/hero/ladies-1280.webp" alt="" width="1280" height="1280" fetchpriority="high" decoding="async" />
         </picture>
         <div class="hero-content">
-          <img alt="Wit logo van Pesila Thai Massage" src="images/logo-white-1024.png" width="645" height="807" fetchpriority="high" />
+          <picture>
+            <source srcset="images/logo-white.avif" type="image/avif" />
+            <img alt="Wit logo van Pesila Thai Massage" src="images/logo-white-1024.png" width="645" height="807" fetchpriority="high" />
+          </picture>
           <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
           <p>Ontspan en herstel met traditionele Thaise massages bij Pesila Thai Massage op Schiedamseweg 17A, Rotterdam.</p>
           <p><a class="btn btn-primary btn-custom" href="#booking">Boek nu jouw massage</a></p>
@@ -1891,28 +1894,22 @@
             }
           });
 
-          // Update active nav link on scroll
-          const updateActiveLink = () => {
-            const scrollY = window.scrollY + 100;
-
-            sections.forEach((section) => {
-              const sectionTop = section.offsetTop;
-              const sectionHeight = section.offsetHeight;
-              const sectionId = section.getAttribute("id");
-
-              if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                navLinks.forEach((link) => {
-                  link.classList.remove("active");
-                  if (link.getAttribute("href")?.includes(`#${sectionId}`)) {
-                    link.classList.add("active");
-                  }
-                });
-              }
+          // Update active nav link via IntersectionObserver (no forced reflow)
+          const setActive = (sectionId) => {
+            navLinks.forEach((link) => {
+              link.classList.toggle("active", link.getAttribute("href")?.includes(`#${sectionId}`));
             });
           };
 
-          window.addEventListener("scroll", updateActiveLink, { passive: true });
-          updateActiveLink();
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) setActive(entry.target.id);
+              });
+            },
+            { rootMargin: "-100px 0px -85% 0px" },
+          );
+          sections.forEach((section) => observer.observe(section));
         };
 
         // ==================== Service Cards ====================
