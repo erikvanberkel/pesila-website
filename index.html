@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link rel="preload" as="image" href="images/ladies1920.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="images/hero/ladies-768.avif 768w, images/hero/ladies-1280.avif 1280w, images/hero/ladies-1920.avif 1920w" imagesizes="100vw" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69BZRSS6JF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -70,9 +70,7 @@
       .hero-section {
         scroll-margin-top: 5rem;
         margin-top: 63px;
-        background: url("images/ladies1920.jpg") no-repeat center center;
-        background-size: cover;
-        background-image: url("images/ladies1920.webp");
+        background-color: #2d2926;
         min-height: calc(100vh - 63px);
         min-height: calc(100dvh - 63px);
         height: auto;
@@ -84,6 +82,20 @@
         position: relative;
         padding: 0 0 2rem 0;
         transition: min-height 0.5s;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
 
       .hero-section::before {
@@ -93,6 +105,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        z-index: 1;
         background: linear-gradient(180deg, rgba(45, 41, 38, 0.3) 0%, rgba(45, 41, 38, 0.6) 100%);
       }
 
@@ -914,6 +927,19 @@
     <main id="main-content">
       <!-- Hero Section -->
       <section aria-labelledby="hero-heading" class="hero-section" id="home">
+        <picture class="hero-bg">
+          <source
+            type="image/avif"
+            srcset="images/hero/ladies-768.avif 768w, images/hero/ladies-1280.avif 1280w, images/hero/ladies-1920.avif 1920w"
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcset="images/hero/ladies-768.webp 768w, images/hero/ladies-1280.webp 1280w, images/hero/ladies-1920.webp 1920w"
+            sizes="100vw"
+          />
+          <img src="images/hero/ladies-1280.webp" alt="" width="1280" height="1280" fetchpriority="high" decoding="async" />
+        </picture>
         <div class="hero-content">
           <img alt="Wit logo van Pesila Thai Massage" src="images/logo-white-1024.png" width="645" height="807" fetchpriority="high" />
           <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
