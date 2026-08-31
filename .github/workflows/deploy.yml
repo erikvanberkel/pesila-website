@@ -26,6 +26,11 @@ jobs:
         run: |
           sed -i 's/__GOOGLE_MAPS_API_KEY__/${{ secrets.GOOGLE_MAPS_API_KEY }}/g' index.html
 
+      - name: Cache-bust assets
+        run: |
+          VERSION=$(git rev-parse --short HEAD)
+          sed -i "s|__VERSION__|${VERSION}|g" index.html gallery.html
+
       - name: Update sitemap dates
         run: |
           TODAY=$(date -u +%Y-%m-%d)

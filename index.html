@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="nl">
   <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="images/hero/ladies-768.avif 768w, images/hero/ladies-1280.avif 1280w, images/hero/ladies-1920.avif 1920w" imagesizes="100vw" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69BZRSS6JF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,26 +15,6 @@
       gtag("js", new Date());
       gtag("config", "G-69BZRSS6JF");
     </script>
-    <script>
-      (function () {
-        var cache = localStorage.getItem("google_reviews_cache");
-        var fresh = false;
-        if (cache) {
-          try {
-            var parsed = JSON.parse(cache);
-            fresh = Date.now() - parsed.timestamp < 24 * 60 * 60 * 1000;
-          } catch (e) {}
-        }
-        if (!fresh) {
-          var s = document.createElement("script");
-          s.src = "https://maps.googleapis.com/maps/api/js?key=__GOOGLE_MAPS_API_KEY__&libraries=places&loading=async";
-          s.async = true;
-          document.head.appendChild(s);
-        }
-      })();
-    </script>
-    <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Pesila Thai Massage Rotterdam | Authentieke Thaise Massage</title>
     <meta content="Ontspan met authentieke Thaise massages bij Pesila Thai Massage in Rotterdam. Boek nu voor traditionele, aroma-olie, of sportmassages op Schiedamseweg 17A!" name="description" />
     <meta content="Thaise massage Rotterdam, Pesila Thai Massage, traditionele Thaise massage, aroma-oliemassage, voetreflexmassage, nek-schouder-massage, hot stone massage, duo-massage, zwangerschapsmassage, sportmassage, deep tissue massage, kruidenstempelmassage, massage Rotterdam" name="keywords" />
@@ -40,12 +23,11 @@
     <meta content="Pesila Thai Massage" name="author" />
     <meta content="#604429" name="theme-color" />
     <link href="images/icon192.png" rel="apple-touch-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://maps.googleapis.com" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
+    <link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link href="css/bootstrap.min.css?v=__VERSION__" rel="stylesheet" />
+    <link href="css/main.css?v=__VERSION__" rel="stylesheet" />
     <link href="images/icon.png" rel="icon" type="image/png" />
     <link href="https://www.pesila.nl" rel="canonical" />
     <meta content="Pesila Thai Massage Rotterdam - Authentieke Thaise Wellness" property="og:title" />
@@ -88,9 +70,7 @@
       .hero-section {
         scroll-margin-top: 5rem;
         margin-top: 63px;
-        background: url("images/ladies1920.jpg") no-repeat center center;
-        background-size: cover;
-        background-image: url("images/ladies1920.webp");
+        background-color: #2d2926;
         min-height: calc(100vh - 63px);
         min-height: calc(100dvh - 63px);
         height: auto;
@@ -102,6 +82,20 @@
         position: relative;
         padding: 0 0 2rem 0;
         transition: min-height 0.5s;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
 
       .hero-section::before {
@@ -111,6 +105,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        z-index: 1;
         background: linear-gradient(180deg, rgba(45, 41, 38, 0.3) 0%, rgba(45, 41, 38, 0.6) 100%);
       }
 
@@ -126,6 +121,7 @@
       .hero-content img {
         margin-bottom: 2.5rem;
         width: min(30vw, 280px);
+        height: auto;
         filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
       }
 
@@ -154,6 +150,21 @@
         border-radius: 20px;
         font-size: 0.9rem;
         letter-spacing: 0.02em;
+      }
+
+      .hero-content .hero-vacation-notice {
+        display: block;
+        width: fit-content;
+        margin: 0.5rem auto 0;
+        padding: 0.5rem 1.25rem;
+        background: linear-gradient(135deg, #c9a961 0%, #a88d4a 100%);
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 400;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+        color: #2d2926;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
       }
 
       .btn-custom {
@@ -217,6 +228,7 @@
         cursor: pointer;
         transition: box-shadow 0.3s ease;
         position: relative;
+        scroll-margin-top: 5rem;
       }
 
       .service-card:hover {
@@ -322,7 +334,8 @@
 
       .service-detail-inner img {
         width: 100%;
-        height: 240px;
+        /* Clamp op korte viewports zodat de prijstabel zichtbaar blijft */
+        height: min(400px, 45vh);
         object-fit: cover;
         border-radius: 12px;
         margin: 1rem 0;
@@ -474,19 +487,6 @@
         box-shadow: 0 8px 30px rgba(96, 68, 41, 0.15);
       }
 
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: var(--background-color);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
       img.gallery {
         width: 75%;
         aspect-ratio: 4/3;
@@ -556,7 +556,8 @@
           font-size: 0.95rem;
         }
 
-        .hero-content small {
+        .hero-content small,
+        .hero-content .hero-vacation-notice {
           font-size: 0.8rem;
           padding: 0.4rem 1rem;
         }
@@ -867,26 +868,16 @@
         ]
       }
     </script>
-    <noscript>
-      <style>
-        #preloader {
-          display: none !important;
-        }
-      </style>
-    </noscript>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Spring naar hoofdinhoud</a>
-    <div id="preloader">
-      <img alt="Pesila Thai Massage wordt geladen" src="images/logo.png" style="max-width: 100px" />
-    </div>
 
     <!-- Navigation -->
     <header>
       <nav aria-label="Hoofdnavigatie" class="navbar navbar-expand-lg fixed-top">
         <div class="container">
           <a class="navbar-brand" href="#home">
-            <img alt="Pesila Thai Massage Logo" src="images/logo.png" />
+            <img alt="Pesila Thai Massage Logo" src="images/logo.png" width="500" height="229" />
           </a>
           <input class="d-none" id="navbar-toggle" type="checkbox" />
           <label aria-label="Navigatie in-/uitschakelen" class="navbar-toggler" for="navbar-toggle">
@@ -931,12 +922,29 @@
     <main id="main-content">
       <!-- Hero Section -->
       <section aria-labelledby="hero-heading" class="hero-section" id="home">
+        <picture class="hero-bg">
+          <source
+            type="image/avif"
+            srcset="images/hero/ladies-768.avif 768w, images/hero/ladies-1280.avif 1280w, images/hero/ladies-1920.avif 1920w"
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcset="images/hero/ladies-768.webp 768w, images/hero/ladies-1280.webp 1280w, images/hero/ladies-1920.webp 1920w"
+            sizes="100vw"
+          />
+          <img src="images/hero/ladies-1280.webp" alt="" width="1280" height="1280" fetchpriority="high" decoding="async" />
+        </picture>
         <div class="hero-content">
-          <img alt="Wit logo van Pesila Thai Massage" src="images/logo-white-1024.png" />
+          <picture>
+            <source srcset="images/logo-white.avif" type="image/avif" />
+            <img alt="Wit logo van Pesila Thai Massage" src="images/logo-white-1024.png" width="645" height="807" fetchpriority="high" />
+          </picture>
           <h1 id="hero-heading">Authentieke Thaise Massage in Rotterdam</h1>
           <p>Ontspan en herstel met traditionele Thaise massages bij Pesila Thai Massage op Schiedamseweg 17A, Rotterdam.</p>
           <p><a class="btn btn-primary btn-custom" href="#booking">Boek nu jouw massage</a></p>
           <small class="small mb-4">✓ Professionele therapeutische massage</small>
+          <span class="hero-vacation-notice">🌴 VAKANTIE: Gesloten van 18 t/m 26 juli 2026</span>
         </div>
       </section>
 
@@ -945,6 +953,14 @@
         <div class="container">
           <h2 class="section-title" id="timetable-heading">Onze openingstijden</h2>
           <p class="text-center">Plan je bezoek aan Pesila Thai Massage op een tijd die jou uitkomt.</p>
+
+          <!-- Vacation Notice -->
+          <div class="alert alert-info vacation-alert" role="alert" aria-live="polite" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #0c5460;">
+            <h4 class="alert-heading" style="margin-bottom: 0.75rem;">🌴 Vakantie - Tijdelijk gesloten</h4>
+            <p style="margin-bottom: 0.5rem;"><strong>Wij zijn gesloten van 18 t/m 26 juli 2026</strong></p>
+            <p style="margin-bottom: 0.5rem;">We genieten van een welverdiende vakantie en zijn weer terug op 27 juli 2026.</p>
+            <p style="margin-bottom: 0;">Bedankt voor uw begrip en tot snel!</p>
+          </div>
 
           <div class="card">
             <div class="card-body">
@@ -978,7 +994,7 @@
           <div class="service-list">
             <article aria-expanded="false" aria-labelledby="traditional-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Traditionele Thaise massage bij Pesila" class="service-thumb" loading="lazy" src="images/services/traditioneel.avif" />
+                <img alt="Traditionele Thaise massage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/traditioneel-thumb.avif" />
                 <div class="service-info">
                   <h3 id="traditional-massage">Traditionele Thaise Massage <span class="badge-popular">Meest gekozen</span></h3>
                   <div class="service-subtitle">Vanaf € 40,- · 30–120 min</div>
@@ -1018,7 +1034,7 @@
             </article>
             <article aria-expanded="false" aria-labelledby="aroma-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Aroma-oliemassage bij Pesila" class="service-thumb" loading="lazy" src="images/services/aroma.avif" />
+                <img alt="Aroma-oliemassage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/aroma-thumb.avif" />
                 <div class="service-info">
                   <h3 id="aroma-massage">Aroma-oliemassage</h3>
                   <div class="service-subtitle">Vanaf € 75,- · 60–120 min</div>
@@ -1057,7 +1073,7 @@
             </article>
             <article aria-expanded="false" aria-labelledby="foot-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Voetreflexmassage bij Pesila" class="service-thumb" loading="lazy" src="images/services/voeten.avif" />
+                <img alt="Voetreflexmassage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/voeten-thumb.avif" />
                 <div class="service-info">
                   <h3 id="foot-massage">
                     Voetreflexmassage
@@ -1099,7 +1115,7 @@
             </article>
             <article aria-expanded="false" aria-labelledby="neck-shoulder-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Nek-schouder-hoofdmassage bij Pesila" class="service-thumb" loading="lazy" src="images/services/nek-schouder.avif" />
+                <img alt="Nek-schouder-hoofdmassage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/nek-schouder-thumb.avif" />
                 <div class="service-info">
                   <h3 id="neck-shoulder-massage">Nek-schouder-hoofdmassage</h3>
                   <div class="service-subtitle">Vanaf € 40,- · 30–120 min</div>
@@ -1143,7 +1159,7 @@
             </article>
             <article aria-expanded="false" aria-labelledby="hot-stone-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Hot stone massage bij Pesila" class="service-thumb" loading="lazy" src="images/services/hotstone.avif" />
+                <img alt="Hot stone massage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/hotstone-thumb.avif" />
                 <div class="service-info">
                   <h3 id="hot-stone-massage">Hot Stone Massage</h3>
                   <div class="service-subtitle">Vanaf € 75,- · 60–120 min</div>
@@ -1186,7 +1202,7 @@
             </article>
             <article aria-expanded="false" aria-labelledby="duo-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Duo-massage bij Pesila" class="service-thumb" loading="lazy" src="images/services/duo.avif" />
+                <img alt="Duo-massage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/duo-thumb.avif" />
                 <div class="service-info">
                   <h3 id="duo-massage">Duo-massage <span class="badge-popular">Meest gekozen</span></h3>
                   <div class="service-subtitle">Vanaf € 125,- · 60–120 min</div>
@@ -1225,7 +1241,7 @@
             </article>
             <article aria-expanded="false" aria-labelledby="pregnancy-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Zwangerschapsmassage bij Pesila" class="service-thumb" loading="lazy" src="images/services/zwangerschap.avif" />
+                <img alt="Zwangerschapsmassage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/zwangerschap-thumb.avif" />
                 <div class="service-info">
                   <h3 id="pregnancy-massage">Zwangerschapsmassage</h3>
                   <div class="service-subtitle">€ 65,- · 60 min</div>
@@ -1256,7 +1272,7 @@
             </article>
             <article aria-expanded="false" aria-labelledby="sports-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Sportmassage bij Pesila" class="service-thumb" loading="lazy" src="images/services/sport.avif" />
+                <img alt="Sportmassage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/sport-thumb.avif" />
                 <div class="service-info">
                   <h3 id="sports-massage">Sportmassage</h3>
                   <div class="service-subtitle">Vanaf € 65,- · 60–120 min</div>
@@ -1299,7 +1315,7 @@
             </article>
             <article aria-expanded="false" aria-labelledby="deep-tissue-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Deep tissue massage bij Pesila" class="service-thumb" loading="lazy" src="images/services/deep-tissue.avif" />
+                <img alt="Deep tissue massage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/deep-tissue-thumb.avif" />
                 <div class="service-info">
                   <h3 id="deep-tissue-massage">
                     Deep Tissue Massage
@@ -1340,7 +1356,7 @@
             </article>
             <article aria-expanded="false" aria-labelledby="herbal-massage" class="service-card" tabindex="0">
               <div class="service-summary">
-                <img alt="Kruidenstempelmassage bij Pesila" class="service-thumb" loading="lazy" src="images/services/kruidenstempel.avif" />
+                <img alt="Kruidenstempelmassage bij Pesila" class="service-thumb" loading="lazy" width="72" height="72" src="images/services/kruidenstempel-thumb.avif" />
                 <div class="service-info">
                   <h3 id="herbal-massage">
                     Kruidenstempelmassage
@@ -1512,13 +1528,16 @@
       <section aria-labelledby="booking-heading" class="booking-section" id="booking">
         <div class="container">
           <h2 class="section-title">Maak nu je afspraak</h2>
+          <!-- Vacation Notice -->
+          <div class="alert alert-info vacation-alert" role="alert" aria-live="polite" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #0c5460;"><strong>🌴 Vakantieperiode</strong><br />Door onze vakantie zijn we van 18 t/m 26 juli 2026 niet beschikbaar voor afspraken. Vanaf 27 juli 2026 heten we je graag weer welkom!</div>
+
           <div class="alert alert-warning" role="alert" style="max-width: 800px; margin: 1.5rem auto; border-radius: 10px; border-left: 4px solid #856404"><strong>⚠️ Belangrijk:</strong> Wij bieden uitsluitend professionele therapeutische massages in een respectvolle omgeving. Ongepast gedrag wordt niet getolereerd.</div>
 
           <p class="text-center mt-5">
             Als je direct online een afspraak wilt maken op basis van onze beschikbaarheid, kies dan Boek nu.<br />
             Snel, eenvoudig en 24/7 beschikbaar!
           </p>
-          <script src="https://widget.treatwell.nl/common/venue-menu/javascript/widget-button.js?v1"></script>
+          <script defer src="https://widget.treatwell.nl/common/venue-menu/javascript/widget-button.js?v1"></script>
           <script>
             (function () {
               var link = document.createElement("link");
@@ -1782,7 +1801,7 @@
         };
       })();
     </script>
-    <script data-api-url="https://pesila-ai-receptionist-production.up.railway.app" src="https://pesila-ai-receptionist-production.up.railway.app/static/chat-widget.js"></script>
+    <script defer data-api-url="https://pesila-ai-receptionist-production.up.railway.app" src="https://pesila-ai-receptionist-production.up.railway.app/static/chat-widget.js"></script>
 
     <script async>
       (function () {
@@ -1790,6 +1809,11 @@
 
         // ==================== Configuration ====================
         const CONFIG = {
+          vacation: {
+            startDate: new Date("2026-07-18T00:00:00"),
+            endDate: new Date("2026-07-26T23:59:59"),
+            daysBeforeNotice: 5,
+          },
           google: {
             placeId: "ChIJayy_TwM1xEcRGWhh99q1o48",
             cacheDuration: 24 * 60 * 60 * 1000,
@@ -1804,11 +1828,17 @@
           },
         };
 
-        // ==================== Preloader ====================
-        const hidePreloader = () => {
-          window.addEventListener("load", () => {
-            document.getElementById("preloader").style.display = "none";
-          });
+        // ==================== Vacation Notice Management ====================
+        const handleVacationNotices = () => {
+          const { startDate, endDate, daysBeforeNotice } = CONFIG.vacation;
+          const showNoticeFrom = new Date(startDate.getTime() - daysBeforeNotice * 24 * 60 * 60 * 1000);
+          const now = new Date();
+
+          if (now < showNoticeFrom || now > endDate) {
+            document.querySelectorAll(".vacation-alert, .hero-vacation-notice").forEach((notice) => {
+              notice.style.display = "none";
+            });
+          }
         };
 
         // ==================== Form Validation ====================
@@ -1876,33 +1906,28 @@
             }
           });
 
-          // Update active nav link on scroll
-          const updateActiveLink = () => {
-            const scrollY = window.scrollY + 100;
-
-            sections.forEach((section) => {
-              const sectionTop = section.offsetTop;
-              const sectionHeight = section.offsetHeight;
-              const sectionId = section.getAttribute("id");
-
-              if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                navLinks.forEach((link) => {
-                  link.classList.remove("active");
-                  if (link.getAttribute("href")?.includes(`#${sectionId}`)) {
-                    link.classList.add("active");
-                  }
-                });
-              }
+          // Update active nav link via IntersectionObserver (no forced reflow)
+          const setActive = (sectionId) => {
+            navLinks.forEach((link) => {
+              link.classList.toggle("active", link.getAttribute("href")?.includes(`#${sectionId}`));
             });
           };
 
-          window.addEventListener("scroll", updateActiveLink, { passive: true });
-          updateActiveLink();
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) setActive(entry.target.id);
+              });
+            },
+            { rootMargin: "-100px 0px -85% 0px" },
+          );
+          sections.forEach((section) => observer.observe(section));
         };
 
         // ==================== Service Cards ====================
         const initServiceCards = () => {
           const cards = document.querySelectorAll(".service-card");
+          let scrollTimer;
 
           cards.forEach((card) => {
             const toggleCard = () => {
@@ -1917,6 +1942,23 @@
 
               // Toggle this card
               card.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+
+              // When expanding, scroll the card into view once the accordion
+              // animation (0.5s) settles. Collapsing another card above this
+              // one removes height and can pull this card behind the fixed
+              // navbar. A timer instead of transitionend: it also fires in
+              // browsers that can't animate grid-template-rows, and it can be
+              // cancelled when the card is collapsed mid-animation. No
+              // explicit behavior option, so CSS scroll-behavior (and its
+              // prefers-reduced-motion override) decides how to scroll.
+              clearTimeout(scrollTimer);
+              if (!isExpanded) {
+                scrollTimer = setTimeout(() => {
+                  if (card.getAttribute("aria-expanded") === "true") {
+                    card.scrollIntoView({ block: "start" });
+                  }
+                }, 500);
+              }
             };
 
             card.addEventListener("click", toggleCard);
@@ -1930,6 +1972,20 @@
         };
 
         // ==================== Google Reviews ====================
+        let mapsLoaderPromise = null;
+        const loadGoogleMaps = () => {
+          if (mapsLoaderPromise) return mapsLoaderPromise;
+          mapsLoaderPromise = new Promise((resolve, reject) => {
+            const s = document.createElement("script");
+            s.src = "https://maps.googleapis.com/maps/api/js?key=__GOOGLE_MAPS_API_KEY__&libraries=places&loading=async";
+            s.async = true;
+            s.onload = resolve;
+            s.onerror = reject;
+            document.head.appendChild(s);
+          });
+          return mapsLoaderPromise;
+        };
+
         const GoogleReviews = {
           async fetch() {
             const cached = localStorage.getItem("google_reviews_cache");
@@ -2045,18 +2101,59 @@
 
           retryCount: 0,
 
-          init() {
+          run() {
             this.fetch()
               .then((data) => {
                 if (data) {
                   requestAnimationFrame(() => this.render(data));
                 } else if (this.retryCount++ < CONFIG.google.maxRetries) {
-                  setTimeout(() => this.init(), CONFIG.google.retryDelay);
+                  setTimeout(() => this.run(), CONFIG.google.retryDelay);
                 } else {
                   console.warn("Google Reviews: API not loaded after " + CONFIG.google.maxRetries + " retries");
                 }
               })
               .catch((error) => console.error("Google Reviews: Initialization failed", error));
+          },
+
+          hasFreshCache() {
+            try {
+              const cached = localStorage.getItem("google_reviews_cache");
+              if (!cached) return false;
+              const { timestamp } = JSON.parse(cached);
+              return Date.now() - timestamp < CONFIG.google.cacheDuration;
+            } catch (e) {
+              return false;
+            }
+          },
+
+          init() {
+            if (this.hasFreshCache()) {
+              this.run();
+              return;
+            }
+
+            const target = document.getElementById("testimonials");
+            const triggerLoad = () => {
+              loadGoogleMaps()
+                .then(() => this.run())
+                .catch((error) => console.error("Google Reviews: Failed to load Maps API", error));
+            };
+
+            if (!target || !("IntersectionObserver" in window)) {
+              triggerLoad();
+              return;
+            }
+
+            const observer = new IntersectionObserver(
+              (entries, obs) => {
+                if (entries.some((e) => e.isIntersecting)) {
+                  obs.disconnect();
+                  triggerLoad();
+                }
+              },
+              { rootMargin: "600px 0px" },
+            );
+            observer.observe(target);
           },
         };
 
@@ -2105,7 +2202,7 @@
 
         // ==================== Initialization ====================
         const init = () => {
-          hidePreloader();
+          handleVacationNotices();
           initFormValidation();
           initNavigation();
           initServiceCards();
