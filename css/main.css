@@ -239,6 +239,21 @@ a.btn.btn-custom:focus {
   text-decoration: none;
 }
 
+/* Treatwell award next to the booking button */
+.booking-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+}
+
+.booking-award {
+  display: block;
+  width: clamp(170px, 16vw, 220px);
+  height: auto;
+}
+
 /* Text containers */
 
 /* Decorative elements */

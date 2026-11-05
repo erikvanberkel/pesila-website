@@ -53,7 +53,7 @@ GoogleReviews.init()      // Dynamic loading with cache
 
 | Service | Purpose | Fallback |
 |---------|---------|----------|
-| Treatwell Widget | Booking | Links to treatwell.nl/plaats/pesila-thai-massage/ |
+| Treatwell Widget | Booking | Links to widget.treatwell.nl/salon/482688/menu/ |
 | FormSubmit.co | Contact form | Phone/email displayed |
 | Google Maps API | Reviews | External link to Google Reviews |
 | Google Analytics | Tracking | Site works without it |

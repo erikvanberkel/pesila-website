@@ -152,6 +152,64 @@
         letter-spacing: 0.02em;
       }
 
+      /* Linksonder in het eerste scherm, ook als de hero hoger is dan het scherm */
+      .hero-award {
+        position: absolute;
+        bottom: calc(100% - 100vh + 63px + 2rem);
+        bottom: calc(100% - 100dvh + 63px + 2rem);
+        left: clamp(1.5rem, 2.5vw, 3rem);
+        z-index: 2;
+        display: block;
+        width: clamp(165px, 16vw, 260px);
+      }
+
+      .hero-award picture,
+      .hero-award img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .hero-award picture + picture {
+        margin-top: 0.5rem;
+        border-radius: 999px;
+        background: rgba(45, 41, 38, 0.55);
+      }
+
+      a.hero-award:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 2px;
+        border-radius: 12px;
+        padding-inline: 0;
+      }
+
+      @media (max-width: 991.98px) {
+        .hero-section {
+          flex-direction: column;
+        }
+
+        .hero-award {
+          position: static;
+          display: flex;
+          align-items: center;
+          align-self: flex-start;
+          gap: 0.75rem;
+          width: auto;
+          margin: 1rem 0 0 1.5rem;
+        }
+
+        .hero-award picture {
+          flex: 0 0 140px;
+          width: 140px;
+        }
+
+        .hero-award picture + picture {
+          flex-basis: 130px;
+          width: 130px;
+          margin-top: 0;
+        }
+      }
+
       .hero-content .hero-vacation-notice {
         display: block;
         width: fit-content;
@@ -639,6 +697,7 @@
         "image": "https://www.pesila.nl/images/logo-color-512.png",
         "description": "Authentieke Thaise massages in Rotterdam voor ontspanning en herstel bij Pesila Thai Massage op Schiedamseweg 17A.",
         "priceRange": "€40-€220",
+        "award": "Treatwell Top Rated 2026",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5.0",
@@ -946,6 +1005,23 @@
           <small class="small mb-4">✓ Professionele therapeutische massage</small>
           <span class="hero-vacation-notice">🌴 VAKANTIE: Gesloten van 18 t/m 26 juli 2026</span>
         </div>
+        <!-- Treatwell-onderscheiding: stopt na ca. 4 seconden; stilstaand bij prefers-reduced-motion -->
+        <a class="hero-award" href="#booking">
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="images/treatwell/top-rated-2026.avif" type="image/avif" />
+            <source media="(prefers-reduced-motion: reduce)" srcset="images/treatwell/top-rated-2026.webp" type="image/webp" />
+            <source media="(prefers-reduced-motion: reduce)" srcset="images/treatwell/top-rated-2026.png" type="image/png" />
+            <source srcset="images/treatwell/top-rated-2026-animated.webp" type="image/webp" />
+            <img alt="Onderscheiding Treatwell Top Rated 2026" decoding="async" height="480" src="images/treatwell/top-rated-2026-animated.gif" width="480" />
+          </picture>
+          <picture>
+            <source media="(prefers-reduced-motion: reduce)" srcset="images/treatwell/top-rated-2026-stars.webp" type="image/webp" />
+            <source media="(prefers-reduced-motion: reduce)" srcset="images/treatwell/top-rated-2026-stars.png" type="image/png" />
+            <source srcset="images/treatwell/top-rated-2026-stars-animated.webp" type="image/webp" />
+            <img alt="Vijf sterren" decoding="async" height="100" src="images/treatwell/top-rated-2026-stars-animated.gif" width="510" />
+          </picture>
+          <span class="visually-hidden"> – ga naar Boek nu</span>
+        </a>
       </section>
 
       <!-- Timetable Section -->
@@ -1548,9 +1624,9 @@
               document.getElementsByTagName("head")[0].appendChild(link);
             })();
           </script>
-          <p class="text-center">
+          <p class="booking-cta">
             <a
-              href="https://www.treatwell.nl/plaats/pesila-thai-massage/"
+              href="https://widget.treatwell.nl/salon/482688/menu/"
               id="wahanda-online-booking-widget"
               onclick="
                 wahanda.openOnlineBookingWidget('https://widget.treatwell.nl/salon/482688/menu/');
@@ -1561,6 +1637,11 @@
             >
               <span>Boek nu</span><span class="visually-hidden"> (opent in nieuw venster)</span>
             </a>
+            <picture>
+              <source srcset="images/treatwell/top-rated-2026.avif" type="image/avif" />
+              <source srcset="images/treatwell/top-rated-2026.webp" type="image/webp" />
+              <img alt="Onderscheiding Treatwell Top Rated 2026" class="booking-award" decoding="async" height="480" loading="lazy" src="images/treatwell/top-rated-2026.png" width="480" />
+            </picture>
           </p>
 
           <p class="text-center mt-5">Als je vragen hebt, vul dan het formulier in en wij nemen zo snel mogelijk contact met je op.</p>
